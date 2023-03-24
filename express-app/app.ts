@@ -182,9 +182,10 @@ app.get('/restaurants', (req, res) => {
     },
   ];
 
-  res.send({ restaurants });
+  res.send(restaurants);
 });
 
 app.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log(`Server running at http://localhost:${port}`);
 });

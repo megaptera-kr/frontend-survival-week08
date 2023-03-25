@@ -33,7 +33,8 @@ const OrderTypeCard = styled.li`
   cursor: pointer;
   
   &:hover {
-    background: ${(props) => props.theme.colors.selectedOrderTypeCard};
+    background: ${(props) => props.theme.colors.selectedOrderTypeCardBackground};
+    border: ${(props) => props.theme.colors.selectedOrderTypeCardBorder};
   }
 `;
 

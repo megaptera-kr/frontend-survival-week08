@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useEffectOnce, useLocalStorage } from 'usehooks-ts';
 import Menu from '../types/Menu';
 
 type MenuProps = {
@@ -41,11 +42,18 @@ const MenuBorderLine = styled.div`
 `;
 
 export default function MenuItem({ menus }: MenuProps) {
+  const defaultCart = [] as Menu[];
+  const [cart, setCart] = useLocalStorage('cart', defaultCart);
+
+  const handleClick = (menu: Menu) => {
+    setCart([...cart, menu]);
+  };
+
   return (
     <>
       <MenuBox>
         {menus?.map((menu) => (
-          <MenuCard key={menu.id}>
+          <MenuCard key={menu.id} onClick={() => { handleClick(menu); }}>
             <li>
               <MenuImage src={menu.image} alt={menu.name} />
             </li>

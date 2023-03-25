@@ -4,11 +4,11 @@ import MenuItem from './MenuItem';
 
 const RestaurantsListWrap = styled.div`
   background: ${(props) => props.theme.colors.menuListBackground};
-  padding: 22px 0;
+  /* padding: 22px 0; */
 `;
 
 const RestaurantCard = styled.div`
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 `;
 
 const RestaurantName = styled.div`

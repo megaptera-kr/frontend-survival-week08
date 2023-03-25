@@ -1,11 +1,16 @@
 import { useState } from 'react';
 
+import { useLocalStorage } from 'usehooks-ts';
 import useFetchRestaurants from '../hooks/useFetchRestaurants';
+
+import filterRestaurants from '../utils/filterRestaurants';
+
+import Menu from '../types/Menu';
 
 import SearchBar from '../components/SearchBar';
 import Categories from '../components/Categories';
-import filterRestaurants from '../utils/filterRestaurants';
 import RestaurantsList from '../components/RestaurantsList';
+import Cart from '../components/Cart';
 
 export default function OrderPage() {
   const restaurants = useFetchRestaurants();
@@ -18,6 +23,7 @@ export default function OrderPage() {
     restaurants,
     { filterText, filterCategory },
   );
+
   return (
     <div>
       <SearchBar
@@ -34,6 +40,7 @@ export default function OrderPage() {
         <RestaurantsList
           filteredRestaurants={filteredRestaurants}
         />
+        <Cart />
       </div>
     </div>
   );

@@ -9,7 +9,6 @@ const LayoutWrap = styled.div`
   background: ${(props) => props.theme.colors.background};
   color: ${(props) => props.theme.colors.primarytext};
   margin: 0 auto;
-  padding: 22px 20px;
 `;
 
 export default function Layout() {

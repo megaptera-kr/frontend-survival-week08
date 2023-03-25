@@ -8,6 +8,7 @@ const HeaderWrap = styled.div`
   width: 100%;
   height: 100px;
   display: flex;
+  padding: 22px 20px;
 `;
 
 const Logo = styled.img`

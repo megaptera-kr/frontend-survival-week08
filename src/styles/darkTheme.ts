@@ -3,7 +3,7 @@ import Theme from './Theme';
 const darkTheme: Theme = {
   sizes: {
     basicWidth: '1080px',
-    basicHeight: '1920px',
+    basicHeight: 'auto',
   },
   colors: {
     /* common */
@@ -15,9 +15,13 @@ const darkTheme: Theme = {
     orderTypeCard: '#3A3A3A',
     selectedOrderTypeCard: '#FF8400',
     /* order */
+    menuListBackground: '#3A3A3A',
+    selectedCategoryBackground: '#3A3A3A',
+    selectedCategoryText: '#FF8400',
     menuCard: '#1E1E1E',
-    selectedMenuCard: '#FF8400',
-    divideMenu: '#FF8400',
+    selectedMenuCardBackground: '#1E1E1E',
+    selectedMenuCardBorder: '#FF8400',
+    divideMenu: '#555555',
     orderlist: '#1E1E1E',
     cancleButton: '#170A0C',
     orderButton: '#FF8400',

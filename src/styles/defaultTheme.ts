@@ -1,7 +1,7 @@
 const defaultTheme = {
   sizes: {
     basicWidth: '1080px',
-    basicHeight: '1920px',
+    basicHeight: 'auto',
   },
   colors: {
     /* common */
@@ -13,9 +13,13 @@ const defaultTheme = {
     orderTypeCard: '#FFFFFF',
     selectedOrderTypeCard: '#FFF1DC',
     /* order */
+    menuListBackground: '#FFFFFF',
+    selectedCategoryBackground: '#FFFFFF',
+    selectedCategoryText: '#FF8400',
     menuCard: '#F4F4F4',
-    selectedMenuCard: '#FFF1DC',
-    divideMenu: '#FFF1DC',
+    selectedMenuCardBackground: '#FFF1DC',
+    selectedMenuCardBorder: '#FF8400',
+    divideMenu: '#F4F4F4',
     orderlist: '#F4F4F4',
     cancleButton: '#170A0C',
     orderButton: '#FF8400',

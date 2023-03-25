@@ -4,6 +4,7 @@ import MenuItem from './MenuItem';
 
 const RestaurantsListWrap = styled.div`
   background: ${(props) => props.theme.colors.menuListBackground};
+  border-radius: ${(props) => props.theme.sizes.bgBorderRadious};
   /* padding: 22px 0; */
 `;
 

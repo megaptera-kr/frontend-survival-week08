@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useEffectOnce, useLocalStorage } from 'usehooks-ts';
+import { useLocalStorage } from 'usehooks-ts';
 import Menu from '../types/Menu';
 
 type MenuProps = {

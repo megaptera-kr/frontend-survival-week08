@@ -24,11 +24,13 @@ const Title = styled.span`
   font-size: 3rem;
   text-align: center;
   letter-spacing: 0.04em;
+  font-family: 'yg-jalnan';
 `;
 
 const Switch = styled(Title)`
   width: 30%;
   font-size: 20px;
+  font-family: 'Pretendard-Regular';
   ul {
     display: inline-flex;
     flex-wrap: wrap;

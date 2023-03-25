@@ -6,6 +6,7 @@ import bag from '../../static/images/bag.png';
 
 const IntroWrap = styled.div`
   padding: 10% 0;
+  font-family: 'yg-jalnan';
 `;
 
 const IntroText = styled.div`

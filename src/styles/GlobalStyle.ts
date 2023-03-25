@@ -4,9 +4,14 @@ const GlobalStyle = createGlobalStyle`
  @font-face {
   font-family: 'yg-jalnan';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
-  font-weight: normal;
   font-style: normal;
  }
+
+ @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-style: normal;
+}
 
  html {
   box-sizing: border-box;
@@ -25,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
  
  body {
   font-size: 1.6rem;
-  font-family: 'yg-jalnan';
+  font-family: 'Pretendard-Regular';
  }
  
  :lang(ko) {

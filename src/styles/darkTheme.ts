@@ -4,6 +4,7 @@ const darkTheme: Theme = {
   sizes: {
     basicWidth: '1080px',
     basicHeight: 'auto',
+    bgBorderRadious: '0px 80px 0px 0px',
   },
   colors: {
     /* common */
@@ -11,6 +12,9 @@ const darkTheme: Theme = {
     primarytext: '#FFFFFF',
     secondarytext: '#FFFFFF',
     thirdtext: '#FF8400',
+    /* header */
+    searchBarBorder: '#FF8400',
+    searchBarText: '#FFFFFF',
     /* intro */
     orderTypeCard: '#3A3A3A',
     selectedOrderTypeCardBackground: '#3A3A3A',
@@ -31,10 +35,13 @@ const darkTheme: Theme = {
     clickedCancleButton: '#44272B',
     clickedOrderButton: '#D87000',
     /* order complete */
+    receiptBackground: '#3A3A3A',
     orderNumber: '#CECECE',
-    divideOrderList: '#FFFFFF',
+    divideOrderNumber: '#FFFFFF',
+    divideOrderList: '#555555',
     totalPrice: '#FF8400',
-    goBackToMainButton: '#FF8400',
+    goBackToMainButtonBackground: '#FF8400',
+    goBackToMainButton: '#FFFFFF',
   },
 };
 

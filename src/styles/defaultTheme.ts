@@ -2,6 +2,7 @@ const defaultTheme = {
   sizes: {
     basicWidth: '1080px',
     basicHeight: 'auto',
+    bgBorderRadious: '0px 80px 0px 0px',
   },
   colors: {
     /* common */
@@ -9,6 +10,9 @@ const defaultTheme = {
     primarytext: '#FFFFFF',
     secondarytext: '#000000',
     thirdtext: '#FF8400',
+    /* header */
+    searchBarBorder: '#FFFFFF',
+    searchBarText: '#FFFFFF',
     /* intro */
     orderTypeCard: '#FFFFFF',
     selectedOrderTypeCardBackground: '#FFF1DC',
@@ -30,10 +34,13 @@ const defaultTheme = {
     clickedCancleButton: '#44272B',
     clickedOrderButton: '#D87000',
     /* order complete */
+    receiptBackground: '#FFFFFF',
     orderNumber: '#6A6A6A',
-    divideOrderList: '#616161',
+    divideOrderNumber: '#616161',
+    divideOrderList: '#F4F4F4',
     totalPrice: '#FF8400',
-    goBackToMainButton: '#FF8400',
+    goBackToMainButtonBackground: '#FF8400',
+    goBackToMainButton: '#FFFFFF',
   },
 };
 

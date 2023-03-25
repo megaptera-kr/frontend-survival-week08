@@ -2,13 +2,42 @@ import { useNavigate } from 'react-router-dom';
 
 import { useLocalStorage } from 'usehooks-ts';
 
+import styled from 'styled-components';
+
 import Receipt from '../types/Receipt';
 
-import orderComplete from '../../static/images/complete.png';
+import OrderNumber from '../components/OrderNumber';
+import OrderList from '../components/OrderList';
+
+const ReceiptWrap = styled.div`
+  width: 100%;
+  height: auto;
+  background: ${(props) => props.theme.colors.receiptBackground};
+  color: ${(props) => props.theme.colors.secondarytext};
+  padding: 10% 7% 6% 7%;
+  border-radius: ${(props) => props.theme.sizes.bgBorderRadious};
+`;
+
+const GoToMainButtonWrap = styled.div`
+  width: 100%;
+  height: 100px;
+  button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 80px;
+    font-weight: 500;
+    font-size: 28px;
+    font-family: 'Pretendard-Regular';
+    cursor: pointer;
+    color: ${(props) => props.theme.colors.goBackToMainButton};
+    background: ${(props) => props.theme.colors.goBackToMainButtonBackground};
+  }
+`;
 
 export default function OrderCompletePage() {
   const defaultReceipt = {} as Receipt;
-  const [receipt, setReceipt] = useLocalStorage('receipt', defaultReceipt);
+  const [, setReceipt] = useLocalStorage('receipt', defaultReceipt);
 
   const navigate = useNavigate();
 
@@ -18,56 +47,17 @@ export default function OrderCompletePage() {
   };
 
   return (
-    <div>
-      <ul>
-        <li>
-          <img src={orderComplete} alt="order-complete" />
-        </li>
-        <li>
-          주문이
-          <br />
-          완료되었습니다!
-        </li>
-        <li>
-          주문번호
-          {receipt.id}
-        </li>
-      </ul>
-      <div>---------</div>
-      <div>
-        <div>주문목록</div>
-        <div>---------</div>
-        <ul>
-          {
-            receipt.menu.map((menu, key) => (
-              <li key={`${menu.name + key + 1}`}>
-                {menu.name}
-                <span>
-                  {menu.price.toLocaleString()}
-                  원
-                </span>
-              </li>
-            ))
-          }
-
-        </ul>
-        <div>---------</div>
-        <div>
-          총 가격
-          <span>
-            {receipt.totalPrice}
-            원
-          </span>
-        </div>
-      </div>
-      <div>
+    <ReceiptWrap>
+      <OrderNumber />
+      <OrderList />
+      <GoToMainButtonWrap>
         <button
           type="button"
           onClick={handleClick}
         >
           메인화면으로 돌아가기
         </button>
-      </div>
-    </div>
+      </GoToMainButtonWrap>
+    </ReceiptWrap>
   );
 }

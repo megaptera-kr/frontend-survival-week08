@@ -14,6 +14,6 @@ function useFilteredRestaurant(
       s.category === selectedCategory && s.name.includes(shopName)
     ));
 
-  return { setSelectedCategory, filteredRestaurant };
+  return { selectedCategory, setSelectedCategory, filteredRestaurant };
 }
 export default useFilteredRestaurant;

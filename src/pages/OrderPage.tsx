@@ -1,6 +1,7 @@
 import { SetStateAction, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useLocalStorage } from 'usehooks-ts';
+import styled from 'styled-components';
 import SearchInput from '../components/SearchInput';
 import useFilteredRestaurant from '../hooks/useFilteredRestaurant';
 import useFetchRestaurants from '../hooks/useFetchRestaurants';
@@ -14,8 +15,9 @@ export default function OrderPage() {
   const [shopName, setShopName] = useState('');
   const restaurants = useFetchRestaurants();
 
-  const { setSelectedCategory, filteredRestaurant } = useFilteredRestaurant('전체', restaurants, shopName);
+  const { selectedCategory, setSelectedCategory, filteredRestaurant } = useFilteredRestaurant('전체', restaurants, shopName);
   const [carts, setCarts] = useLocalStorage<Menu[]>('carts', []);
+  const navigate = useNavigate();
 
   const addCart = (item: Menu) => {
     setCarts([...carts, item]);
@@ -29,18 +31,17 @@ export default function OrderPage() {
   };
 
   const onClickOrder = () => {
-    order(carts, totalPrice)
-      .then((res:ReceiptProps) => null);
-  };
-
-  const endReceipt = () => {
-    setCarts([]);
+    if (carts.length) {
+      order(carts, totalPrice)
+        .then((res:ReceiptProps) => {
+          navigate('/order/completed', { state: res });
+        })
+        .catch((err) => console.log(err));
+    }
   };
 
   return (
     <>
-      <div>orderPage</div>
-
       <SearchInput
         shopName={shopName}
         setShopName={setShopName}
@@ -49,6 +50,7 @@ export default function OrderPage() {
       <CategoryButtons
         restaurants={restaurants}
         setSelectedCategory={setSelectedCategory}
+        selectedCategory={selectedCategory}
       />
 
       <ShopList
@@ -63,9 +65,6 @@ export default function OrderPage() {
         onClickOrder={onClickOrder}
         setCarts={setCarts}
       />
-
-      <div><Link to="/">취소</Link></div>
-      <div><Link to="/order-done">주문 하기</Link></div>
     </>
 
   );

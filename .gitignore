@@ -106,3 +106,5 @@ dist
 
 # IDEA
 .idea/
+
+/output/

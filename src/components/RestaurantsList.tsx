@@ -5,20 +5,20 @@ import MenuItem from './MenuItem';
 const RestaurantsListWrap = styled.div`
   background: ${(props) => props.theme.colors.menuListBackground};
   border-radius: ${(props) => props.theme.sizes.bgBorderRadious};
-  /* padding: 22px 0; */
+  min-height: 1107px;
 `;
 
 const RestaurantCard = styled.div`
-  /* margin-bottom: 30px; */
+  padding-top: 7%;
 `;
 
 const RestaurantName = styled.div`
   color: ${(props) => props.theme.colors.secondarytext};
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 4.3rem;
   line-height: 57px;
   letter-spacing: -0.03em;
-  padding: 0 20px;
+  padding: 0 55px;
 `;
 
 type RestaurantsListProps = {

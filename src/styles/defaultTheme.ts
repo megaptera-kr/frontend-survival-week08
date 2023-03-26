@@ -2,6 +2,7 @@ const defaultTheme = {
   sizes: {
     basicWidth: '1080px',
     basicHeight: 'auto',
+    minHeight: '1920px',
     bgBorderRadious: '0px 80px 0px 0px',
   },
   colors: {
@@ -13,6 +14,10 @@ const defaultTheme = {
     /* header */
     searchBarBorder: '#FFFFFF',
     searchBarText: '#FFFFFF',
+    searchBarBackground: '#FF8400',
+    ThemeButtonBox: '#FFA454',
+    currentThemeBackground: '#FFFFFF',
+    currentThemeText: '#000000',
     /* intro */
     orderTypeCard: '#FFFFFF',
     selectedOrderTypeCardBackground: '#FFF1DC',
@@ -27,6 +32,9 @@ const defaultTheme = {
     divideMenu: '#F4F4F4',
     /* cart */
     cartlist: '#F4F4F4',
+    cartTotalQtyBackground: '#FF8400',
+    cartTotalQtyColor: '#FFFFFF',
+    cartTotalPrice: '#FF8400',
     cartItemBackground: '#FFFFFF',
     cartItemPriceText: '#FF8400',
     cancleButton: '#170A0C',

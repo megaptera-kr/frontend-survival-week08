@@ -15,18 +15,26 @@ const SearchBarWrap = styled.div`
   padding: 10px 30px;
 `;
 
+const SearchIcon = styled.label`
+  position: relative;
+  position: relative;
+  top: -70px;
+  right: -458px;
+  img {
+    display: inline-block;
+    width: 60px;
+  }
+`;
+
 const SearchBarInput = styled.input`
-  width: 1020px;
+  width: 98%;
   height: 80px;
   border: 2px solid ${(props) => props.theme.colors.searchBarBorder};
-  background: none;
   color: ${(props) => props.theme.colors.searchBarText};
   border-radius: 20px;
   font-size: 3rem;
   padding: 10px 20px;
-  background-image: url('../../static/images/icon-search.png');
-  background-repeat: no-repeat;
-  background-position: center; 
+  background-color: transparent;
   font-family: 'Pretendard-Regular';
 
   &::placeholder{
@@ -49,13 +57,16 @@ export default function SearchBar({
   };
   return (
     <SearchBarWrap>
-      {/* <i src={searchIcon} alt="searchIcon" /> */}
       <SearchBarInput
+        id="search-bar"
         type="text"
         placeholder={placeholder}
         value={filterText}
         onChange={handleChange}
       />
+      <SearchIcon htmlFor="search-bar">
+        <img src={searchIcon} alt="searchIcon" />
+      </SearchIcon>
     </SearchBarWrap>
   );
 }

@@ -5,17 +5,17 @@ import fastfood from '../../static/images/fastfood.png';
 import bag from '../../static/images/bag.png';
 
 const IntroWrap = styled.div`
-  padding: 10% 0;
+  padding: 31% 0;
   font-family: 'yg-jalnan';
 `;
 
 const IntroText = styled.div`
   width: 100%;
-  height: 30rem;
+  height: 43rem;
   text-align: center;
-  font-size: 7rem;
-  letter-spacing: 0.3rem;
-  line-height: 1.3;
+  font-weight: 700;
+  font-size: 110px;
+  line-height: 140px;
 `;
 
 const OrderTypeWrap = styled.ul`

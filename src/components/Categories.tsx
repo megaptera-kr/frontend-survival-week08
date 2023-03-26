@@ -18,21 +18,30 @@ type CateogoryItemProps = {
 const CategoryTab = styled.ul`
   display: flex;
   width: 100%;
+  padding: 0 4% 0 3%;
 `;
 
 const CateogoryItem = styled.li<CateogoryItemProps>`
   width: 25%;
-  height: 84px;
-  font-size: 2.5rem;
+  height: 82px;
+  font-size: 3.5rem;
+  font-weight: 500;
   line-height: 8rem;
   text-align: center;
   letter-spacing: -0.03em;
   cursor: pointer;
 
-  ${(props) => props.filterCategory === props.category && css`
+  span {
+    width: 230px;
+    height: 84px;
+    display: block;
+    ${(props) => props.filterCategory === props.category && css`
     color: ${props.theme.colors.selectedCategoryText};
     background: ${props.theme.colors.selectedCategoryBackground};
+    border: 1px solid ${props.theme.colors.selectedCategoryBackground};
+    border-radius: 20px 20px 0px 0px;
   `}
+  }
   
 `;
 
@@ -58,7 +67,9 @@ export default function Categories({
             category={category}
             onClick={() => { handleClick(category); }}
           >
-            {category}
+            <span>
+              {category}
+            </span>
           </CateogoryItem>
         ))
       }

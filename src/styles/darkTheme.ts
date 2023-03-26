@@ -4,6 +4,7 @@ const darkTheme: Theme = {
   sizes: {
     basicWidth: '1080px',
     basicHeight: 'auto',
+    minHeight: '1920px',
     bgBorderRadious: '0px 80px 0px 0px',
   },
   colors: {
@@ -15,6 +16,10 @@ const darkTheme: Theme = {
     /* header */
     searchBarBorder: '#FF8400',
     searchBarText: '#FFFFFF',
+    searchBarBackground: '#606060',
+    ThemeButtonBox: '#3A3A3A',
+    currentThemeBackground: '#1E1E1E',
+    currentThemeText: '#FFFFFF',
     /* intro */
     orderTypeCard: '#3A3A3A',
     selectedOrderTypeCardBackground: '#3A3A3A',
@@ -27,7 +32,11 @@ const darkTheme: Theme = {
     selectedMenuCardBackground: '#1E1E1E',
     selectedMenuCardBorder: '#FF8400',
     divideMenu: '#555555',
+    /* cart */
     cartlist: '#1E1E1E',
+    cartTotalQtyBackground: '#FF8400',
+    cartTotalQtyColor: '#FFFFFF',
+    cartTotalPrice: '#FF8400',
     cartItemBackground: '#3A3A3A',
     cartItemPriceText: '#FF8400',
     cancleButton: '#170A0C',

@@ -1,7 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 
-import styled from 'styled-components';
-
 import { useLocalStorage } from 'usehooks-ts';
 
 import shoppingCart from '../../static/images/shopping-cart.png';
@@ -11,34 +9,9 @@ import Menu from '../types/Menu';
 import Receipt from '../types/Receipt';
 import CartItem from './CartItem';
 
-const CartWrap = styled.div`
-  background: ${(props) => props.theme.colors.cartlist};
-  color: ${(props) => props.theme.colors.secondarytext};
-  padding: 2%;
-`;
-
-const CartInfoWrap = styled.div`
-  width: 100%;
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
-`;
-
-const CartInfo = styled.div`
-  display: flex;
-  div {
-    padding: 10px;
-  }
-  img {
-    width: 33px;
-    height: 33px;
-  }
-
-`;
-
-const TotalPrice = styled.div`
-  padding: 10px;
-`;
+import {
+  CartWrap, CartInfoWrap, CartInfo, TotalQty, TotalPrice, OrderButtonBox,
+} from './Cart.style';
 
 export default function Cart() {
   const defaultCart = [] as Menu[];
@@ -57,6 +30,10 @@ export default function Cart() {
 
   const navigate = useNavigate();
 
+  const cancelOrder = () => {
+    setCart(defaultCart);
+  };
+
   const orderMenu = async () => {
     if (!totalQty) {
       return;
@@ -74,13 +51,15 @@ export default function Cart() {
       <CartInfoWrap>
         <CartInfo>
           <img src={shoppingCart} alt="shopping-cart" />
-          <div>
-            주문내역
-            <span>
+          <TotalQty>
+            <span className="order-list">
+              주문내역
+            </span>
+            <span className="total-qty">
               {totalQty}
               개
             </span>
-          </div>
+          </TotalQty>
         </CartInfo>
         <TotalPrice>
           총 결제 예상금액
@@ -88,14 +67,28 @@ export default function Cart() {
             {' '}
             {totalPrice.toLocaleString()}
           </span>
+          {' '}
           원
         </TotalPrice>
       </CartInfoWrap>
       <CartItem />
-      <div>
-        <button type="button">취소</button>
-        <button type="button" onClick={orderMenu}>주문하기</button>
-      </div>
+      <OrderButtonBox>
+        <button
+          className="cancel"
+          type="button"
+          onClick={cancelOrder}
+        >
+          취소
+
+        </button>
+        <button
+          className="order"
+          type="button"
+          onClick={orderMenu}
+        >
+          주문 하기
+        </button>
+      </OrderButtonBox>
     </CartWrap>
   );
 }

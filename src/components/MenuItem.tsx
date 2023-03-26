@@ -15,7 +15,7 @@ const MenuBox = styled.div`
 
 const MenuCard = styled.ul`
   width: 310px;
-  height: 380px;
+  height: 396px;
   border-radius: 40px;
   padding: 30px;
   background: ${(props) => props.theme.colors.menuCard};
@@ -24,6 +24,14 @@ const MenuCard = styled.ul`
   &:hover {
     background: ${(props) => props.theme.colors.selectedMenuCardBackground};
     border: 3px solid ${(props) => props.theme.colors.selectedMenuCardBorder};
+  }
+
+  .menu-name,
+  .menu-price {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: -0.03em;
   }
 `;
 
@@ -57,10 +65,10 @@ export default function MenuItem({ menus }: MenuProps) {
             <li>
               <MenuImage src={menu.image} alt={menu.name} />
             </li>
-            <li>
+            <li className="menu-name">
               {menu.name}
             </li>
-            <li>
+            <li className="menu-price">
               {menu.price.toLocaleString()}
               원
             </li>

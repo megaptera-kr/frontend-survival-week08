@@ -11,10 +11,10 @@ import OrderList from '../components/OrderList';
 
 const ReceiptWrap = styled.div`
   width: 100%;
-  height: auto;
+  height: ${(props) => props.theme.sizes.basicHeight};
   background: ${(props) => props.theme.colors.receiptBackground};
   color: ${(props) => props.theme.colors.secondarytext};
-  padding: 10% 7% 6% 7%;
+  padding: 10% 7% 21% 7%;
   border-radius: ${(props) => props.theme.sizes.bgBorderRadious};
 `;
 

@@ -32,6 +32,7 @@ export default function Cart() {
 
   const cancelOrder = () => {
     setCart(defaultCart);
+    navigate('/');
   };
 
   const orderMenu = async () => {

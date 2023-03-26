@@ -46,7 +46,7 @@ const TotalQty = styled.div`
     background: ${(props) => props.theme.colors.cartTotalQtyBackground};
     color: ${(props) => props.theme.colors.cartTotalQtyColor};
     border-radius: 30px;
-    padding-top: 5.5%;
+    padding-top: 4.5%;
     text-align: center;
     letter-spacing: 0.2rem;
   }

@@ -1,6 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import searchIcon from '../../static/images/icon-search.png';
+import { useDarkMode } from 'usehooks-ts';
+import defaultSearchIcon from '../../static/images/icon-search.png';
+import darkSearchIcon from '../../static/images/icon-search-dark.png';
 
 type SearchBarProps = {
   filterText: string;
@@ -15,7 +17,11 @@ const SearchBarWrap = styled.div`
   padding: 10px 30px;
 `;
 
-const SearchIcon = styled.label`
+type SearchBarIconProps = {
+  isDarkMode: boolean;
+}
+
+const SearchIcon = styled.label<SearchBarIconProps>`
   position: relative;
   position: relative;
   top: -70px;
@@ -24,6 +30,13 @@ const SearchIcon = styled.label`
     display: inline-block;
     width: 60px;
   }
+  ${(props) => props.isDarkMode && css`
+    top: -63px;
+    img{
+      width: 43px;
+    }
+  `}
+  
 `;
 
 const SearchBarInput = styled.input`
@@ -55,6 +68,9 @@ export default function SearchBar({
     const { value } = event.target;
     setFilterText(value);
   };
+
+  const { isDarkMode } = useDarkMode();
+
   return (
     <SearchBarWrap>
       <SearchBarInput
@@ -64,8 +80,8 @@ export default function SearchBar({
         value={filterText}
         onChange={handleChange}
       />
-      <SearchIcon htmlFor="search-bar">
-        <img src={searchIcon} alt="searchIcon" />
+      <SearchIcon htmlFor="search-bar" isDarkMode={isDarkMode}>
+        <img src={!isDarkMode ? defaultSearchIcon : darkSearchIcon} alt="searchIcon" />
       </SearchIcon>
     </SearchBarWrap>
   );

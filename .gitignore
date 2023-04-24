@@ -106,3 +106,7 @@ dist
 
 # IDEA
 .idea/
+
+.vscode
+
+output

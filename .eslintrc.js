@@ -15,10 +15,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-  ],
+  plugins: ['react', '@typescript-eslint'],
   settings: {
     'import/resolver': {
       node: {
@@ -27,6 +24,7 @@ module.exports = {
     },
   },
   rules: {
+    'linebreak-style': 0,
     indent: ['error', 2],
     'no-trailing-spaces': 'error',
     curly: 'error',
@@ -48,15 +46,22 @@ module.exports = {
     'key-spacing': ['error', { mode: 'strict' }],
     'arrow-spacing': ['error', { before: true, after: true }],
     'import/no-extraneous-dependencies': 'off',
-    'import/extensions': ['error', 'ignorePackages', {
-      js: 'never',
-      jsx: 'never',
-      ts: 'never',
-      tsx: 'never',
-    }],
-    'react/jsx-filename-extension': [2, {
-      extensions: ['.js', '.jsx', '.ts', '.tsx'],
-    }],
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
+    'react/jsx-filename-extension': [
+      2,
+      {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    ],
     'jsx-a11y/label-has-associated-control': ['error', { assert: 'either' }],
   },
 };

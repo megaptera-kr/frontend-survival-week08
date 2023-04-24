@@ -3,13 +3,10 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: [
-
-  ],
+  extends: [],
   overrides: [
     {
-      extends: [
-      ],
+      extends: [],
       files: ['*.ts'],
     },
   ],

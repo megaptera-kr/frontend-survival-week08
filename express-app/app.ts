@@ -9,6 +9,7 @@ const BASE_IMAGE_URL = 'http://localhost:3000/images';
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static('public'));
 
@@ -25,7 +26,7 @@ app.post('/orders', (req, res) => {
     totalPrice,
   };
 
-  res.status(201).send({ receipt });
+  res.status(200).send({ receipt });
 });
 
 app.get('/restaurants', (req, res) => {
@@ -182,9 +183,10 @@ app.get('/restaurants', (req, res) => {
     },
   ];
 
-  res.send({ restaurants });
+  res.send(restaurants);
 });
 
 app.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log(`Server running at http://localhost:${port}`);
 });

@@ -1,15 +1,21 @@
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import App from './App';
 
 function main() {
-  const container = document.getElementById('root');
-  if (!container) {
+  const element = document.getElementById('root');
+  if (!element) {
     return;
   }
 
-  const root = ReactDOM.createRoot(container);
-  root.render(<App />);
+  const root = ReactDOM.createRoot(element);
+
+  root.render((
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  ));
 }
 
 main();

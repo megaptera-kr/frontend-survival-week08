@@ -1,8 +1,17 @@
 import React from 'react';
+import {
+  Cart, CategoryBar, RestaurantList, SearchBar,
+} from '../components';
 
 function OrderPage() {
   return (
-    <div>OrderPage</div>
+    <div>
+      <SearchBar />
+      <CategoryBar />
+      <RestaurantList />
+      <Cart />
+    </div>
+
   );
 }
 

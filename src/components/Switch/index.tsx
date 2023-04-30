@@ -30,6 +30,7 @@ const StyledSwitchButton = styled.button<{ isChecked: boolean, isDarkMode: boole
   cursor: pointer;
   border: none;
   border-radius: 30px;
+  font-size: 2rem;
   background: ${({ isChecked, isDarkMode, theme }) => {
     if (isChecked) {
       return isDarkMode ? theme.colors.darkgray200 : theme.colors.white;

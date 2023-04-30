@@ -6,9 +6,9 @@ const API_URI = 'http://localhost:3000';
 
 export const getRestaurant = async (): Promise<Restaurant[]> => {
   try {
-    const restaurants = await axios.get<null, GetRestaurantResponse>(`${API_URI}/restaurants`);
+    const { data } = await axios.get<null, GetRestaurantResponse>(`${API_URI}/restaurants`);
 
-    return restaurants || [];
+    return data.restaurants || [];
   } catch (e) {
     return [];
   }
@@ -24,11 +24,11 @@ export const getOrder = async (id: string): Promise<Order> => {
   }
 };
 
-export const postOrders = async (data: PostOrderRequest): Promise<PostOrderResponse> => {
+export const postOrders = async (payload: PostOrderRequest): Promise<{id: string}> => {
   try {
-    const res = await axios.post<PostOrderRequest, PostOrderResponse>(`${API_URI}/orders`, data);
-    return res;
+    const { data } = await axios.post<PostOrderRequest, PostOrderResponse>(`${API_URI}/orders`, payload);
+    return { id: data.id };
   } catch (e) {
-    return {} as PostOrderResponse;
+    return {} as { id: string };
   }
 };

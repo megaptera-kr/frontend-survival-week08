@@ -3,30 +3,31 @@ import { useRef } from 'react';
 
 import { useTabsKeyTrap } from '../../../hooks';
 import { Tab } from './tab';
+import type { Category } from '../../../types/kiosk';
 import * as S from './TabList.styled';
 
-interface TabItem<T extends string> {
+interface TabItem<T extends Category> {
   id: T;
   label: string;
   panel: string;
 }
 
-interface TabListProps<T extends string> {
+interface TabListProps {
   className?: string;
   ariaLabel: string;
-  tabs: ReadonlyArray<TabItem<T>>;
-  currentTab: T;
-  selectTab: (tabId: T) => void;
+  tabs: Record<Category, TabItem<Category>>;
+  currentTab: Category;
+  selectTab: (tabId: Category) => void;
 }
 
-export default function TabList<T extends string>({
+export default function TabList({
   className, ariaLabel, tabs, currentTab, selectTab,
-}: TabListProps<T>) {
+}: TabListProps) {
   const tablistRef = useRef(null);
 
   const { handleKeyListener } = useTabsKeyTrap(tablistRef, selectTab);
 
-  const handleSelectTab = (tabId: T) => () => {
+  const handleSelectTab = (tabId: Category) => () => {
     selectTab(tabId);
   };
 
@@ -38,7 +39,7 @@ export default function TabList<T extends string>({
       aria-label={ariaLabel}
       onKeyDown={handleKeyListener}
     >
-      {tabs.map(({ id, label, panel }) => (
+      {Object.values(tabs).map(({ id, label, panel }) => (
         <Tab
           key={id}
           id={id}

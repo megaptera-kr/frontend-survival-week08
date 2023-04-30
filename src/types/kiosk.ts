@@ -1,3 +1,5 @@
+export type Category = '전체' | '중식' | '한식' | '일식';
+
 export type Food = {
   id: string;
   name: string;

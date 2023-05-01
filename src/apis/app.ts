@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Order, Receipt, Restaurant } from '../types/restaurant';
+import { Order, Restaurant } from '../types/restaurant';
 import { GetRestaurantResponse, PostOrderRequest, PostOrderResponse } from './dto';
 
 const API_URI = 'http://localhost:3000';

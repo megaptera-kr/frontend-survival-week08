@@ -32,13 +32,12 @@ describe('Router ', () => {
   });
 
   context('URL 경로가 /order인 경우', () => {
-    it('location state의 id가 1에 해당하는 주문이 렌더링 되어야 합니다.', () => {
+    it('주문 목록 페이지가 렌더링 되어야 합니다.', () => {
       // Given, When
-      const location = { pathname: '/order', state: { id: 1 } };
-      renderRouter([location]);
+      renderRouter(['/order']);
 
       // Then
-      screen.getByText(/Order/);
+      screen.getByPlaceholderText(/식당이름을 입력해주세요/);
     });
   });
 
@@ -48,7 +47,7 @@ describe('Router ', () => {
       renderRouter(['/orderComplete']);
 
       // Then
-      screen.getByRole('heading', { name: /주문 완료, 서둘러 배달가겠습니다!/ });
+      screen.getByRole('heading', { name: /주문이 완료되었습니다!/ });
     });
   });
 });

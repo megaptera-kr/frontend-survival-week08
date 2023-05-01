@@ -6,7 +6,6 @@ import { Header } from '../components';
 
 const StyledContainer = styled.div`
   max-width: 1080px;
-  height: 100vh;
   margin: 0 auto;
   background: ${(props) => props.theme.colors.background};
 `;

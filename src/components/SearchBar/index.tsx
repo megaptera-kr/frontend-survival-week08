@@ -43,15 +43,13 @@ const StyledIcon = styled.img`
 
 export default function SearchBar() {
   const { isDarkMode } = useContext(StyleContext);
-  const [{ searchParams, restaurants }, store] = useRestaurantStore();
+  const [{ searchParams }, store] = useRestaurantStore();
 
   const handleSearch: ChangeEventHandler<HTMLInputElement> = (e) => {
     store.searchRestaurants?.({
       name: e.target.value,
       category: searchParams.category,
     });
-
-    console.log(restaurants);
   };
 
   return (

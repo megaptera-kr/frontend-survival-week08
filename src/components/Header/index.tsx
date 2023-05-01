@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { useDarkMode } from 'usehooks-ts';
 import { Switch } from '../Switch';
 import { StyleContext } from '../../context/StyleProvider';
 

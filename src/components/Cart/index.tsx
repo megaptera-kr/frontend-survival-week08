@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router';
 import { postOrders } from '../../apis/app';
 import { Menu } from '../../types/restaurant';
 import toLocaleCurrency from '../../utils/format';
@@ -99,6 +100,7 @@ const StyledCancelButton = styled.button<{isDarkMode: boolean}>`
 `;
 
 export default function Cart() {
+  const navigate = useNavigate();
   const { isDarkMode } = useContext(StyleContext);
   const [{ cart }, store] = useOrderStore();
   const totalPrice = cart.reduce((prev, cur) => prev + cur.price, 0);
@@ -107,16 +109,19 @@ export default function Cart() {
     store.setCart?.(cart.filter((cartMenu) => cartMenu.id !== menu.id));
   };
 
-  const handleClickOrderMenu = async () => {
-    // const res = await postOrders({
-    //   menu: cart,
-    //   totalPrice,
-    // });
-
-    // store.setCart?.([]);
+  const handleClickCancelMenu = () => {
+    store.setCart?.([]);
   };
 
-  console.log(cart);
+  const handleClickOrderMenu = async () => {
+    const { id } = await postOrders({
+      menu: cart,
+      totalPrice,
+    });
+
+    store.setCart?.([]);
+    navigate('/orderComplete', { state: { id } });
+  };
 
   return (
     <StyledContainer isDarkMode={isDarkMode}>
@@ -167,7 +172,7 @@ export default function Cart() {
           bgColor="brown100"
           color="white"
           fontSize="2.8rem"
-          onClick={handleClickOrderMenu}
+          onClick={handleClickCancelMenu}
         >
           취소
         </Button>

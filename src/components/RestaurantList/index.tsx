@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { Fragment, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import RestaurantItem from '../RestaurantItem';
 import useRestaurantStore from '../../hooks/useRestaurantStore';
@@ -32,10 +32,10 @@ export default function RestaurantList() {
           const isNeedDivision = index !== restaurants.length - 1;
 
           return (
-            <>
-              <RestaurantItem key={restaurant.id} restaurant={restaurant} />
+            <Fragment key={restaurant.id}>
+              <RestaurantItem restaurant={restaurant} />
               {isNeedDivision && <StyledDivision isDarkMode={isDarkMode} />}
-            </>
+            </Fragment>
 
           );
         })}

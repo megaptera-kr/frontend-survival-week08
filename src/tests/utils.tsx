@@ -23,10 +23,10 @@ export const withAllContexts = (children: React.ReactElement, themeType: 'light'
   const testClient = createTestQueryClient();
 
   return (
-    <ThemeProvider theme={theme}>
-      <QueryClientProvider client={testClient}>
+    <QueryClientProvider client={testClient}>
+      <ThemeProvider theme={theme}>
         {children}
-      </QueryClientProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 };

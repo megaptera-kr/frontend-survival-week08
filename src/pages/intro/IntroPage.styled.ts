@@ -15,7 +15,7 @@ export const Container = styled.section`
       text-align: center;
     }
 
-    @meida ${theme.breakPoint.desktop} {
+    @media ${theme.breakPoint.desktop} {
       & > h2 {
         ${theme.typo.bold55};
         margin-bottom: 76px;
@@ -27,15 +27,15 @@ export const Container = styled.section`
 `;
 
 export const OrderLinks = styled.div`
-${({ theme }) => css`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
-  column-gap: 20px;
+  ${({ theme }) => css`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    column-gap: 20px;
 
-  @media ${theme.breakPoint.desktop} {
-    min-width: 50%;
-    margin: 0 auto;
-  }
+    @media ${theme.breakPoint.desktop} {
+      min-width: 50%;
+      margin: 0 auto;
+    }
   `};
 `;

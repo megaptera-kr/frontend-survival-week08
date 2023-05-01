@@ -33,9 +33,7 @@ export default function Header() {
     <StyledContainer>
       <StyledLogoWrapper>
         <StyledLogo src="/images/logo.png" alt="logo" />
-        <StyledTitle>
-          메가테라 푸드코드 키오스크
-        </StyledTitle>
+        <StyledTitle>메가테라 푸드코트 키오스크</StyledTitle>
       </StyledLogoWrapper>
       <Switch labels={['밝게', '어둡게']} onClick={toggle} />
     </StyledContainer>

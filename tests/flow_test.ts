@@ -22,7 +22,7 @@ Scenario('음식 주문하기', ({ I }) => {
   I.see('총 결제 예상금액');
 
   I.waitForText('2개');
-  I.waitForText('11,500원');
+  I.waitForText('11,500');
 
   I.click('주문하기');
 

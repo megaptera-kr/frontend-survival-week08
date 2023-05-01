@@ -57,7 +57,7 @@ export default function SearchBar() {
   return (
     <StyledContainer>
       <label htmlFor="search">
-        <StyledInput id="search" type="text" placeholder="식당이름을 입력해주세요" value={searchParams.name} onChange={handleSearch} isDarkMode={isDarkMode} />
+        <StyledInput id="search" name="검색" type="text" placeholder="식당이름을 입력해주세요" value={searchParams.name} onChange={handleSearch} isDarkMode={isDarkMode} />
         <StyledIcon src="/images/icon-search.png" alt="search" />
       </label>
     </StyledContainer>

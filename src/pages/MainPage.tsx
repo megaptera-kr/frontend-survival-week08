@@ -10,6 +10,7 @@ const StyledTitle = styled.h1`
   line-height: 14rem;
   text-align: center;
   color: ${({ theme }) => theme.colors.white};
+  margin-top: 29rem;
 `;
 
 const StyledButtonContainer = styled.div`

@@ -24,7 +24,7 @@ Scenario('음식 주문하기', ({ I }) => {
   I.waitForText('2개');
   I.waitForText('11,500원');
 
-  I.click('주문하기');
+  I.click('주문 하기');
 
   I.waitForText('주문이 완료되었습니다!');
   I.see('주문목록');
@@ -43,7 +43,9 @@ Scenario('식당 찾기', ({ I }) => {
   I.see('데브부엌');
   I.dontSee('메가반점');
 
-  I.fillField('검색', '데브부엌');
+  I.fillField('식당 이름 검색', '데브부엌');
+  I.pressKey('Enter');
+
   I.see('제육덮밥');
   I.dontSee('메리김밥');
   I.dontSee('컵라면');

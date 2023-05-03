@@ -1,5 +1,17 @@
+import { Reset } from 'styled-reset';
+import GlobalStyle from './styles/GlobalStyle';
+
+import Layout from './components/Layout';
+import HomePage from './Pages/HomePage';
+
 export default function App() {
   return (
-    <h1>메가테라 푸드코트 키오스크</h1>
+    <>
+      <Reset />
+      <GlobalStyle />
+      <Layout>
+        <HomePage />
+      </Layout>
+    </>
   );
 }

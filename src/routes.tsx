@@ -1,4 +1,4 @@
-import Layout from './components/Layout';
+import Layout from './components/common/Layout';
 import HomePage from './pages/HomePage';
 import OrderPage from './pages/OrderPage';
 import OrderCompletePage from './pages/OrderCompletePage';

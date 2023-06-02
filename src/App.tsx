@@ -1,27 +1,20 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import { useDarkMode } from 'usehooks-ts';
-
-import { ThemeProvider } from 'styled-components';
 import { Reset } from 'styled-reset';
 
 import routes from './routes';
 
 import GlobalStyle from './styles/GlobalStyle';
-import defaultTheme from './styles/defaultTheme';
-import darkTheme from './styles/darkTheme';
+import AppProviders from './providers/AppProviders';
 
 const router = createBrowserRouter(routes);
 
 export default function App() {
-  const { isDarkMode } = useDarkMode();
-  const theme = isDarkMode ? darkTheme : defaultTheme;
-
   return (
-    <ThemeProvider theme={theme}>
+    <AppProviders>
       <Reset />
       <GlobalStyle />
       <RouterProvider router={router} />
-    </ThemeProvider>
+    </AppProviders>
   );
 }

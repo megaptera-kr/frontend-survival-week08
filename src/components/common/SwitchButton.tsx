@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { useDarkMode } from 'usehooks-ts';
-import Button from './Button';
+import ButtonText from './ButtonText';
 
 const SwitchButtonContainer = styled.button.attrs({
   type: 'button',
@@ -17,14 +16,18 @@ const SwitchButtonContainer = styled.button.attrs({
   cursor: pointer;
 `;
 
-export default function SwitchButton() {
-  const { isDarkMode, toggle } = useDarkMode();
+type Props = {
+  isDarkMode: boolean;
+  toggle: () => void;
+}
+
+export default function SwitchButton({ isDarkMode, toggle }:Props) {
   return (
     <SwitchButtonContainer
       onClick={toggle}
     >
-      <Button name="밝게" isActive={!isDarkMode} />
-      <Button name="어둡게" isActive={isDarkMode} />
+      <ButtonText name="밝게" isActive={!isDarkMode} />
+      <ButtonText name="어둡게" isActive={isDarkMode} />
     </SwitchButtonContainer>
   );
 }

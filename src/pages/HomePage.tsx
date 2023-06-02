@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import OrderButton from '../components/home/OrderButton';
 
@@ -32,14 +33,23 @@ const ButtonContainer = styled.div`
 `;
 
 export default function HomePage() {
+  const navigate = useNavigate();
   return (
     <HomeContainer>
       <HeadingTwo>
         원하시는 주문을 터치해주세요
       </HeadingTwo>
       <ButtonContainer>
-        <OrderButton name="매장 주문" image="fastfood" />
-        <OrderButton name="전체 포장" image="bag" />
+        <OrderButton
+          name="매장 주문"
+          image="fastfood"
+          handleClick={() => navigate('/order')}
+        />
+        <OrderButton
+          name="전체 포장"
+          image="bag"
+          handleClick={() => navigate('/order')}
+        />
       </ButtonContainer>
     </HomeContainer>
   );

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useDarkMode } from 'usehooks-ts';
 import SwitchButton from './SwitchButton';
 import Image from './Image';
 
@@ -30,10 +31,12 @@ const HeadingOne = styled.h1`
 `;
 
 export default function Header() {
+  const { isDarkMode, toggle } = useDarkMode();
   return (
     <HeaderContainer>
       <LeftSide>
         <Image
+          aria-label="logo"
           width="6.2rem"
           height="6rem"
           src="/images/logo.png"
@@ -41,7 +44,10 @@ export default function Header() {
         />
         <HeadingOne>메가테라 푸드코트 키오스크</HeadingOne>
       </LeftSide>
-      <SwitchButton />
+      <SwitchButton
+        isDarkMode={isDarkMode}
+        toggle={toggle}
+      />
     </HeaderContainer>
   );
 }

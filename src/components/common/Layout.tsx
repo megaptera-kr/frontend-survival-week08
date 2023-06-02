@@ -5,8 +5,8 @@ import Header from './Header';
 const LayoutContainer = styled.div`
   width: 1080px;
   margin: 0 auto;
-  ${(props) => props.theme.colors.background && `background: ${props.theme.colors.background}`};
-  ${(props) => props.theme.colors.main.text && `color: ${props.theme.colors.main.text}`};
+  background: ${(props) => props.theme.colors.background};
+  color: ${(props) => props.theme.colors.main.text};
 `;
 
 export default function Layout() {

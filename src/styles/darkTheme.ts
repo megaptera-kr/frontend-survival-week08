@@ -2,6 +2,7 @@ import Theme from './Theme';
 
 const darkTheme:Theme = {
   colors: {
+    body: '#1E1E1E',
     background: '#1E1E1E',
     main: {
       text: '#FFF',

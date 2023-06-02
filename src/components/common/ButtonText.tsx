@@ -8,7 +8,7 @@ type Props = {
   name: string;
 } & Style;
 
-const ButtonContainer = styled.span<Style>`
+const TextContainer = styled.span<Style>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,10 +34,10 @@ const ButtonContainer = styled.span<Style>`
   text-transform: uppercase;
 `;
 
-export default function Button({ name, isActive }:Props) {
+export default function ButtonText({ name, isActive }:Props) {
   return (
-    <ButtonContainer isActive={isActive}>
+    <TextContainer isActive={isActive}>
       {name}
-    </ButtonContainer>
+    </TextContainer>
   );
 }

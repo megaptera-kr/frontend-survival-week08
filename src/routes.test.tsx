@@ -1,10 +1,6 @@
-import { render, screen } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
-import { Reset } from 'styled-reset';
+import { render, screen } from './utils/test-utils';
 import routes from './routes';
-import defaultTheme from './styles/defaultTheme';
-import GlobalStyle from './styles/GlobalStyle';
 
 const context = describe;
 
@@ -12,18 +8,16 @@ describe('main', () => {
   function renderRouter(path: string) {
     const router = createMemoryRouter(routes, { initialEntries: [path] });
     render(
-      <ThemeProvider theme={defaultTheme}>
-        <Reset />
-        <GlobalStyle />
-        <RouterProvider router={router} />
-      </ThemeProvider>,
+      <RouterProvider router={router} />,
     );
   }
   context('현재 경로가 "/"일 때', () => {
     it('"매장 주문", "포장 주문" 버튼 두개가 렌더링 된다.', () => {
       renderRouter('/');
 
-      expect(screen.getByText('HomePage')).toBeInTheDocument();
+      expect(screen.getByText('원하시는 주문을 터치해주세요')).toBeInTheDocument();
+      expect(screen.getByText('매장 주문')).toBeInTheDocument();
+      expect(screen.getByText('전체 포장')).toBeInTheDocument();
     });
   });
   context('현재 경로가 "/order"일 때', () => {

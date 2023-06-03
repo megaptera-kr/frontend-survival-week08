@@ -16,10 +16,10 @@ const TextContainer = styled.span<Style>`
   height: 5.1rem;
   border-radius: 3rem;
   background: ${(props) => (props.isActive
-    ? props.theme.colors.main.background : 'transparent')};
+    ? props.theme.colors.body : 'transparent')};
   color: ${(props) => (props.isActive
     ? props.theme.colors.sub.text : props.theme.colors.main.text)};
-  transition: all 0.1s ease 0s;
+  transition: all 0.1s ease 0.1s;
 
   ${(props) => props.isActive && 'box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.12)'};
 

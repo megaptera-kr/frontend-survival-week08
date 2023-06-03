@@ -7,7 +7,7 @@ const HeaderContainer = styled.header`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 5rem 3rem 0;
+  padding: 5rem 3rem 4rem;
 `;
 
 const LeftSide = styled.div`

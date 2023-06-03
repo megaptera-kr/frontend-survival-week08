@@ -1,8 +1,6 @@
 import { useDarkMode } from 'usehooks-ts';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import userEvent from '@testing-library/user-event';
 import {
-  fireEvent,
   render, renderHook, screen, waitFor,
 } from '../../utils/test-utils';
 import OrderButton from './OrderButton';
@@ -54,6 +52,16 @@ describe('OrderButton', () => {
         background: #FFF
       `);
     });
+
+    // it('마우스가 버튼 위에 있을 때 버튼 배경색이 #FFF1DC이다', () => {
+    //   renderOrderButton();
+
+    //   const orderButton = screen.getByTestId('order-button');
+    //   userEvent.hover(orderButton);
+    //   expect(orderButton).toHaveStyle(`
+    //     background: #FFF1DC
+    //   `);
+    // });
   });
 
   context('테마가 다크모드 일 때', () => {
@@ -73,7 +81,6 @@ describe('OrderButton', () => {
 
       const orderButton = screen.getByTestId('order-button');
       userEvent.hover(orderButton);
-      expect(orderButton).toBeInTheDocument();
       expect(orderButton).toHaveStyle(`
         background: #3A3A3A
       `);

@@ -11,7 +11,9 @@ const LayoutContainer = styled.div`
 
 export default function Layout() {
   return (
-    <LayoutContainer>
+    <LayoutContainer
+      data-testid="layout"
+    >
       <Header />
       <main>
         <Outlet />

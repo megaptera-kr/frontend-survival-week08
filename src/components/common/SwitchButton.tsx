@@ -24,6 +24,7 @@ type Props = {
 export default function SwitchButton({ isDarkMode, toggle }:Props) {
   return (
     <SwitchButtonContainer
+      data-testid="switch-button"
       onClick={toggle}
     >
       <ButtonText name="밝게" isActive={!isDarkMode} />

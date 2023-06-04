@@ -1,4 +1,5 @@
 import { useDarkMode } from 'usehooks-ts';
+import 'jest-styled-components';
 import userEvent from '@testing-library/user-event';
 import {
   render, renderHook, screen, waitFor,
@@ -53,15 +54,15 @@ describe('OrderButton', () => {
       `);
     });
 
-    // it('마우스가 버튼 위에 있을 때 버튼 배경색이 #FFF1DC이다', () => {
-    //   renderOrderButton();
+    it('마우스가 버튼 위에 있을 때 버튼 배경색이 #FFF1DC이다', () => {
+      renderOrderButton();
 
-    //   const orderButton = screen.getByTestId('order-button');
-    //   userEvent.hover(orderButton);
-    //   expect(orderButton).toHaveStyle(`
-    //     background: #FFF1DC
-    //   `);
-    // });
+      const orderButton = screen.getByTestId('order-button');
+
+      expect(orderButton).toHaveStyleRule('background', '#FFF1DC', {
+        modifier: ':hover',
+      });
+    });
   });
 
   context('테마가 다크모드 일 때', () => {

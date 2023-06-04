@@ -1,7 +1,7 @@
 {
   "name": "frontend-survival-week08-answer",
   "version": "0.0.1",
-  "description": "Megaptera food court kiosk",
+  "description": "Megaptera food court kiosk css",
   "source": "index.html",
   "scripts": {
     "start": "parcel --port 8080",

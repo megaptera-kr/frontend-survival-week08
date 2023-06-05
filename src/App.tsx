@@ -1,5 +1,20 @@
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
+import { Reset } from 'styled-reset';
+
+import routes from './routes';
+
+import GlobalStyle from './styles/GlobalStyle';
+import AppProviders from './providers/AppProviders';
+
+const router = createBrowserRouter(routes);
+
 export default function App() {
   return (
-    <h1>메가테라 푸드코트 키오스크</h1>
+    <AppProviders>
+      <Reset />
+      <GlobalStyle />
+      <RouterProvider router={router} />
+    </AppProviders>
   );
 }

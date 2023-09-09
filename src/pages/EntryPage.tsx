@@ -33,7 +33,7 @@ const EntryPageButton = styled.button.attrs<ButtonProps>((props) => ({
   border-radius: 1em;
   font-size: 4.8rem;
   font-weight: bold;
-  background-color: #3A3A3A;
+  background-color: ${(props) => props.theme.colors.entryPageButtonBg};
   cursor: pointer;
 
   & img {

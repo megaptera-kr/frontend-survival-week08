@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-size: 1.6rem;
     ${(props) => css`
-      color: ${props.theme.colors.text};
+      color: ${props.theme.colors.globalText};
       background-color: ${props.theme.colors.background};
     `};
   }

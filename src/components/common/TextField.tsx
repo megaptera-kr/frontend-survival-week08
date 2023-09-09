@@ -14,13 +14,14 @@ export default function TextField({ placeholder, text, setText }: TextFieldProps
 
   return (
     <div>
+      <label htmlFor="search-input">label</label>
       <input
+        id="search-input"
         type="text"
         placeholder={placeholder}
         value={text}
         onChange={handleChange}
       />
-      <span>여기에 아이콘</span>
     </div>
   );
 }

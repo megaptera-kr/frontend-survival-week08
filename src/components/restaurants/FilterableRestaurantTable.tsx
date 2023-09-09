@@ -23,6 +23,7 @@ export default function FilterableRestaurantTable() {
         categories={categories}
         filterText={filterText}
         setFilterText={setFilterText}
+        currentCategory={currentCategory}
         setCurrentCategory={setCurrentCategory}
       />
       <RestaurantTable restaunrants={filterdRestaurants} />

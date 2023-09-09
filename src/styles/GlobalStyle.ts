@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -16,9 +16,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    width: 1080px;
-    margin: 0 auto;
     font-size: 1.6rem;
+    ${(props) => css`
+      color: ${props.theme.colors.text};
+      background-color: ${props.theme.colors.background};
+    `};
   }
 
   :lang(ko) {

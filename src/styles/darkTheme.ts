@@ -13,6 +13,7 @@ const darkTheme: Theme = {
     categoryButtonBg: '#3A3A3A',
     restaurantTableBg: '#3A3A3A',
     menuItemButtonBg: '#1E1E1E',
+    menuItemButtonBgHover: '',
     line: '#555555',
   },
 };

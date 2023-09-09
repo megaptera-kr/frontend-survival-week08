@@ -11,6 +11,7 @@ const defaultTheme = {
     categoryButtonBg: '#fff',
     restaurantTableBg: '#fff',
     menuItemButtonBg: '#F4F4F4',
+    menuItemButtonBgHover: '#FFF1DC',
     line: '#F4F4F4',
   },
 };

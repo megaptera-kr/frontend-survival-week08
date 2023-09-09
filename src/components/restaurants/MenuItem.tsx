@@ -18,6 +18,7 @@ const Button = styled.button.attrs<ButtonProps>(({ type }) => ({
 
   &:hover {
     border: 1px solid ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.menuItemButtonBgHover};
   }
 
   & img {

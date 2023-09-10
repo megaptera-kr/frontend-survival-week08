@@ -26,7 +26,7 @@ export default function FilterableRestaurantTable() {
         currentCategory={currentCategory}
         setCurrentCategory={setCurrentCategory}
       />
-      <RestaurantTable restaunrants={filterdRestaurants} />
+      <RestaurantTable restaurants={filterdRestaurants} />
     </div>
   );
 }

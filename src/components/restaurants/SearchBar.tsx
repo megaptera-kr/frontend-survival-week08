@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import Categories from './Categories';
 import FilterTextField from './FilterTextField';
+import Categories from './Categories';
 
 const SearchBarWrap = styled.div`
   padding: 0 3rem;

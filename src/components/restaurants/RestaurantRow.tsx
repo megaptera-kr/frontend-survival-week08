@@ -21,14 +21,14 @@ const TableRow = styled.tr`
 `;
 
 type RestaurantRowProps = {
-  restaunrant: Restaurant;
+  restaurant: Restaurant;
 }
 
-export default function RestaurantRow({ restaunrant }: RestaurantRowProps) {
+export default function RestaurantRow({ restaurant }: RestaurantRowProps) {
   return (
     <TableRow>
-      <td>{restaunrant.name}</td>
-      <td><Menu menu={restaunrant.menu} /></td>
+      <td>{restaurant.name}</td>
+      <td><Menu menu={restaurant.menu} /></td>
     </TableRow>
   );
 }

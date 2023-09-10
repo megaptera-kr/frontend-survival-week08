@@ -11,18 +11,18 @@ const RestaurantTableWrap = styled.div`
 `;
 
 type RestaurantTableProps = {
-  restaunrants: Restaurant[];
+  restaurants: Restaurant[];
 }
 
-export default function RestaurantTable({ restaunrants }: RestaurantTableProps) {
+export default function RestaurantTable({ restaurants }: RestaurantTableProps) {
   return (
     <RestaurantTableWrap>
       <table>
         <tbody>
-          {restaunrants.map((restaunrant) => (
+          {restaurants.map((restaurant) => (
             <RestaurantRow
-              key={restaunrant.id}
-              restaunrant={restaunrant}
+              key={restaurant.id}
+              restaurant={restaurant}
             />
           ))}
         </tbody>

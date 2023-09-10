@@ -14,7 +14,7 @@ export default function TextField({ placeholder, text, setText }: TextFieldProps
 
   return (
     <div>
-      <label htmlFor="search-input">label</label>
+      <label htmlFor="search-input">검색</label>
       <input
         id="search-input"
         type="text"

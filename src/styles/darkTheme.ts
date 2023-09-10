@@ -15,6 +15,12 @@ const darkTheme: Theme = {
     menuItemButtonBg: '#1E1E1E',
     menuItemButtonBgHover: '',
     line: '#555555',
+    cartItemBg: '#3A3A3A',
+    cartBg: '#000',
+    cartCancelButtonBg: '#44272B',
+    cartCancelButtonBgHover: '#170A0C',
+    cartOrderButtonBg: '#FF8400',
+    cartOrderButtonBgHover: '#D87000',
   },
 };
 

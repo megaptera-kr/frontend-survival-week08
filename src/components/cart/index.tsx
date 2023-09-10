@@ -1,17 +1,33 @@
 import { useNavigate } from 'react-router';
+import styled from 'styled-components';
 
 import useCartStore from '../../hooks/useCartStore';
+import useCreateOrder from '../../hooks/useCreateOrder';
 
 import Summary from './Summary';
 import CartItem from './CartItem';
 import CartButtons from './CartButtons';
-import useCreateOrder from '../../hooks/useCreateOrder';
+
+const CartWrap = styled.div`
+  padding: 2em;
+  background-color: ${({ theme }) => theme.colors.cartBg};
+`;
+
+const CartItemsWrap = styled.ul`
+  display: grid;
+  margin-block: 2em;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+`;
 
 export default function Cart() {
   const navigate = useNavigate();
   const [{ menu }, store] = useCartStore();
-
   const createOrder = useCreateOrder(menu);
+
+  const handleClickRemoveItem = (index: number) => {
+    store.removeItem(index);
+  };
 
   const handleClickCancel = () => {
     store.clearItem();
@@ -27,15 +43,22 @@ export default function Cart() {
   };
 
   return (
-    <div>
+    <CartWrap>
       <Summary cartMenu={menu} />
-      <ul>
+      <CartItemsWrap>
         {menu.map((food, i) => {
           const key = `${i}-${food.id}`;
-          return <CartItem key={key} food={food} />;
+          return (
+            <CartItem
+              key={key}
+              food={food}
+              index={i}
+              onClickRemoveItem={handleClickRemoveItem}
+            />
+          );
         })}
-      </ul>
+      </CartItemsWrap>
       <CartButtons onClickCancel={handleClickCancel} onClickOrder={handleClickOrder} />
-    </div>
+    </CartWrap>
   );
 }

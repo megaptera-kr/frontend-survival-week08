@@ -10,6 +10,11 @@ const handlers = [
 
     return res(ctx.json(200), ctx.json({ restaurants }));
   }),
+  rest.get(`${BASE_URL}/orders/:id`, (req, res, ctx) => {
+    const { order } = fixtures;
+
+    return res(ctx.json(200), ctx.json({ order }));
+  }),
 ];
 
 export default handlers;

@@ -13,7 +13,7 @@ const EntryPageTitle = styled.h2`
   text-align: center;
   font-size: 11rem;
   font-weight: bold;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 const EntryPageButtonWrap = styled.div`
@@ -40,6 +40,10 @@ const EntryPageButton = styled.button.attrs<ButtonProps>((props) => ({
     display: block;
     width: 40%;
     margin-bottom: 1em;
+  }
+
+  & span {
+    color: ${(props) => props.theme.colors.globalText};
   }
 `;
 

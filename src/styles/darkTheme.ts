@@ -8,6 +8,7 @@ const darkTheme: Theme = {
     globalText: '#fff',
     searchInputBorder: '#FF8400',
     primary: '#FF8400',
+    primaryHover: '#D87000',
     secondary: '#3A3A3A',
     entryPageButtonBg: '#3A3A3A',
     categoryButtonBg: '#3A3A3A',
@@ -19,8 +20,9 @@ const darkTheme: Theme = {
     cartBg: '#000',
     cartCancelButtonBg: '#44272B',
     cartCancelButtonBgHover: '#170A0C',
-    cartOrderButtonBg: '#FF8400',
-    cartOrderButtonBgHover: '#D87000',
+    receiptPageBg: '#3A3A3A',
+    oredrId: '#6A6A6A',
+    receiptLine: '#FFF',
   },
 };
 

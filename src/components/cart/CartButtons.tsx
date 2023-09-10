@@ -22,11 +22,11 @@ const CartButtonsWrap = styled.div`
   }
 
   & button:last-of-type {
-    background-color: ${({ theme }) => theme.colors.cartOrderButtonBg};
+    background-color: ${({ theme }) => theme.colors.primary};
   }
 
   & button:last-of-type:hover {
-    background-color: ${({ theme }) => theme.colors.cartOrderButtonBgHover};
+    background-color: ${({ theme }) => theme.colors.primaryHover};
   }
 `;
 

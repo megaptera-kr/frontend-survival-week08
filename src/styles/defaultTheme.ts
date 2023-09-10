@@ -6,6 +6,7 @@ const defaultTheme = {
     globalText: '#000',
     searchInputBorder: '#fff',
     primary: '#FF8400',
+    primaryHover: '#D87000',
     secondary: '#3A3A3A',
     entryPageButtonBg: '#fff',
     categoryButtonBg: '#fff',
@@ -17,8 +18,9 @@ const defaultTheme = {
     cartBg: '#F4F4F4',
     cartCancelButtonBg: '#44272B',
     cartCancelButtonBgHover: '#170A0C',
-    cartOrderButtonBg: '#FF8400',
-    cartOrderButtonBgHover: '#D87000',
+    receiptPageBg: '#fff',
+    oredrId: '#6A6A6A',
+    receiptLine: '#616161',
   },
 };
 

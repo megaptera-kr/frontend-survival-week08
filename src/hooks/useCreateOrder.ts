@@ -1,6 +1,6 @@
-import { Food } from '../types';
+import Menu from '../types/Menu';
 
-const useCreateOrder = async (menu: Food[], totalPrice: number) => {
+const useCreateOrder = async (menu: Menu[], totalPrice: number) => {
   const response = await fetch('http://localhost:3000/orders', {
     method: 'POST',
     headers: {

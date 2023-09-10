@@ -206,13 +206,14 @@ export default function OrderPage() {
     <Container>
       <div style={{ padding: '0 2em' }}>
         <div style={{ paddingBlock: '1em 2em' }}>
-          <SearchInput type="text" placeholder="식당 이름을 입력해주세요" value={keyword} onChange={(e) => setKeyword(e.target.value)} />
+          <label htmlFor="restaurant" style={{ display: 'none' }}>검색</label>
+          <SearchInput id="restaurant" type="text" placeholder="식당 이름을 입력해주세요" value={keyword} onChange={(e) => setKeyword(e.target.value)} />
         </div>
         <CategoryUl>
-          <CategoryLi><button type="button" className="active" onClick={() => setSelectedCategory('전체')}>전체</button></CategoryLi>
-          <CategoryLi><button type="button" onClick={() => setSelectedCategory('중식')}>중식</button></CategoryLi>
-          <CategoryLi><button type="button" onClick={() => setSelectedCategory('한식')}>한식</button></CategoryLi>
-          <CategoryLi><button type="button" onClick={() => setSelectedCategory('일식')}>일식</button></CategoryLi>
+          <CategoryLi><button type="button" className={selectedCategory === '전체' ? 'active' : ''} onClick={() => setSelectedCategory('전체')}>전체</button></CategoryLi>
+          <CategoryLi><button type="button" className={selectedCategory === '중식' ? 'active' : ''} onClick={() => setSelectedCategory('중식')}>중식</button></CategoryLi>
+          <CategoryLi><button type="button" className={selectedCategory === '한식' ? 'active' : ''} onClick={() => setSelectedCategory('한식')}>한식</button></CategoryLi>
+          <CategoryLi><button type="button" className={selectedCategory === '일식' ? 'active' : ''} onClick={() => setSelectedCategory('일식')}>일식</button></CategoryLi>
         </CategoryUl>
       </div>
       <MenuDiv>

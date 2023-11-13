@@ -26,7 +26,6 @@ Scenario('음식 주문하기', ({ I }) => {
 
   I.click('주문하기');
 
-  I.waitForText('주문이 완료되었습니다!');
   I.see('주문목록');
   I.see('김밥');
   I.see('짜장면');

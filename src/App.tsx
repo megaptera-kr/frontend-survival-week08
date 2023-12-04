@@ -1,5 +1,23 @@
+import { ThemeProvider } from 'styled-components';
+
+import { useDarkMode } from 'usehooks-ts';
+
+import AppRoutes from './routes';
+
+import defaultTheme from '../styles/defaultTheme';
+
+import darkTheme from '../styles/darkTheme';
+import GlobalStyles from '../styles/GlobalStyles';
+
 export default function App() {
+  const { isDarkMode } = useDarkMode();
+
+  const theme = !isDarkMode ? defaultTheme : darkTheme;
+
   return (
-    <h1>메가테라 푸드코트 키오스크</h1>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <AppRoutes />
+    </ThemeProvider>
   );
 }

@@ -1,11 +1,11 @@
-import App from '../App';
+import Main from '../pages/Main/Main';
 import Complete from '../pages/Complete/Complete';
 import Order from '../pages/Order/Order';
 
 const Routes = [
   {
     path: '/',
-    element: <App />,
+    element: <Main />,
   },
   {
     path: '/order',

@@ -1,4 +1,5 @@
 import { ChangeEvent } from 'react';
+import * as Styles from './styles';
 
 interface SearchBarProps {
   handleSetSearchKeyword : (keyword : string) => void
@@ -9,13 +10,13 @@ function SearchBar({ handleSetSearchKeyword } : SearchBarProps) {
     handleSetSearchKeyword(event.target.value);
   };
   return (
-    <div className="search-bar">
-      <input
+    <Styles.SearchBarWrapper>
+      <Styles.SearchInput
         type="text"
-        placeholder="검색"
+        placeholder="식당 이름을 입력해주세요"
         onChange={onChangeSearchKeyword}
       />
-    </div>
+    </Styles.SearchBarWrapper>
   );
 }
 

@@ -1,6 +1,6 @@
 # CSS in JS 로 디자인 적용하기
 
-데브로드 프론트엔드 생존코스 8주차 과제 풀이
+데브로드 프론트엔드 생존코스 8주차 과제
 
 ## 서버 실행하기
 
@@ -20,7 +20,7 @@ npm install
 npm start
 ```
 
-## Unit 테스트 
+## Unit 테스트
 
 ```shell
 npm test

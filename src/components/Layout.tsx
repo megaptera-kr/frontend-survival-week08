@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
   text-align: center;
   width: 1080px;
-  padding: 50px 30px;
+  padding: 50px 30px 0px 50px;
   min-height: 1920px;
   background: ${(props) => props.theme.colors.layoutBackground};
 `;

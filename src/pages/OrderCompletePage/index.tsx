@@ -1,3 +1,5 @@
+import OrderComplete from '../../components/OrderComplete';
+
 export default function OrderCompletePage() {
-  return <div>OrderCompletePage</div>;
+  return <OrderComplete />;
 }

@@ -2,27 +2,28 @@
 /* eslint-disable react/require-default-props */
 import styled from 'styled-components';
 
+import React from 'react';
 import TypographyProps from './type';
 
-function Text<C extends React.ElementType>({
-  as,
-  children,
-  $variant,
-  $color,
-  ...rest
-}: TypographyProps<C>) {
-  const Component = as || 'span';
+function Typo<C extends React.ElementType>(props: TypographyProps<C>) {
+  const {
+    $as, $variant, $color, children, ...rest
+  } = props;
+
+  const Component = $as || 'span';
 
   return (
-    <Component $variant={$variant} $color={$color} {...rest}>
+    <Component $varinat={$variant} $color={$color} {...rest}>
       {children}
     </Component>
   );
 }
 
-const Typography = styled(Text)(({ theme, $variant, $color }) => ({
+const Typography = styled(Typo)(({ theme, $variant, $color }) => ({
   ...($variant ? theme.typography[$variant] : theme.typography.body_01),
-  ...($color ? { color: theme.colors[$color] } : {}),
+  ...($color
+    ? { color: theme.colors[$color] }
+    : { color: theme.colors.defaultText }),
 }));
 
 export default Typography;

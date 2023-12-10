@@ -2,12 +2,15 @@ import { ThemeProvider } from 'styled-components';
 
 import { useDarkMode } from 'usehooks-ts';
 
+import { Provider } from 'react-redux';
 import AppRoutes from './routes';
 
-import defaultTheme from '../styles/defaultTheme';
+import defaultTheme from './theme/defaultTheme';
 
-import darkTheme from '../styles/darkTheme';
-import GlobalStyles from '../styles/GlobalStyles';
+import darkTheme from './theme/darkTheme';
+
+import GlobalStyles from './theme/GlobalStyles';
+import { store } from './store';
 
 export default function App() {
   const { isDarkMode } = useDarkMode();
@@ -17,7 +20,9 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <AppRoutes />
+      <Provider store={store}>
+        <AppRoutes />
+      </Provider>
     </ThemeProvider>
   );
 }

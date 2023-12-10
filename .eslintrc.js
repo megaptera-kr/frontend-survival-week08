@@ -27,7 +27,6 @@ module.exports = {
     },
   },
   rules: {
-    // indent: ['error', 2],
     'jsx-quotes': ['error', 'prefer-single'],
     'no-trailing-spaces': 'error',
     curly: 'error',

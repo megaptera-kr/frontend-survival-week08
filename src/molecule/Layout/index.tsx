@@ -8,7 +8,7 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  row-gap: 1.6rem;
+  height: 100%;
 `;
 
 export default function Layout() {

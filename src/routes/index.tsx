@@ -9,9 +9,13 @@ export default function AppRoutes() {
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<IntroPage />} />
+
           <Route path='order'>
             <Route index element={<OrderPage />} />
-            <Route path='complete' element={<OrderCompletePage />} />
+
+            <Route path='complete'>
+              <Route path=':id' element={<OrderCompletePage />} />
+            </Route>
           </Route>
         </Route>
       </Routes>

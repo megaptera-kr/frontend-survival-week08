@@ -2,8 +2,10 @@ import styled from 'styled-components';
 
 export const Menues = styled.ul`
   display:flex;
+  width:100%;
   gap:25px;
   margin-top:20px;
+  overflow-x:overlay;
 `;
 
 export const Menu = styled.li`

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Restaurants = styled.ul`
   display:flex;
+  min-height:calc(100vh - 530px);
   flex-wrap:wrap;
   padding:80px 50px;
   gap:80px;
@@ -9,6 +10,7 @@ export const Restaurants = styled.ul`
 `;
 
 export const Restaurant = styled.li`
+  width:100%;
   flex:1 1 100%;
   padding-top:80px;
   &:first-child{

@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router';
 import { useState } from 'react';
 import { postOrders } from '../../services/postOrders';
 import useCartStore from '../../hooks/useCartStore';
+import * as Styles from './styles';
 
 function Cart() {
   const [{ cart, totalPrice }, store] = useCartStore();
@@ -17,59 +18,68 @@ function Cart() {
     if (response.id) {
       setOrderText('주문이 완료되었습니다!');
       setTimeout(() => {
-        // store.clearCart();
         navigate(`/complete?ordersId=${response.id}`);
+        // store.clearCart();
       }, 200);
     }
   };
 
   return (
-    <div className="cart">
-      <h3>장바구니</h3>
-      <ul className="cart-menu-list">
-        {cart.map((menu, menuIdx) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <li key={`cart_${menuIdx}`}>
-            <span>
-              메뉴명 :
-              {' '}
-              {menu.name}
-            </span>
-            <span>
-              가격 :
-              {' '}
-              {menu.price}
-            </span>
-            <button type="button" data-testid={`cart_${menu.id}_${cart.length}`} onClick={() => store.deleteCartMenu(menuIdx)}>삭제</button>
-          </li>
-        ))}
-      </ul>
-      <p className="cart-footer">
-        <span>
-          주문내역
-          {cart.length}
-          개
-        </span>
-        <span className="price">
-          총 결제 예상금액 :
+    <Styles.CartWrapper>
+      <Styles.CartTitleBox>
+        <Styles.LengthWrap>
+          <Styles.CartTitle>주문내역</Styles.CartTitle>
+          <Styles.CartLength>
+            {cart.length}
+            {' '}
+            개
+            {' '}
+          </Styles.CartLength>
+        </Styles.LengthWrap>
+        <Styles.CartPrice>
+          총 결제 예상금액
           {' '}
-          {totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+          <Styles.Price>
+            {totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+          </Styles.Price>
           원
-        </span>
-      </p>
+        </Styles.CartPrice>
+      </Styles.CartTitleBox>
       {totalPrice > 0
       && (
-        <ul className="cart-btn-list">
-          <li>
-            <button type="button" onClick={() => store.clearCart()}>취소</button>
-          </li>
-          <li>
-            <button type="button" onClick={handleOrder}>주문하기</button>
-          </li>
-        </ul>
+        <>
+          <Styles.CartMenues>
+            {cart.map((menu, menuIdx) => (
+            // eslint-disable-next-line react/no-array-index-key
+              <Styles.CartMenu key={`cart_${menuIdx}`}>
+                <Styles.CartMenuTitle>
+                  {menu.name}
+                </Styles.CartMenuTitle>
+                <Styles.CartMenuPrice>
+                  {menu.price}
+                </Styles.CartMenuPrice>
+                <Styles.CartMenuDeleteButton data-testid={`cart_${menu.id}_${cart.length}`} onClick={() => store.deleteCartMenu(menuIdx)} />
+              </Styles.CartMenu>
+            ))}
+          </Styles.CartMenues>
+          <Styles.CartFooter>
+            <Styles.CartFooterItem>
+              <Styles.CartFooterButton
+                $isType="cancel"
+                onClick={() => store.clearCart()}
+              >
+                취소
+              </Styles.CartFooterButton>
+            </Styles.CartFooterItem>
+            <Styles.CartFooterItem>
+              <Styles.CartFooterButton onClick={handleOrder}>주문하기</Styles.CartFooterButton>
+            </Styles.CartFooterItem>
+          </Styles.CartFooter>
+
+        </>
       )}
       {orderText}
-    </div>
+    </Styles.CartWrapper>
   );
 }
 

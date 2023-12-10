@@ -7,6 +7,7 @@ import Categories from '../../components/Categories/Categories';
 import Cart from '../../components/Cart/Cart';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import Restaurants from '../../components/Restaurants/Restaurants';
+import OrderWrap from './styles';
 
 export default function Order() {
   const [categories, setCagetories] = useState<string[]>([]);
@@ -52,7 +53,7 @@ export default function Order() {
   }, [searchKeyword, currentCategory]);
 
   return (
-    <div>
+    <OrderWrap>
       <SearchBar handleSetSearchKeyword={setSearchKeyword} />
       <Categories
         categories={categories}
@@ -61,6 +62,6 @@ export default function Order() {
       />
       <Restaurants restaurants={restaurants} />
       <Cart />
-    </div>
+    </OrderWrap>
   );
 }

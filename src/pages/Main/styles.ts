@@ -42,6 +42,8 @@ export const OrderButton = styled.button`
   align-items: center;
   justify-content: center;
   border-radius:40px;
+  background-color: ${(props) => props.theme.colors.background};
+  color: ${(props) => props.theme.colors.text};
 `;
 
 export const Icon = styled.i<{ $type?: string }>`

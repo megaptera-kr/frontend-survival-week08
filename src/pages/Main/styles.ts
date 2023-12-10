@@ -27,7 +27,6 @@ export const TypeList = styled.div<{$isDarkMode : boolean}>`
     border-width: 3px;
     border-style:solid;
     border-color:transparent;
-    cursor:pointer;
     transition:all 0.3s;
     &:hover{
       background-color:${(props) => (!props.$isDarkMode ? '#fff1dc' : 'none')};

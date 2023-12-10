@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const SearchBarWrapper = styled.div`
-  padding:0 50px;
+  margin-top:30px;
+  padding:0 30px;
 `;
 
 export const SearchInput = styled.input`
@@ -15,6 +16,7 @@ export const SearchInput = styled.input`
   font-weight:400;
   color: #fff;
   &::placeholder {
+    font-family: 'Pretendard Variable';
     color:${(props) => props.theme.colors.white};
   }
 `;

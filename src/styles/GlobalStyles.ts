@@ -4,10 +4,10 @@ import reset from 'styled-reset';
 const GlobalStyle = createGlobalStyle<{$isDarkMode : boolean}>`
   ${reset}
   html {
-    font-size:62.5%;
+    font-size:62.5%!important;
   }
   html, body, button, input, ::selection {
-    font-family: 'Jalnan';
+    font-family: 'Jalnan', "Pretendard Variable";
     font-size:inherit;
   }
   body{
@@ -21,6 +21,8 @@ const GlobalStyle = createGlobalStyle<{$isDarkMode : boolean}>`
   button{
     padding:0;
     border:none;
+    cursor:pointer;
+    background:none;
   }
 `;
 

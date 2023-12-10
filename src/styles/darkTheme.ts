@@ -5,7 +5,7 @@ const darkTheme = {
     text: '#fff',
     boxColor: '#1e1e1e',
     primary: '#ff8400',
-    white :'#fff',
+    white: '#fff',
   },
 };
 

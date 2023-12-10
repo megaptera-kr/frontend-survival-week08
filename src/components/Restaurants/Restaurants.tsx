@@ -1,5 +1,6 @@
 import Menu from '../Menu/Menu';
 import { RestaurantsInterface } from './Restaurants.interface';
+import * as Styles from './styles';
 
 interface RestaurantsProps {
   restaurants: RestaurantsInterface[];
@@ -7,29 +8,16 @@ interface RestaurantsProps {
 
 function Restaurants({ restaurants } : RestaurantsProps) {
   return (
-    <div>
-      <ul className="restaurants">
-        {restaurants.map((restaurant) => (
-          <li key={`restaurant_${restaurant.id}`}>
-            <div>
-              <p>
-                상호명 :
-                {' '}
-                {restaurant.name}
-              </p>
-              <p>
-                업종 :
-                {' '}
-                {restaurant.category}
-              </p>
-            </div>
-            <div>
-              <Menu menues={restaurant.menu} />
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Styles.Restaurants>
+      {restaurants.map((restaurant) => (
+        <Styles.Restaurant key={`restaurant_${restaurant.id}`}>
+          <Styles.StoreName>
+            {restaurant.name}
+          </Styles.StoreName>
+          <Menu menues={restaurant.menu} />
+        </Styles.Restaurant>
+      ))}
+    </Styles.Restaurants>
   );
 }
 

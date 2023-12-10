@@ -16,6 +16,7 @@ export const Label = styled.label<{$isDarkMode : boolean}>`
   width:208px;
   height:64px;
   padding:6px 8px;
+  font-family: 'Pretendard Variable';
   cursor:pointer;
   border-radius: 30px;
   transition:background 0.1s;

@@ -11,7 +11,14 @@ function Categories({ categories, currentCategory, handleSetCurrentCategory } : 
     <Styles.Categories className="categories">
       {categories.map((category) => (
         <Styles.Category key={category}>
-          <Styles.CategoryButton type="button" data-testid={category} className={category === currentCategory ? 'selected' : ''} onClick={() => { handleSetCurrentCategory(category); }}>{category}</Styles.CategoryButton>
+          <Styles.CategoryButton
+            type="button"
+            data-testid={category}
+            $isActive={category === currentCategory}
+            onClick={() => { handleSetCurrentCategory(category); }}
+          >
+            {category}
+          </Styles.CategoryButton>
         </Styles.Category>
       ))}
     </Styles.Categories>

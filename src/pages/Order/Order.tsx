@@ -53,7 +53,6 @@ export default function Order() {
 
   return (
     <div>
-      <Cart />
       <SearchBar handleSetSearchKeyword={setSearchKeyword} />
       <Categories
         categories={categories}
@@ -61,6 +60,7 @@ export default function Order() {
         handleSetCurrentCategory={setCurrentCategory}
       />
       <Restaurants restaurants={restaurants} />
+      <Cart />
     </div>
   );
 }

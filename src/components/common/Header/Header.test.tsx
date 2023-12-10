@@ -15,7 +15,7 @@ describe('', () => {
           handleToggleTheme={handleToggleTheme}
         />,
       );
-      expect(screen.getAllByText('메가테라 푸드코트'));
+      expect(screen.getAllByText(/메가테라 푸드코트/));
 
       fireEvent.click(screen.getByText('어둡게'));
       expect(handleToggleTheme).toBeCalled();

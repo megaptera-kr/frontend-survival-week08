@@ -6,6 +6,8 @@ const defaultTheme = {
     boxColor: '#f4f4f4',
     primary: '#fff',
     white: '#fff',
+    borderColor: '#616161',
+    orderBorderColor: '#F4F4F4',
   },
 };
 

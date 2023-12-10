@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Header = styled.header`
   display:flex;
-  padding:0 30px;
+  padding:50px 30px 0;
   justify-content: space-between;
   align-items: center;
 `;

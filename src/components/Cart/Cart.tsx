@@ -3,10 +3,12 @@ import { useState } from 'react';
 import { postOrders } from '../../services/postOrders';
 import useCartStore from '../../hooks/useCartStore';
 import * as Styles from './styles';
+import useThemeStore from '../../hooks/useThmeStore';
 
 function Cart() {
   const [{ cart, totalPrice }, store] = useCartStore();
   const [orderText, setOrderText] = useState('');
+  const [{ isDarkMode }] = useThemeStore();
 
   const navigate = useNavigate();
   const handleOrder = async () => {
@@ -19,8 +21,8 @@ function Cart() {
       setOrderText('주문이 완료되었습니다!');
       setTimeout(() => {
         navigate(`/complete?ordersId=${response.id}`);
-        // store.clearCart();
-      }, 200);
+        store.clearCart();
+      }, 1000);
     }
   };
 
@@ -31,9 +33,7 @@ function Cart() {
           <Styles.CartTitle>주문내역</Styles.CartTitle>
           <Styles.CartLength>
             {cart.length}
-            {' '}
             개
-            {' '}
           </Styles.CartLength>
         </Styles.LengthWrap>
         <Styles.CartPrice>
@@ -56,9 +56,10 @@ function Cart() {
                   {menu.name}
                 </Styles.CartMenuTitle>
                 <Styles.CartMenuPrice>
-                  {menu.price}
+                  {menu.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                  원
                 </Styles.CartMenuPrice>
-                <Styles.CartMenuDeleteButton data-testid={`cart_${menu.id}_${cart.length}`} onClick={() => store.deleteCartMenu(menuIdx)} />
+                <Styles.CartMenuDeleteButton $isDarkMode={isDarkMode} data-testid={`cart_${menu.id}_${cart.length}`} onClick={() => store.deleteCartMenu(menuIdx)} />
               </Styles.CartMenu>
             ))}
           </Styles.CartMenues>
@@ -78,7 +79,14 @@ function Cart() {
 
         </>
       )}
-      {orderText}
+      {orderText
+      && (
+        <Styles.Dim>
+          <Styles.OrderResponseText>
+            {orderText}
+          </Styles.OrderResponseText>
+        </Styles.Dim>
+      )}
     </Styles.CartWrapper>
   );
 }

@@ -6,6 +6,8 @@ const darkTheme = {
     boxColor: '#1e1e1e',
     primary: '#ff8400',
     white: '#fff',
+    borderColor: '#fff',
+    orderBorderColor: '#555',
   },
 };
 

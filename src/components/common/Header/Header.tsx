@@ -9,7 +9,7 @@ interface HeaderInterface {
 function Header({ isDarkMode, handleToggleTheme } : HeaderInterface) {
   return (
     <Styles.Header>
-      <Styles.Title>메가테라 푸드코트</Styles.Title>
+      <Styles.Title>메가테라 푸드코트 키오스크</Styles.Title>
       <Checkbox trueText="어둡게" falseText="밝게" isDarkMode={isDarkMode} handleToggleTheme={handleToggleTheme} />
     </Styles.Header>
   );

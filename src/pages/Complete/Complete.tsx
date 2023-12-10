@@ -47,8 +47,7 @@ export default function Complete() {
       <Styles.TitleWrapper>
         <Styles.CompleteTitle>주문이 완료되었습니다!</Styles.CompleteTitle>
         <Styles.OrderNumber>
-          {' '}
-          주문번호 :
+          주문번호
           {ordersId}
         </Styles.OrderNumber>
       </Styles.TitleWrapper>
@@ -60,22 +59,23 @@ export default function Complete() {
             <Styles.OrderItem key={`cart_${itemIdx}`}>
               <Styles.OrderInfo>{item.name}</Styles.OrderInfo>
               <Styles.OrderInfo>
-                {item.price.toString().replace(/\B(?=(\d{3})+(?!\d))}/g, ',')}
+                {item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                 원
               </Styles.OrderInfo>
             </Styles.OrderItem>
           ))}
         </Styles.OrderList>
-        <Styles.TotalInfomation>
-          합계 :
-          {' '}
-          {allTotalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-          {' '}
-          원
-          {' '}
+        <Styles.TotalInfomation as="div">
+          <Styles.TotalText>
+            총 가격
+          </Styles.TotalText>
+          <Styles.TotalPrice>
+            {allTotalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+            원
+          </Styles.TotalPrice>
         </Styles.TotalInfomation>
       </Styles.OrderListWrapper>
-      <Styles.MainButton onClick={goHome}>홈으로</Styles.MainButton>
+      <Styles.MainButton onClick={goHome}>메인화면으로 돌아가기</Styles.MainButton>
     </Styles.CompleteWrapper>
   );
 }

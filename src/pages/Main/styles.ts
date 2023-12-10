@@ -2,11 +2,8 @@ import styled from 'styled-components';
 
 export const MainContainer = styled.div`
   width:calc(100% - 100px);
+  height:calc(100vh - 336px);
   padding:100px 50px;
-  position:fixed;
-  top:50%;
-  left:50%;
-  transform: translate(-50%, -50%);
 `;
 
 export const Desc = styled.h2`

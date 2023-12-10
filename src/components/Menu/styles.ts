@@ -22,7 +22,6 @@ export const MenuButton = styled.button`
   border:3px solid transparent;
   background:${(props) => props.theme.colors.boxColor};
   color:${(props) => props.theme.colors.text};
-  transition: all 0.3s;
   &:hover{
     border-color:#ff8400;
   }

@@ -4,6 +4,7 @@ import {
 import restaurants from '../../features/restaurants';
 import Categories from './Categories';
 import getCategories from '../../utils/getCategory';
+import useRender from '../../hooks/usdRender';
 
 const context = describe;
 let currentCategory = '전체';
@@ -13,7 +14,7 @@ describe('카테고리 목록이 필요하다.', () => {
   context('매장 리스트에서 중복을 제외한 카테고리 목록을 가져온다.', () => {
     it('카테고리 목록이 조회된다.', () => {
       const categories = getCategories(restaurants);
-      render(<Categories
+      useRender(<Categories
         categories={categories}
         currentCategory={currentCategory}
         handleSetCurrentCategory={handleChangeCategory}
@@ -30,7 +31,7 @@ describe('카테고리를 선택한다', () => {
   context('한식을 선택한다.', () => {
     it('선택된 카테고리가 한식으로 변경된다.', async () => {
       const categories = getCategories(restaurants);
-      render(<Categories
+      useRender(<Categories
         categories={categories}
         currentCategory={currentCategory}
         handleSetCurrentCategory={handleChangeCategory}

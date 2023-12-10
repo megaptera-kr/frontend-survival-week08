@@ -43,8 +43,18 @@ Scenario('식당 찾기', ({ I }) => {
   I.see('데브부엌');
   I.dontSee('메가반점');
 
-  I.fillField('검색', '데브부엌');
+  I.fillField('search', '데브부엌');
   I.see('제육덮밥');
   I.dontSee('메리김밥');
   I.dontSee('컵라면');
+});
+
+Scenario('주문 내용 보기', ({ I }) => {
+  I.amOnPage('/complete?ordersId=1702201947470');
+
+  I.waitForText('주문이 완료되었습니다!');
+  I.see('주문번호1702201947470');
+
+  I.see('주문목록');
+  I.see('총 가격');
 });

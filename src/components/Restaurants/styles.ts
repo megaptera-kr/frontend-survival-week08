@@ -7,6 +7,7 @@ export const Restaurants = styled.ul`
   padding:80px 50px;
   gap:80px;
   background:${(props) => props.theme.colors.background};
+  border-radius: 0px 80px 0px 0px;
 `;
 
 export const Restaurant = styled.li`

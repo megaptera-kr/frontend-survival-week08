@@ -1,6 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import Restaurants from '../Restaurants/Restaurants';
 import restaurants from '../../features/restaurants';
+import useRender from '../../hooks/usdRender';
 
 const context = describe;
 
@@ -13,7 +14,7 @@ const searchResult = restaurants.filter(
 describe('검색창에 메가를 입력한다.', () => {
   context('매장 목록에서 검색창에 작성된 메가가 포함된 목록을 검색한다.', () => {
     it('메가반점과 메가김치찌개가 반환된다.', () => {
-      render(<Restaurants restaurants={searchResult} />);
+      useRender(<Restaurants restaurants={searchResult} />);
       expect(screen.getAllByText(new RegExp(searchText))).toBeTruthy();
     });
   });

@@ -18,7 +18,6 @@ export const CategoryButton = styled.button<{$isActive : boolean}>`
   border-radius:20px 20px 0 0;
   font-size:4.0rem;
   font-family: 'Pretendard Variable';
-  transition: all 0.3s;
   color:${(props) => (props.$isActive ? '#ff8400' : '#fff')};
   background:${(props) => (props.$isActive ? props.theme.colors.background : 'none')};
 `;

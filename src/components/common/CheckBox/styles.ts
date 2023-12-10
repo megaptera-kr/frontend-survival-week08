@@ -21,6 +21,7 @@ export const Label = styled.label<{$isDarkMode : boolean}>`
   border-radius: 30px;
   transition:background 0.1s;
   background:${(props) => (!props.$isDarkMode ? '#FFA454' : '#3A3A3A')};
+  color:${(props) => (!props.$isDarkMode ? '#000' : '#fff')};
   &:after{
     content:'';
     position:absolute;
@@ -31,7 +32,7 @@ export const Label = styled.label<{$isDarkMode : boolean}>`
     height:calc(100% - 12px);
     transform:translate(0%, -50%);
     transition:left 0.3s;
-    background:#000;
+    background:${(props) => (!props.$isDarkMode ? '#fff' : '#1E1E1E')};
     border-radius:30px;
   }
 `;

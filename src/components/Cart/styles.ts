@@ -33,6 +33,7 @@ export const CartTitle = styled.h3`
 `;
 
 export const CartLength = styled.span`
+  font-size:2.4rem;
   padding:6px 16px;
   border-radius:30px;
   background:#ff8400;
@@ -70,7 +71,7 @@ export const CartMenu = styled.li`
 export const CartMenuTitle = styled.p`
   font-size:2.8rem;
   font-weight : 500;
-  leter-spacing:-0.84px;
+  letter-spacing:-0.84px;
   color:${(props) => props.theme.colors.text};
 `;
 
@@ -81,13 +82,14 @@ export const CartMenuPrice = styled(CartMenuTitle)`
 
 export const CartMenuDeleteButton = styled.button.attrs({
   type: 'button',
-})`
+})<{$isDarkMode : boolean}>`
   width:24px;
   height:24px;
   position:absolute;
   top:30px;
   right:30px;
   background:url('/images/icon-clear.svg') no-repeat center / contain;
+  filter: ${(props) => !props.$isDarkMode && 'invert()'};
 `;
 
 export const CartFooter = styled.ul`
@@ -109,4 +111,31 @@ export const CartFooterButton = styled.button.attrs({
   font-weight:700;
   background:${(props) => (props.$isType === 'cancel' ? '#44272B' : '#FF8400')};
   color:#fff;
+  font-family: 'Pretendard Variable';
+  transition: background 0.3s;
+  &:hover{
+    background:${(props) => (props.$isType === 'cancel' ? '#000' : '#D87000')}
+  }
+`;
+
+export const Dim = styled.div`
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0, 0, 0, 0.6);
+`;
+
+export const OrderResponseText = styled.p`
+  padding:20px;
+  position:fixed;
+  top:50%;
+  left:50%;
+  z-index:20;
+  font-size:2.0rem;
+  transform: translate(-50%, -50%);
+  border-radius:20px;
+  background:${(props) => props.theme.colors.background};
+  color:${(props) => props.theme.colors.text};
 `;

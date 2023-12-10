@@ -14,6 +14,7 @@ function SearchBar({ handleSetSearchKeyword } : SearchBarProps) {
       <Styles.SearchInput
         type="text"
         placeholder="식당 이름을 입력해주세요"
+        name="search"
         onChange={onChangeSearchKeyword}
       />
     </Styles.SearchBarWrapper>

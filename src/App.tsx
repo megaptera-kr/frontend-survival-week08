@@ -1,5 +1,21 @@
+import { ThemeProvider } from 'styled-components';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import { Reset } from 'styled-reset';
+import { useReadLocalStorage } from 'usehooks-ts';
+import defaultTheme from './styles/defaultTheme';
+import darkTheme from './styles/darkTheme';
+import routes from './routes';
+
+const router = createBrowserRouter(routes);
+
 export default function App() {
+  const isDarkMode = useReadLocalStorage('darkMode');
+  const theme = isDarkMode ? darkTheme : defaultTheme;
   return (
-    <h1>메가테라 푸드코트 키오스크</h1>
+    <ThemeProvider theme={theme}>
+      <Reset />
+      <RouterProvider router={router} />
+    </ThemeProvider>
   );
 }

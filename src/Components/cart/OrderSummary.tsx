@@ -63,8 +63,8 @@ export default function OrderSummary({ selectedMenu }: OrderSummary) {
         총 결제 예상금액
         <span>
           {sum.toLocaleString()}
+          원
         </span>
-        원
       </StyledSum>
     </StyledContainer>
   );

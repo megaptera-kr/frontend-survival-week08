@@ -1,16 +1,28 @@
 import React from 'react';
+import { MenuData } from '../../../../hooks/useFetchData';
 
 type MenuRowProps = {
   isHead: boolean;
+  data: MenuData;
+  category: string;
 }
 
 export default function MenuRow({
   isHead,
+  data,
+  category,
 }: MenuRowProps) {
   return (
     <tr>
-      {isHead && <th rowSpan={3}>메가반점</th>}
-      <td><button type="button">짜장면 8000원</button></td>
+      {isHead && <td rowSpan={3}>{category}</td>}
+      <td>
+        <button type="button">
+          {data.name}
+          {' '}
+          {data.price}
+          원
+        </button>
+      </td>
     </tr>
   );
 }

@@ -1,17 +1,40 @@
-import React from 'react';
-import MenuInCategory from './MenuInCategory';
+import { useEffect, useState } from 'react';
+import { RestaurantData } from '../../../../hooks/useFetchData';
+import MenuInRestaurants from './MenuInRestaurants';
 
-export default function MenuTable() {
+export default function MenuTable({ selectedCategory, restaurantsData }: {
+  selectedCategory: string;
+  restaurantsData: RestaurantData[] | undefined;
+}) {
+  const [filteredData, setFilteredData] = useState<RestaurantData[]>();
+
+  // selectedCategory 바뀔때마다 실행
+  useEffect(() => {
+    let filteredRestaurants: RestaurantData[] | undefined;
+    if (selectedCategory !== '') {
+      filteredRestaurants = restaurantsData?.filter((restaurant) => (
+        restaurant.category === selectedCategory
+      ));
+    } else {
+      filteredRestaurants = restaurantsData;
+    }
+
+    setFilteredData((prev) => {
+      if (prev !== filteredRestaurants) {
+        return filteredRestaurants;
+      }
+    });
+  }, [selectedCategory]);
+
   return (
-    <div className="menu-table">
-      <h2>식당별 메뉴</h2>
-      <table>
-        <thead>
-          <th>식당 이름</th>
-          <th>메뉴</th>
-        </thead>
-        <MenuInCategory />
-      </table>
+    <div>
+      {filteredData
+        ?.map((restaurantData) => (
+          <MenuInRestaurants
+            key={restaurantData.id}
+            restaurantData={restaurantData}
+          />
+        ))}
     </div>
   );
 }

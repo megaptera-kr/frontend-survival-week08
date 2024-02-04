@@ -1,12 +1,49 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction, useCallback } from 'react';
 
-export default function FilterBar() {
+type FilterButtonProps = {
+  btnData: string
+  handleClick: any,
+}
+
+function FilterButton({
+  btnData,
+  handleClick,
+}: FilterButtonProps) {
+  return (
+    <button type="button" onClick={handleClick}>{btnData}</button>
+  );
+}
+
+type FilterBarProps = {
+  categories: string[];
+  setSelectedCategory: Dispatch<SetStateAction<string>>;
+}
+
+export default function FilterBar({
+  categories,
+  setSelectedCategory,
+}: FilterBarProps) {
+  const handleClick = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => {
+    setSelectedCategory(
+      e.target.textContent === '전체' ? '' : e.target.textContent,
+    );
+  };
+
   return (
     <div className="filter-bar">
-      <button type="button">전체</button>
-      <button type="button">중식</button>
-      <button type="button">한식</button>
-      <button type="button">일식</button>
+      <FilterButton
+        btnData="전체"
+        handleClick={handleClick}
+      />
+      {categories.map((category) => (
+        <FilterButton
+          key={category}
+          btnData={category}
+          handleClick={handleClick}
+        />
+      ))}
     </div>
   );
 }

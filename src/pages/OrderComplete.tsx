@@ -1,6 +1,11 @@
 import { useNavigate } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
+import styled from 'styled-components';
 import Receipt from '../Components/order/Receipt';
+
+const StyledContainer = styled.div`
+
+`;
 
 export default function OrderComplete() {
   const navigate = useNavigate();
@@ -17,11 +22,8 @@ export default function OrderComplete() {
   }
 
   return (
-    <div>
-      <Receipt orderId={OrderId} />
-      <button type="button" onClick={navigateToHome}>
-        메인화면으로 돌아가기
-      </button>
-    </div>
+    <StyledContainer>
+      <Receipt orderId={OrderId} navigateToHome={navigateToHome} />
+    </StyledContainer>
   );
 }

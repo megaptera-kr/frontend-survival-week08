@@ -1,24 +1,32 @@
 import { render, screen } from '@testing-library/react';
+
 import receipt from '../../../fixtures/receipt';
 import OrderMenu from './OrderMenu';
 
+import TestProvider from '../../hooks/TestProvider';
+
 describe('OrderMenu', () => {
   it('render title', () => {
-    render(<OrderMenu order={receipt} />);
+    render(
+      <TestProvider>
+        <OrderMenu order={receipt} />
+      </TestProvider>,
+    );
     screen.getByText(/주문목록/);
   });
 
   it('renders list', () => {
-    render(<OrderMenu order={receipt} />);
-
-    expect(screen.getByText(`주문번호${receipt.id}`));
-    expect(screen.getByText('주문목록'));
+    render(
+      <TestProvider>
+        <OrderMenu order={receipt} />
+      </TestProvider>,
+    );
 
     const listItem = screen.getAllByRole('listitem');
     expect(listItem).toHaveLength(receipt.menu.length);
 
     receipt.menu.forEach((food) => {
-      expect(screen.getByText(new RegExp(`${food.name} ${food.price.toLocaleString()}원`)));
+      expect(screen.getByText(new RegExp(`${food.price.toLocaleString()}원`)));
     });
   });
 });

@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 
+import Image from './common/Image';
 import Button from './common/Button';
 
 const Wrapper = styled.header`
@@ -9,17 +10,7 @@ const Wrapper = styled.header`
   gap: 20px;
 `;
 
-type ImgProps = {
-  src: string;
-  alt: string;
-};
-
-const Image = styled.img.attrs<ImgProps>((props) => ({
-  src: props.src,
-  alt: props.alt,
-}))<ImgProps>`
-  src: ${(props: ImgProps) => props.src};
-  alt: ${(props: ImgProps) => props.alt};
+const Logo = styled(Image)`
   width: 80px;
   height: 80px;
 `;
@@ -44,7 +35,6 @@ const ButtonWrapper = styled.div`
 `;
 
 const ThemeToggleButton = styled(Button)`
-  background-color: transparent;
   padding: 0.6em 1.6rem;
   border-radius: 2em;
   margin: 0.1em 0.1em;
@@ -70,7 +60,7 @@ type HeaderProps = {
 export default function Header({ isDarkMode, setIsDarkMode }: HeaderProps) {
   return (
     <Wrapper>
-      <Image src='/images/logo.png' alt='logo' />
+      <Logo src='/images/logo.png' alt='logo' />
       <SubWrapper>
         <Title>메가테라 푸드코트 키오스크</Title>
         <ButtonWrapper>

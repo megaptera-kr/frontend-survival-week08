@@ -33,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
   :lang(ko) {
     h1, h2, h3 {
       word-break: keep-all;
+      font-family: 'yg-jalnan', sans-serif;
     }
   }
 `;

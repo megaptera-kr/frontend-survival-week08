@@ -12,6 +12,7 @@ const Button = styled.button.attrs<ButtonProps>((props) => ({
 }))<ButtonProps>`
   cursor: pointer;
   border: none;
+  background-color: transparent;
 `;
 
 export default Button;

@@ -1,7 +1,7 @@
 const defaultTheme = {
   colors: {
     background:
-      'no-repeat linear-gradient(134.22deg, #F89E21 0.7%, #FF6400 65.66%);',
+      'linear-gradient(134.22deg, rgb(248, 158, 33) 0.7%, rgb(255, 100, 0) 65.66%);',
     headingPrimary: '#FFFFFF',
     headingSecondary: '#FFFFFF',
     headingTertiary: '#FFFFFF',

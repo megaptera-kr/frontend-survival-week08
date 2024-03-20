@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'yg-jalnan', sans-serif;
     font-size: 1.6rem;
+    color: white;
   }
 
   :lang(ko) {

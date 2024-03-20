@@ -5,7 +5,7 @@ type ImgProps = {
   alt: string;
 };
 
-const Image = styled.img.attrs<ImgProps>((props) => ({
+const Img = styled.img.attrs<ImgProps>((props) => ({
   src: props.src,
   alt: props.alt,
 }))<ImgProps>`
@@ -13,4 +13,4 @@ const Image = styled.img.attrs<ImgProps>((props) => ({
   alt: ${(props: ImgProps) => props.alt};
 `;
 
-export default Image;
+export default Img;

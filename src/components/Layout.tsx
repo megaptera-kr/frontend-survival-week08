@@ -13,7 +13,7 @@ import Footer from './Footer';
 const Wrapper = styled.div`
   background: ${(props) => props.theme.colors.background};
   width: 1080px;
-  height: 100vh;
+  /* height: 100vh; */
   margin: auto;
   padding: 25px 25px;
 `;

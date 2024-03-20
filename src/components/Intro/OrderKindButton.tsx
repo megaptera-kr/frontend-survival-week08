@@ -43,7 +43,7 @@ export default function OrderKindButton({
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/order`, { state: { text } });
+    navigate(`/order`, { state: { orderType: text } });
   };
 
   return (

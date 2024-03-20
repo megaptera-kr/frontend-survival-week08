@@ -28,7 +28,7 @@
     "react-router-dom": "^6.22.3",
     "reflect-metadata": "^0.1.13",
     "styled-components": "^5.3.9",
-    "styled-reset": "^4.4.5",
+    "styled-reset": "^4.5.2",
     "tsyringe": "^4.7.0",
     "usehooks-ts": "^2.9.1",
     "usestore-ts": "^0.0.3"

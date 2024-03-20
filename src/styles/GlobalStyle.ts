@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
+  ${reset}
+
   @font-face {
     font-family: 'yg-jalnan';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
@@ -23,7 +26,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${(props) => props.theme.colors.background};
     font-family: 'yg-jalnan', sans-serif;
     font-size: 1.6rem;
   }

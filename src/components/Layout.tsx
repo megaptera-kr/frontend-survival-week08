@@ -1,26 +1,36 @@
 import { Outlet } from 'react-router';
 
-import { Reset } from 'styled-reset';
-import { ThemeProvider } from 'styled-components';
+import { useDarkMode } from 'usehooks-ts';
 
-import defaultTheme from '../styles/defaultTheme';
+import styled, { ThemeProvider } from 'styled-components';
+
 import GlobalStyle from '../styles/GlobalStyle';
+import defaultTheme from '../styles/defaultTheme';
 
 import Header from './Header';
 import Footer from './Footer';
 
+const Wrapper = styled.div`
+  background: ${(props) => props.theme.colors.background};
+  width: 1080px;
+  height: 100vh;
+  margin: auto;
+  padding: 25px 25px;
+`;
+
 export default function Layout() {
-  const theme = defaultTheme;
+  const { isDarkMode, toggle } = useDarkMode(false);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Reset />
+    <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
+      <Wrapper>
+        <Header isDarkMode={isDarkMode} setIsDarkMode={toggle} />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </Wrapper>
     </ThemeProvider>
   );
 }

@@ -23,7 +23,7 @@ const Logo = styled.div`
     font-size: 4.8rem;
     font-family: 'yg-jalnan';
     color: #fff;
-    padding-inline: 0.3rem;
+    padding-inline: 1.4rem;
     transform: translateY(0.4rem);
   }
 `;

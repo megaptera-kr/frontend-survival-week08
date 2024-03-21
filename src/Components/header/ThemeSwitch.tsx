@@ -12,17 +12,17 @@ const ThemeButton = styled.button<ThemeButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 208px;
-  height: 6.4rem;
+  width: 20.8rem;
+  height: 5.4rem;
   background: ${(props) => props.theme.colors.backgroundSecondary};
   border-radius: 30px;
 
   span {
     display: block;
     width: 9.8rem;
-    height: 5rem;
-    line-height: 5rem;
-    font-size: 2rem;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1.6rem;
     border-radius: 30px;
     background-color: transparent;
     color: #fff;

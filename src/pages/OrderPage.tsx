@@ -11,14 +11,10 @@ import { WordH2 } from '../components/common/Word';
 import Restaurants from '../components/restaurant/Restaurants';
 import Cart from '../components/cart/Cart';
 
-const Wrapper = styled.article`
-  margin-top: 1.8rem;
-`;
-
 const OrderTypeWord = styled(WordH2)`
   font-size: 3.2rem;
   font-family: pretendard-regular;
-  background-color: white;
+  /* background-color: white; */
   color: black;
   text-align: start;
   padding-top: 3.2rem;
@@ -34,15 +30,11 @@ export default function OrderPage() {
   const [category, setCategory] = useSetButton('전체');
 
   return (
-    <>
-      {/* TODO: Need to Refactor */}
-      <Wrapper>
-        <FilterText setFilterText={setText} />
-        <FilterTaps category={category} setCategory={setCategory} />
-        <OrderTypeWord text={`[${orderType}] 입니다!`} />
-      </Wrapper>
+    <article>
+      <FilterText setFilterText={setText} />
+      <FilterTaps category={category} setCategory={setCategory} />
       <Restaurants restaurantName={text} categoryName={category} />
-      <Cart />
-    </>
+      <Cart orderType={orderType} />
+    </article>
   );
 }

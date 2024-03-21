@@ -8,12 +8,13 @@ import GlobalStyle from '../styles/GlobalStyle';
 import defaultTheme from '../styles/defaultTheme';
 
 import Header from './Header';
-import Footer from './Footer';
 
 const Wrapper = styled.div`
   background: ${(props) => props.theme.colors.background};
   width: 1080px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 `;
 
 export default function Layout() {
@@ -27,7 +28,6 @@ export default function Layout() {
         <main>
           <Outlet />
         </main>
-        {/* <Footer /> */}
       </Wrapper>
     </ThemeProvider>
   );

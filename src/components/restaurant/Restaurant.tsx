@@ -9,11 +9,10 @@ type RestaurantProps = {
   restaurant: RestaurantModel;
 };
 
-const Container = styled.article`
+const Wrapper = styled.article`
   font-family: 'normal';
-  background-color: white;
-  padding-top: 7.2rem;
-  padding-left: 2.8rem;
+  padding-top: 6.2rem;
+  padding-left: 3.2rem;
   padding-right: 2.8rem;
   display: flex;
   flex-direction: column;
@@ -31,9 +30,9 @@ const RestaurantTitle = styled(WordH2)`
 export default function Restaurant({ restaurant }: RestaurantProps) {
   const { name, menu } = restaurant;
   return (
-    <Container>
+    <Wrapper>
       <RestaurantTitle text={name} />
       <Menu menu={menu} restaurant={restaurant} />
-    </Container>
+    </Wrapper>
   );
 }

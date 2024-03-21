@@ -4,7 +4,10 @@ import useReadRestaurants from '../../hooks/useReadRestaurants';
 import RestaurantModel from '../../models/RestaurantModel';
 import Restaurant from './Restaurant';
 
-const Container = styled.section``;
+const Wrapper = styled.section`
+  background-color: white;
+  border-top-right-radius: 8rem;
+`;
 
 type RestaurantsProps = {
   restaurantName: string;
@@ -19,6 +22,7 @@ const Paragraph = styled.h3`
   text-align: center;
   font-style: italic;
   padding-top: 60px;
+  width: 100%;
 `;
 
 export default function Restaurants({
@@ -32,10 +36,10 @@ export default function Restaurants({
   }
 
   return (
-    <Container>
+    <Wrapper>
       {restaurants.map((restaurant: RestaurantModel) => (
         <Restaurant key={restaurant.id} restaurant={restaurant} />
       ))}
-    </Container>
+    </Wrapper>
   );
 }

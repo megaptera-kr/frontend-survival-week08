@@ -26,8 +26,6 @@ const MenuItemBox = styled(Button)`
 
 const MenuItemImage = styled(Img)`
   width: 75%;
-  pointer-events: none;
-  user-select: none;
 `;
 
 const MenuInfo = styled.div`

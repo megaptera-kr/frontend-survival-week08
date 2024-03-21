@@ -4,11 +4,12 @@ import Image from './common/Image';
 import Button from './common/Button';
 
 const Wrapper = styled.header`
+  background-color: transparent;
+  padding: 3.2rem 3.2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 20px;
-  padding: 25px 25px;
 `;
 
 const Logo = styled(Image)`
@@ -27,6 +28,7 @@ const SubWrapper = styled.div`
 const Title = styled.h1`
   font-size: 4rem;
   color: ${(props) => props.theme.colors.headingSecondary};
+  user-select: none;
 `;
 
 const ButtonWrapper = styled.div`

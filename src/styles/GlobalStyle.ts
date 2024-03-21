@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
+import Img from '../components/common/Image';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -36,6 +37,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: yg-jalnan;
     font-size: 1.6rem;
     color: white;
+  }
+
+  img {
+    pointer-events: none;
+    user-select: none;
   }
 
   :lang(ko) {

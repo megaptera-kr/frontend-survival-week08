@@ -16,7 +16,9 @@ describe('routes', () => {
     it('renders the intro page', () => {
       renderRouter('/');
 
-      screen.getByText('인트로 페이지');
+      screen.getByText(/원하시는 주문을/);
+      screen.getByText(/매장 주문/);
+      screen.getByText(/전체 포장/);
     });
   });
 

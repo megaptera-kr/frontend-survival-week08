@@ -9,7 +9,7 @@ import Header from './header/Header';
 import defaultTheme from '../theme/defaultTheme';
 import GlobalStyle from '../styles/GlobalStyle';
 
-import Main from '../styles/Main';
+import MainStyle from '../styles/MainStyle';
 
 function Layout() {
   const theme = defaultTheme;
@@ -17,10 +17,10 @@ function Layout() {
     <ThemeProvider theme={theme}>
       <Reset />
       <GlobalStyle />
-      <Main>
+      <MainStyle>
         <Header />
         <Outlet />
-      </Main>
+      </MainStyle>
     </ThemeProvider>
   );
 }

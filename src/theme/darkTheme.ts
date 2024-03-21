@@ -1,6 +1,9 @@
 import Theme from './Theme';
 
 const darkTheme : Theme = {
+  fonts: {
+    fontFamily: 'yg-jalnan',
+  },
   colors: {
     backgroundPrimary: '#1E1E1E',
     backgroundSecondary: '#3A3A3A',
@@ -11,6 +14,9 @@ const darkTheme : Theme = {
     basicPrimary: '#FFF',
     borderPrimary: '#FFF',
     borderSecondary: '#555555',
+    orderBtnBg: '#3A3A3A',
+    orderBtnHoverBorder: '#FF8400',
+    orderBtnHover: '#3A3A3A',
   },
 };
 

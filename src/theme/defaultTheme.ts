@@ -1,4 +1,7 @@
 const defaultTheme = {
+  fonts: {
+    fontFamily: 'yg-jalnan',
+  },
   colors: {
     backgroundPrimary: 'linear-gradient(134.22deg, #F89E21 0.7%, #FF6400 65.66%)',
     backgroundSecondary: '#FFA454',
@@ -9,6 +12,9 @@ const defaultTheme = {
     basicPrimary: '#FFF',
     borderPrimary: '#616161',
     borderSecondary: '#F4F4F4',
+    orderBtnBg: '#fff',
+    orderBtnHoverBorder: '#fff',
+    orderBtnHover: '#FFF1DC',
   },
 };
 

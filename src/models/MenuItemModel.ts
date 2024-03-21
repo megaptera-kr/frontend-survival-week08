@@ -1,6 +1,6 @@
 import { moneyformat } from '../utils/common';
 
-import MenuType from '../types/MenuType';
+import MenuItemType from '../types/MenuItemType';
 
 class MenuItemModel {
   id: number;
@@ -11,7 +11,7 @@ class MenuItemModel {
 
   image: string;
 
-  constructor({ id, name, price, image }: MenuType) {
+  constructor({ id, name, price, image }: MenuItemType) {
     this.id = id;
     this.name = name;
     this.price = price;

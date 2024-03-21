@@ -1,8 +1,8 @@
-type MenuType = {
+type MenuItemType = {
   id: number;
   name: string;
   price: number;
   image: string;
 };
 
-export default MenuType;
+export default MenuItemType;

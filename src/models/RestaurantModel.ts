@@ -1,4 +1,4 @@
-import MenuType from '../types/MenuType';
+import MenuItemType from '../types/MenuItemType';
 import RestaurantType from '../types/RestaurantType';
 
 import MenuItemModel from './MenuItemModel';
@@ -16,7 +16,9 @@ class RestaurantModel {
     this.id = id;
     this.name = name;
     this.category = category;
-    this.menu = menu.map((item: MenuType) => new MenuItemModel({ ...item }));
+    this.menu = menu.map(
+      (menuItem: MenuItemType) => new MenuItemModel({ ...menuItem }),
+    );
   }
 }
 

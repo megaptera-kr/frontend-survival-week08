@@ -4,15 +4,18 @@ import CartTotalPrice from './CartTotalPrice';
 
 const Wrapper = styled.div`
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   background-color: #f4f4f4;
 `;
 
-function CartInfoBar() {
+type CartInfoBarProps = {
+  orderType: string;
+};
+
+function CartInfoBar({ orderType }: CartInfoBarProps) {
   return (
     <Wrapper>
-      <CartItemCount />
+      <CartItemCount orderType={orderType} />
       <CartTotalPrice />
     </Wrapper>
   );

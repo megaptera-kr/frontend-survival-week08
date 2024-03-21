@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
-import useCartStore from '../../hooks/useCartStore';
 import CartInfoBar from './CartInfoBar';
+import CartItems from './CartItems';
+import CartButtons from './CartButtons';
 
 type CartProps = {
   orderType: string;
@@ -13,11 +14,11 @@ const Wrapper = styled.section`
 `;
 
 export default function Cart({ orderType }: CartProps) {
-  const [{ cartItems }, cartStore] = useCartStore();
-
   return (
     <Wrapper>
-      <CartInfoBar />
+      <CartInfoBar orderType={orderType} />
+      <CartItems />
+      <CartButtons />
     </Wrapper>
   );
 }

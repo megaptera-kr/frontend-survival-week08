@@ -28,13 +28,26 @@ const Title = styled(Span)`
 const TotalCount = styled(Span)`
   font-size: 2.8rem;
   font-weight: bold;
-  padding: 1.2rem 2.6rem;
+  padding: 1rem 2.8rem;
   background-color: #ff8400;
   border-radius: 3.2rem;
   color: white;
 `;
 
-function CartItemCount() {
+const OrderType = styled(Span)`
+  font-size: 2.8rem;
+  font-weight: bold;
+  background-color: #ff8400;
+  border-radius: 3.2rem;
+  padding: 1rem 2.8rem;
+  color: white;
+`;
+
+type CartItemCountProps = {
+  orderType: string;
+};
+
+function CartItemCount({ orderType }: CartItemCountProps) {
   const [, cartStore] = useCartStore();
 
   return (
@@ -42,6 +55,7 @@ function CartItemCount() {
       <ShoppingCartImg src='/images/shopping-cart.png' alt='shopping_cart' />
       <Title>주문내역</Title>
       <TotalCount>{cartStore.totalItemNum()}개</TotalCount>
+      <OrderType>[{orderType}]</OrderType>
     </Wrapper>
   );
 }

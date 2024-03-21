@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 const Title = styled(Span)`
   color: black;
   font-size: 3.4rem;
-  margin-left: 3.6rem;
+  margin-left: 5.2rem;
 `;
 
 const Price = styled.span`

@@ -27,6 +27,12 @@ const GlobalStyle = createGlobalStyle`
       word-break: keep-all;
     }
   }
+
+  button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
 `;
 
 export default GlobalStyle;

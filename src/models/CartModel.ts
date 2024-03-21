@@ -3,6 +3,7 @@ import RestaurantModel from './RestaurantModel';
 import MenuItemModel from './MenuItemModel';
 
 import NotFoundError from '../exceptions/NotFoundError';
+import { moneyformat } from '../utils/common';
 
 class CartModel {
   readonly cartItems: CartItemModel[] = [];
@@ -90,6 +91,10 @@ class CartModel {
       (acc, item: CartItemModel) => acc + item.price(),
       0,
     );
+  }
+
+  formattedTotalPrice(): string {
+    return moneyformat(this.totalPrice());
   }
 }
 

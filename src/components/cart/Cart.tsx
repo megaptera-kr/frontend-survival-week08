@@ -1,23 +1,23 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.section`
-  background-color: #f4f4f4;
-  /* margin-top: 3.2rem; */
-`;
+import useCartStore from '../../hooks/useCartStore';
+import CartInfoBar from './CartInfoBar';
 
 type CartProps = {
   orderType: string;
 };
 
+const Wrapper = styled.section`
+  background-color: white;
+  padding-top: 5.2rem;
+`;
+
 export default function Cart({ orderType }: CartProps) {
+  const [{ cartItems }, cartStore] = useCartStore();
+
   return (
     <Wrapper>
-      <div>[{orderType}]</div>
-      <div>aslkf</div>
-      <div>aslkf</div>
-      <div>aslkf</div>
-      <div>aslkf</div>
-      <div>aslkf</div>
+      <CartInfoBar />
     </Wrapper>
   );
 }

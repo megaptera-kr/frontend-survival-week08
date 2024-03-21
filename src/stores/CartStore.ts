@@ -53,6 +53,19 @@ class CartStore extends BaseStore<CartStoreSnapshot> {
     this.cart = this.cart.clearItems();
     this.update();
   }
+
+  // Properties
+  totalItemNum(): number {
+    return this.cart.totalItemNum();
+  }
+
+  totalPrice(): number {
+    return this.cart.totalPrice();
+  }
+
+  formattedTotalPrice(): string {
+    return this.cart.formattedTotalPrice();
+  }
 }
 
 export default CartStore;

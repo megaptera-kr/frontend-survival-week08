@@ -33,7 +33,7 @@ export default function Restaurant({ restaurant }: RestaurantProps) {
   return (
     <Container>
       <RestaurantTitle text={name} />
-      <Menu menu={menu} />
+      <Menu menu={menu} restaurant={restaurant} />
     </Container>
   );
 }

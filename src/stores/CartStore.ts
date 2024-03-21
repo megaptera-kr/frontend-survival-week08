@@ -2,12 +2,13 @@ import { singleton } from 'tsyringe';
 
 import BaseStore from './BaseStore';
 
+import CartModel from '../models/CartModel';
 import CartItemModel from '../models/CartItemModel';
-import MenuItemType from '../types/MenuItemType';
+import RestaurantModel from '../models/RestaurantModel';
+import MenuItemModel from '../models/MenuItemModel';
 
 export type CartStoreSnapshot = {
-  items: CartItemModel[];
-  totalPrice: number;
+  cartItems: CartItemModel[];
 };
 
 @singleton()
@@ -21,8 +22,7 @@ class CartStore extends BaseStore<CartStoreSnapshot> {
 
   takeSnapshot() {
     this.snapshot = {
-      items: this.cart.items,
-      totalPrice: this.cart.totalPrice,
+      cartItems: this.cart.cartItems,
     };
   }
 
@@ -31,18 +31,26 @@ class CartStore extends BaseStore<CartStoreSnapshot> {
     this.publish();
   }
 
-  add({ id, name, price, image }: MenuItemType) {
-    this.cart = this.cart.addItem({ id, name, price, image });
+  addItem({
+    restaurant,
+    menuItem,
+    quantity,
+  }: {
+    restaurant: RestaurantModel;
+    menuItem: MenuItemModel;
+    quantity: number;
+  }) {
+    this.cart = this.cart.upsertItem({ restaurant, menuItem, quantity });
     this.update();
   }
 
-  remove({ cartId }: { cartId: number }) {
-    this.cart = this.cart.removeItem(cartId);
+  removeItem({ menuId }: { menuId: number }) {
+    this.cart = this.cart.deleteItem({ menuId });
     this.update();
   }
 
   clear() {
-    this.cart = this.cart.clear();
+    this.cart = this.cart.clearItems();
     this.update();
   }
 }

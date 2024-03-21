@@ -1,13 +1,15 @@
 import styled from 'styled-components';
-import MenuItemModel from '../../models/MenuItemModel';
+
+import useCartStore from '../../hooks/useCartStore';
+
 import Img from '../common/Image';
+import Button from '../common/Button';
 import { WordH2 } from '../common/Word';
 
-type MenuItemProps = {
-  menuItem: MenuItemModel;
-};
+import MenuItemModel from '../../models/MenuItemModel';
+import RestaurantModel from '../../models/RestaurantModel';
 
-const MenuItemBox = styled.div`
+const MenuItemBox = styled(Button)`
   border-radius: 40px;
   background-color: #f4f4f4;
   display: flex;
@@ -53,10 +55,21 @@ const MenuItemHover = styled(MenuItemBox)`
   }
 `;
 
-export default function MenuItem({ menuItem }: MenuItemProps) {
+type MenuItemProps = {
+  menuItem: MenuItemModel;
+  restaurant: RestaurantModel;
+};
+
+export default function MenuItem({ menuItem, restaurant }: MenuItemProps) {
+  const [, store] = useCartStore();
+
+  const handleClick = () => {
+    store.addItem({ restaurant, menuItem, quantity: 1 });
+  };
+
   return (
     <MenuItemHover>
-      <MenuItemBox>
+      <MenuItemBox onClick={handleClick}>
         <MenuItemImage src={menuItem.image} alt='menu-item' />
         <MenuInfo>
           <MenuName text={menuItem.name} />

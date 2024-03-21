@@ -11,6 +11,13 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 
+  @font-face {
+    font-family: 'pretendard-regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+
   html {
     box-sizing: border-box;
   }
@@ -34,7 +41,6 @@ const GlobalStyle = createGlobalStyle`
   :lang(ko) {
     h1, h2, h3 {
       word-break: keep-all;
-      font-family: 'yg-jalnan', sans-serif;
     }
   }
 `;

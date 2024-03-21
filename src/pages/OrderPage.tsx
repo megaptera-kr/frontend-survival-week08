@@ -7,9 +7,17 @@ import useSetButton from '../hooks/useSetButton';
 
 import FilterText from '../components/order/FilterText';
 import FilterTaps from '../components/order/FilterTaps';
+import { WordH2 } from '../components/common/Word';
 
 const Wrapper = styled.article`
   margin-top: 1.8rem;
+`;
+
+const OrderTypeWord = styled(WordH2)`
+  font-size: 3.2rem;
+  font-family: pretendard-regular;
+  text-align: start;
+  margin-top: 3.2rem;
 `;
 
 export default function OrderPage() {
@@ -23,8 +31,7 @@ export default function OrderPage() {
     <Wrapper>
       <FilterText setFilterText={setText} />
       <FilterTaps category={category} setCategory={setCategory} />
-      <h3 style={{ fontSize: '3rem' }}>OrderTypeComment</h3>
-      <section>{orderType}</section>
+      <OrderTypeWord text={`[${orderType}] 입니다!`} />
     </Wrapper>
   );
 }

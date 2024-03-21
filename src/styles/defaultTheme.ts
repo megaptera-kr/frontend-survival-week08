@@ -9,25 +9,3 @@ const defaultTheme = {
 };
 
 export default defaultTheme;
-
-// body-primary
-// body-secondary
-// body-muted
-// link-text
-// link-hover
-// link-visited
-// buttonText: '',
-// button-text-hover
-// button-text-disabled
-// label-text
-// label-muted
-// placeholder-text
-// placeholder-text-hover
-
-// fontSize: {
-//   xxl: '',
-//   xl: '',
-//   l: '',
-//   m: '',
-//   s: '',
-// },

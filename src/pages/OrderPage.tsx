@@ -8,9 +8,11 @@ import useSetButton from '../hooks/useSetButton';
 import FilterText from '../components/order/FilterText';
 import FilterTaps from '../components/order/FilterTaps';
 import { WordH2 } from '../components/common/Word';
+import FilterableRestaurants from '../components/restaurant/FilterableRestaurants';
 
 const Wrapper = styled.article`
   margin-top: 1.8rem;
+  padding: 25px 25px;
 `;
 
 const OrderTypeWord = styled(WordH2)`
@@ -28,10 +30,13 @@ export default function OrderPage() {
   const [category, setCategory] = useSetButton('전체');
 
   return (
-    <Wrapper>
-      <FilterText setFilterText={setText} />
-      <FilterTaps category={category} setCategory={setCategory} />
-      <OrderTypeWord text={`[${orderType}] 입니다!`} />
-    </Wrapper>
+    <>
+      <Wrapper>
+        <FilterText setFilterText={setText} />
+        <FilterTaps category={category} setCategory={setCategory} />
+        <OrderTypeWord text={`[${orderType}] 입니다!`} />
+      </Wrapper>
+      <FilterableRestaurants />
+    </>
   );
 }

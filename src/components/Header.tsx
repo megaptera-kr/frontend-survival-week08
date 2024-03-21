@@ -8,6 +8,7 @@ const Wrapper = styled.header`
   flex-direction: row;
   align-items: center;
   gap: 20px;
+  padding: 25px 25px;
 `;
 
 const Logo = styled(Image)`

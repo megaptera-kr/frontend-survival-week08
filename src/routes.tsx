@@ -1,4 +1,4 @@
-import Layout from './Components/Layout';
+import Layout from './components/Layout';
 
 import IntroPage from './pages/IntroPage';
 import OrderCompletePage from './pages/OrderCompletePage';

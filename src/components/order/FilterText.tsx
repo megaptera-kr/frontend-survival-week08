@@ -27,10 +27,19 @@ const FilterIcon = styled(Img)`
   height: 40px;
 `;
 
-export default function FilterText() {
+type FilterTextProps = {
+  setFilterText: (v: string) => void;
+};
+
+export default function FilterText({ setFilterText }: FilterTextProps) {
   return (
     <TextWrapper>
-      <SearchText placeholder='식당 이름을 입력해주세요' />
+      <SearchText
+        placeholder='식당 이름을 입력해주세요'
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setFilterText(e.target.value)
+        }
+      />
       <FilterIcon src='/images/icon-search.png' alt='filer_icon' />
     </TextWrapper>
   );

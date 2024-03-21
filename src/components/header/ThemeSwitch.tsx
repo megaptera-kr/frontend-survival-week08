@@ -16,6 +16,7 @@ const ThemeButton = styled.button<ThemeButtonProps>`
   height: 5.4rem;
   background: ${(props) => props.theme.colors.backgroundSecondary};
   border-radius: 30px;
+  cursor: pointer;
 
   span {
     display: block;

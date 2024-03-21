@@ -8,18 +8,22 @@ import useSetButton from '../hooks/useSetButton';
 import FilterText from '../components/order/FilterText';
 import FilterTaps from '../components/order/FilterTaps';
 import { WordH2 } from '../components/common/Word';
-import FilterableRestaurants from '../components/restaurant/FilterableRestaurants';
+import Restaurants from '../components/restaurant/Restaurants';
+import Cart from '../components/cart/Cart';
 
 const Wrapper = styled.article`
   margin-top: 1.8rem;
-  padding: 25px 25px;
 `;
 
 const OrderTypeWord = styled(WordH2)`
   font-size: 3.2rem;
   font-family: pretendard-regular;
+  background-color: white;
+  color: black;
   text-align: start;
-  margin-top: 3.2rem;
+  padding-top: 3.2rem;
+  padding-left: 3.2rem;
+  font-weight: bold;
 `;
 
 export default function OrderPage() {
@@ -31,12 +35,14 @@ export default function OrderPage() {
 
   return (
     <>
+      {/* TODO: Need to Refactor */}
       <Wrapper>
         <FilterText setFilterText={setText} />
         <FilterTaps category={category} setCategory={setCategory} />
         <OrderTypeWord text={`[${orderType}] 입니다!`} />
       </Wrapper>
-      <FilterableRestaurants />
+      <Restaurants restaurantName={text} categoryName={category} />
+      <Cart />
     </>
   );
 }

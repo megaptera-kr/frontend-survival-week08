@@ -6,9 +6,10 @@ import TextField from '../common/TextField';
 const TextWrapper = styled.section`
   border: solid 2px white;
   border-radius: 1.2rem;
-  padding: 1.6rem 1.6rem;
+  padding: 3.2rem 25px;
   display: flex;
-  margin-bottom: 3.8rem;
+  margin-left: 3.2rem;
+  margin-right: 3.2rem;
 `;
 
 const SearchText = styled(TextField)`

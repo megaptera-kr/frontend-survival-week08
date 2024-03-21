@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'yg-jalnan', sans-serif;
+    font-family: yg-jalnan;
     font-size: 1.6rem;
     color: white;
   }

@@ -9,6 +9,9 @@ import CategoryModel from '../../models/CategoryModel';
 const Wrapper = styled.ul`
   display: flex;
   justify-content: space-around;
+  margin-top: 3.2rem;
+  margin-left: 3.2rem;
+  margin-right: 3.2rem;
 `;
 
 type FilterTapsProps = {

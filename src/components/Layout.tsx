@@ -9,14 +9,18 @@ import Header from './header/Header';
 import defaultTheme from '../theme/defaultTheme';
 import GlobalStyle from '../styles/GlobalStyle';
 
+import Main from '../styles/Main';
+
 function Layout() {
   const theme = defaultTheme;
   return (
     <ThemeProvider theme={theme}>
       <Reset />
       <GlobalStyle />
-      <Header />
-      <Outlet />
+      <Main>
+        <Header />
+        <Outlet />
+      </Main>
     </ThemeProvider>
   );
 }

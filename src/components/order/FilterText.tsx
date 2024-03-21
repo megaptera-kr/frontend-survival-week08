@@ -30,7 +30,7 @@ const FilterIcon = styled(Img)`
 export default function FilterText() {
   return (
     <TextWrapper>
-      <SearchText placeholder='식당이름을 입력해주세요' />
+      <SearchText placeholder='식당 이름을 입력해주세요' />
       <FilterIcon src='/images/icon-search.png' alt='filer_icon' />
     </TextWrapper>
   );

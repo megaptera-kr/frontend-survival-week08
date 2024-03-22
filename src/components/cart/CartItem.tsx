@@ -64,7 +64,7 @@ function CartItem({ cartItem }: CartItemProp) {
         {menuName}
         <MenuCount>{`(${quantity}개)`}</MenuCount>
       </MenuName>
-      <MenuPrice>{cartItem.priceFormatted()}원</MenuPrice>
+      <MenuPrice>{cartItem.formattedTotalPrice()}원</MenuPrice>
       <CancelButton onClick={handleCancel}>X</CancelButton>
     </Wrapper>
   );

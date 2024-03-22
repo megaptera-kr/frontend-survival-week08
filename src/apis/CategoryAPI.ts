@@ -10,7 +10,7 @@ class CategoryAPI {
     this.url = new URL('http://localhost:3000/categories');
   }
 
-  async select(): Promise<CategoryType[]> {
+  async read(): Promise<CategoryType[]> {
     const response = await fetch(this.url);
     if (!response.ok) {
       throw new Error(`Fail to get data. Status: ${response.status}`);

@@ -16,7 +16,7 @@ function useReadCategories(): useFetchCategoriesReturnType {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data: CategoryType[] = await api.select();
+      const data: CategoryType[] = await api.read();
       const models: CategoryModel[] = data.map(
         (item: CategoryType) => new CategoryModel({ ...item }),
       );

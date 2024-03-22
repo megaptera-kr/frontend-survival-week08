@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 import { useNavigate } from 'react-router';
+
 import useCartStore from '../../hooks/useCartStore';
+import useCreateOrder from '../../hooks/useCreateOrder';
 
 import Button from '../common/Button';
 
@@ -31,9 +33,17 @@ const Order = styled(Button)`
   border-radius: 60px;
 `;
 
-export default function CartButtons() {
+type CartButtonsProps = {
+  orderType: string;
+};
+
+export default function CartButtons({ orderType }: CartButtonsProps) {
   const navigate = useNavigate();
   const [, cartStore] = useCartStore();
+  const { handleCreateOrder } = useCreateOrder({
+    cart: cartStore.getCart(),
+    orderType,
+  });
 
   const handleCancel = () => {
     cartStore.clear();
@@ -41,7 +51,7 @@ export default function CartButtons() {
   };
 
   const handleOrder = () => {
-    // TODO: Implement Order Button
+    handleCreateOrder();
   };
 
   return (

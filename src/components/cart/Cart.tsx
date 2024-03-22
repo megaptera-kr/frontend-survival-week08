@@ -18,7 +18,7 @@ export default function Cart({ orderType }: CartProps) {
     <Wrapper>
       <CartInfoBar orderType={orderType} />
       <CartItems />
-      <CartButtons />
+      <CartButtons orderType={orderType} />
     </Wrapper>
   );
 }

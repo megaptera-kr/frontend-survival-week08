@@ -3,6 +3,7 @@ import cors from 'cors';
 
 import CategoryController from './src/controllers/categories.controller';
 import RestaurantController from './src/controllers/restaurants.controller';
+import OrderController from './src/controllers/order.controller';
 
 const port = 3000;
 
@@ -16,6 +17,7 @@ app.get('/', (req, res) => res.send('Hello, World!'));
 
 CategoryController(app);
 RestaurantController(app);
+OrderController(app);
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console

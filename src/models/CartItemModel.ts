@@ -15,6 +15,8 @@ class CartItemModel {
 
   readonly menuPrice: number;
 
+  readonly menuTotalPrice: number;
+
   readonly menuImage: string;
 
   readonly restaurantId: number;
@@ -30,20 +32,21 @@ class CartItemModel {
     menuName,
     menuPrice,
     menuImage,
+    quantity,
+    categoryName,
     restaurantId,
     restaurantName,
-    categoryName,
-    quantity,
   }: CartItemType) {
     this.id = uuidv4();
     this.menuId = menuId;
     this.menuName = menuName;
     this.menuPrice = menuPrice;
+    this.quantity = quantity;
+    this.menuTotalPrice = this.menuPrice * this.quantity;
     this.menuImage = menuImage;
+    this.categoryName = categoryName;
     this.restaurantId = restaurantId;
     this.restaurantName = restaurantName;
-    this.categoryName = categoryName;
-    this.quantity = quantity;
   }
 
   static makeInstance({
@@ -67,12 +70,8 @@ class CartItemModel {
     });
   }
 
-  price(): number {
-    return this.menuPrice * this.quantity;
-  }
-
-  priceFormatted(): string {
-    return moneyformat(this.price());
+  formattedTotalPrice(): string {
+    return moneyformat(this.menuTotalPrice);
   }
 }
 

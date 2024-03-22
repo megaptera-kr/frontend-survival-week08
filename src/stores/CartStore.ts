@@ -31,6 +31,10 @@ class CartStore extends BaseStore<CartStoreSnapshot> {
     this.publish();
   }
 
+  setOrderType(orderType: string) {
+    this.cart = this.cart.setOrderType(orderType);
+  }
+
   addItem({
     restaurant,
     menuItem,
@@ -65,6 +69,10 @@ class CartStore extends BaseStore<CartStoreSnapshot> {
 
   formattedTotalPrice(): string {
     return this.cart.formattedTotalPrice();
+  }
+
+  getCart() {
+    return this.cart;
   }
 }
 

@@ -8,15 +8,19 @@ import { moneyformat } from '../utils/common';
 class CartModel {
   readonly cartItems: CartItemModel[] = [];
 
-  readonly orderKind: string;
+  readonly orderType: string;
 
-  constructor(cartItems: CartItemModel[] = [], orderKind = '') {
+  constructor(cartItems: CartItemModel[] = [], orderType = '') {
     this.cartItems = cartItems;
-    this.orderKind = orderKind;
+    this.orderType = orderType;
+  }
+
+  setOrderType(orderType: string) {
+    return new CartModel([...this.cartItems], orderType);
   }
 
   #insertItem({ cartItem }: { cartItem: CartItemModel }) {
-    return new CartModel([...this.cartItems, cartItem], this.orderKind);
+    return new CartModel([...this.cartItems, cartItem], this.orderType);
   }
 
   #updateItem({ index, quantity }: { index: number; quantity: number }) {
@@ -31,7 +35,7 @@ class CartModel {
         }),
         ...this.cartItems.slice(index + 1),
       ],
-      this.orderKind,
+      this.orderType,
     );
   }
 
@@ -68,14 +72,14 @@ class CartModel {
       throw new NotFoundError();
     }
 
-    return new CartModel(
-      [...this.cartItems.slice(0, index), ...this.cartItems.slice(index + 1)],
-      this.orderKind,
-    );
+    return new CartModel([
+      ...this.cartItems.slice(0, index),
+      ...this.cartItems.slice(index + 1),
+    ]);
   }
 
   clearItems(): CartModel {
-    this.cartItems.length = 0;
+    this.cartItems.length = 0; // TODO: It's not immutable
     return new CartModel([]);
   }
 
@@ -88,7 +92,7 @@ class CartModel {
 
   totalPrice(): number {
     return this.cartItems.reduce(
-      (acc, item: CartItemModel) => acc + item.price(),
+      (acc, item: CartItemModel) => acc + item.menuTotalPrice,
       0,
     );
   }

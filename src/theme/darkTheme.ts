@@ -11,7 +11,7 @@ const darkTheme : Theme = {
     textSecondary: '#CECECE',
     primary: '#FF8400',
     secondary: '#FFF1DC',
-    basicPrimary: '#FFF',
+    basicPrimary: '#1E1E1E',
     borderPrimary: '#FFF',
     borderSecondary: '#555555',
     orderBtnBg: '#3A3A3A',

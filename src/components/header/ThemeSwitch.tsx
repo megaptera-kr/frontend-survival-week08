@@ -1,11 +1,13 @@
 /* eslint-disable operator-linebreak */
 /* eslint-disable implicit-arrow-linebreak */
-import { useState } from 'react';
+import { useContext } from 'react';
 
 import styled, { css } from 'styled-components';
 
+import { ThemeContext } from '../../context/ThemeProvider';
+
 type ThemeButtonStyleProps = {
-  active?: boolean;
+  active: string;
 };
 
 const ThemeButtonStyle = styled.button<ThemeButtonStyleProps>`
@@ -36,11 +38,11 @@ const ThemeButtonStyle = styled.button<ThemeButtonStyleProps>`
   }
 
   ${(props) =>
-    props.active &&
+    props.active === 'dark' &&
     css`
       span:first-of-type {
         background-color: transparent;
-        color: #fff;
+        color: ${props.theme.colors.textPrimary};
       }
       span:last-of-type {
         background-color: ${props.theme.colors.basicPrimary};
@@ -50,12 +52,9 @@ const ThemeButtonStyle = styled.button<ThemeButtonStyleProps>`
 `;
 
 function ThemeSwitch() {
-  const [active, setActive] = useState(false);
-  const handleClickActive = () => {
-    setActive(!active);
-  };
+  const { theme, onChangeTheme } = useContext(ThemeContext);
   return (
-    <ThemeButtonStyle active={active} onClick={handleClickActive}>
+    <ThemeButtonStyle active={theme} onClick={onChangeTheme}>
       <span>밝게</span>
       <span>어둡게</span>
     </ThemeButtonStyle>

@@ -1,20 +1,19 @@
+/* eslint-disable react/jsx-no-undef */
 import { Outlet } from 'react-router';
-
-import { ThemeProvider } from 'styled-components';
 
 import { Reset } from 'styled-reset';
 
 import Header from './header/Header';
 
-import defaultTheme from '../theme/defaultTheme';
 import GlobalStyle from '../styles/GlobalStyle';
 
 import MainStyle from '../styles/MainStyle';
 
+import ThemeProvider from '../context/ThemeProvider';
+
 export default function Layout() {
-  const theme = defaultTheme;
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider>
       <Reset />
       <GlobalStyle />
       <MainStyle>

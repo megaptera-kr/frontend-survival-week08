@@ -56,8 +56,6 @@ class OrderAPI {
       body: JSON.stringify(body),
     });
 
-    console.log(response);
-
     if (!response.ok) {
       throw new Error(`Fail to create data. Status: ${response.status}`);
     }

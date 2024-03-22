@@ -3,19 +3,40 @@ import { moneyformat } from '../utils/common';
 import MenuItemType from '../types/MenuItemType';
 
 class MenuItemModel {
-  id: number;
+  readonly id: number;
 
-  name: string;
+  readonly name: string;
 
-  price: number;
+  readonly price: number;
 
-  image: string;
+  readonly image: string;
 
-  constructor({ id, name, price, image }: MenuItemType) {
+  readonly totalPrice?: number;
+
+  readonly quantity?: number;
+
+  readonly restaurantName?: string;
+
+  readonly categoryName?: string;
+
+  constructor({
+    id,
+    name,
+    price,
+    image,
+    totalPrice,
+    quantity,
+    restaurantName,
+    categoryName,
+  }: MenuItemType) {
     this.id = id;
     this.name = name;
     this.price = price;
     this.image = image;
+    this.totalPrice = totalPrice;
+    this.quantity = quantity;
+    this.restaurantName = restaurantName;
+    this.categoryName = categoryName;
   }
 
   priceFormat(): string {

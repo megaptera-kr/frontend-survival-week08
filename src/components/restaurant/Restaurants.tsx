@@ -25,10 +25,7 @@ const Paragraph = styled.h3`
   width: 100%;
 `;
 
-export default function Restaurants({
-  restaurantName,
-  categoryName,
-}: RestaurantsProps) {
+function Restaurants({ restaurantName, categoryName }: RestaurantsProps) {
   const { restaurants } = useReadRestaurants({ restaurantName, categoryName });
 
   if (!restaurants.length) {
@@ -43,3 +40,5 @@ export default function Restaurants({
     </Wrapper>
   );
 }
+
+export default Restaurants;

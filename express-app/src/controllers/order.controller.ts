@@ -11,9 +11,9 @@ function OrderController(app: Express) {
     const orderId = Date.now().toString();
     const now = new Date();
 
-    const orderItem: OrderTableType = {
+    const newOrderTableRow: OrderTableType = {
       id: orderId,
-      orderType: body.order,
+      orderType: body.orderType,
       status: body.orderKind === '매장주문' ? '매장주문완료' : '포장주문완료',
       totalPrice: body.totalPrice,
       createAt: now,
@@ -21,9 +21,9 @@ function OrderController(app: Express) {
       menuItems: body.menuItems,
     };
 
-    orders.push(orderItem);
+    orders.push(newOrderTableRow);
 
-    res.status(201).send({ orderId: orderItem.id });
+    res.status(201).send({ orderId: newOrderTableRow.id });
   });
 
   app.get('/orders/:orderId', (req: Request, res: Response) => {

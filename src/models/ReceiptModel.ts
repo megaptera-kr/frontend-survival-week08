@@ -2,6 +2,7 @@ import ReceiptType from '../types/ReceiptType';
 import MenuItemType from '../types/MenuItemType';
 
 import MenuItemModel from './MenuItemModel';
+import { moneyformat } from '../utils/common';
 
 class ReceiptModel {
   readonly id: string;
@@ -28,6 +29,15 @@ class ReceiptModel {
     this.menuItems = object.menuItems.map(
       (menuItem: MenuItemType) => new MenuItemModel({ ...menuItem }),
     );
+  }
+
+  formattedTotalPrice() {
+    const totalPrice = this.menuItems.reduce(
+      (acc, cur) => acc + (!cur.totalPrice ? 0 : cur.totalPrice),
+      0,
+    );
+
+    return moneyformat(totalPrice);
   }
 }
 

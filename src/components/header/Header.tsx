@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-import LogoContent from './LogoContent';
+import Logo from './Logo';
 import ThemeSwitch from './ThemeSwitch';
 
-const HeaderWrap = styled.header`
+const HeaderWrapStyle = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,10 +12,10 @@ const HeaderWrap = styled.header`
 
 function Header() {
   return (
-    <HeaderWrap>
-      <LogoContent />
+    <HeaderWrapStyle>
+      <Logo />
       <ThemeSwitch />
-    </HeaderWrap>
+    </HeaderWrapStyle>
   );
 }
 

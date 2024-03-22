@@ -11,7 +11,7 @@ import GlobalStyle from '../styles/GlobalStyle';
 
 import MainStyle from '../styles/MainStyle';
 
-function Layout() {
+export default function Layout() {
   const theme = defaultTheme;
   return (
     <ThemeProvider theme={theme}>
@@ -24,5 +24,3 @@ function Layout() {
     </ThemeProvider>
   );
 }
-
-export default Layout;

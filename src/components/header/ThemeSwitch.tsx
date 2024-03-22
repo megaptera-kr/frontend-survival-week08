@@ -4,11 +4,11 @@ import { useState } from 'react';
 
 import styled, { css } from 'styled-components';
 
-type ThemeButtonProps = {
+type ThemeButtonStyleProps = {
   active?: boolean;
 };
 
-const ThemeButton = styled.button<ThemeButtonProps>`
+const ThemeButtonStyle = styled.button<ThemeButtonStyleProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,10 +55,10 @@ function ThemeSwitch() {
     setActive(!active);
   };
   return (
-    <ThemeButton active={active} onClick={handleClickActive}>
+    <ThemeButtonStyle active={active} onClick={handleClickActive}>
       <span>밝게</span>
       <span>어둡게</span>
-    </ThemeButton>
+    </ThemeButtonStyle>
   );
 }
 

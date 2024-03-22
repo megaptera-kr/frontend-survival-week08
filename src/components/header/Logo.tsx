@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-const Logo = styled.div`
+const LogoAreaStyle = styled.div`
   display: flex;
   align-items: center;
   position: relative;
@@ -30,14 +30,12 @@ const Logo = styled.div`
   }
 `;
 
-function LogoContent() {
+export default function Logo() {
   return (
-    <Logo>
+    <LogoAreaStyle>
       <Link to="/" />
       <img src="/images/logo.png" alt="logo" />
       <h1>메가테라 푸트코트 키오스트</h1>
-    </Logo>
+    </LogoAreaStyle>
   );
 }
-
-export default LogoContent;

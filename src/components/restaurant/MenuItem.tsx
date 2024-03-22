@@ -21,6 +21,7 @@ const MenuItemBox = styled(Button)`
 
   :hover {
     background-color: #fff1dc;
+    border: solid 1px #ff8400;
   }
 `;
 
@@ -47,12 +48,6 @@ const MenuPrice = styled(WordH2)`
   user-select: none;
 `;
 
-const MenuItemHover = styled(MenuItemBox)`
-  &:hover {
-    border-color: #ff8400;
-  }
-`;
-
 type MenuItemProps = {
   menuItem: MenuItemModel;
   restaurant: RestaurantModel;
@@ -66,14 +61,12 @@ export default function MenuItem({ menuItem, restaurant }: MenuItemProps) {
   };
 
   return (
-    <MenuItemHover>
-      <MenuItemBox onClick={handleClick}>
-        <MenuItemImage src={menuItem.image} alt='menu-item' />
-        <MenuInfo>
-          <MenuName text={menuItem.name} />
-          <MenuPrice text={`(${menuItem.priceFormat()})원`} />
-        </MenuInfo>
-      </MenuItemBox>
-    </MenuItemHover>
+    <MenuItemBox onClick={handleClick}>
+      <MenuItemImage src={menuItem.image} alt='menu-item' />
+      <MenuInfo>
+        <MenuName text={menuItem.name} />
+        <MenuPrice text={`(${menuItem.priceFormat()})원`} />
+      </MenuInfo>
+    </MenuItemBox>
   );
 }

@@ -6,6 +6,7 @@ const TotalInfo = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: solid 1px gray;
 `;
 
 const TotalPriceWord = styled(WordH2)`

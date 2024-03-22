@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router';
 import styled, { css } from 'styled-components';
 
 import Image from './common/Image';
@@ -61,9 +62,13 @@ type HeaderProps = {
 };
 
 export default function Header({ isDarkMode, setIsDarkMode }: HeaderProps) {
+  const navigate = useNavigate();
+
   return (
     <Wrapper>
-      <Logo src='/images/logo.png' alt='logo' />
+      <Button type='button' onClick={() => navigate('/')}>
+        <Logo src='/images/logo.png' alt='logo' />
+      </Button>
       <SubWrapper>
         <Title>메가테라 푸드코트 키오스크</Title>
         <ButtonWrapper>

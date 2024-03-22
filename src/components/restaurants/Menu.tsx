@@ -5,10 +5,9 @@ import MenuItem from './MenuItem';
 import Food from '../../types/Food';
 
 const MenuWrapStyle = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 2.5rem;
   padding-bottom: 8rem;
 `;
 

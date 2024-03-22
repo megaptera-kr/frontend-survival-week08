@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Food from '../../types/Food';
 
 const MenuItemWrapStyle = styled.li`
-  width: 30%;
   button {
     display: block;
     width: 100%;
@@ -13,6 +12,7 @@ const MenuItemWrapStyle = styled.li`
     border: 3px solid ${(props) => props.theme.items.itemBgBorder};
     background-color: ${(props) => props.theme.items.itemBg};
     cursor: pointer;
+    box-sizing: border-box;
   }
 
   img {

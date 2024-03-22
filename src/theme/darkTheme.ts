@@ -17,6 +17,14 @@ const darkTheme : Theme = {
     orderBtnBg: '#3A3A3A',
     orderBtnHoverBorder: '#FF8400',
     orderBtnHover: '#3A3A3A',
+
+  },
+  items: {
+    itemWrapBg: '#3A3A3A',
+    itemBg: '#1E1E1E',
+    itemBgBorder: '#1E1E1E',
+    itemHoverBg: '#1E1E1E',
+    itemHoverBorder: '#FF8400',
   },
 };
 

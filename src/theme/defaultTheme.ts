@@ -16,6 +16,13 @@ const defaultTheme = {
     orderBtnHoverBorder: '#fff',
     orderBtnHover: '#FFF1DC',
   },
+  items: {
+    itemWrapBg: '#FFF',
+    itemBg: '#F4F4F4',
+    itemBgBorder: '#F4F4F4',
+    itemHoverBg: '#FFF1DC',
+    itemHoverBorder: '#FF8400',
+  },
 };
 
 export default defaultTheme;

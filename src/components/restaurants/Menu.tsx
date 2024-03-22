@@ -1,0 +1,36 @@
+import styled from 'styled-components';
+
+import MenuItem from './MenuItem';
+
+import Food from '../../types/Food';
+
+const MenuWrapStyle = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2.5rem 0;
+  padding-bottom: 8rem;
+`;
+
+type MenuProps = {
+  menu: Food[];
+};
+
+export default function Menu({ menu }: MenuProps) {
+  const handleClickItem = () => {
+    // TODO : Store 연결
+  };
+
+  if (!menu.length) {
+    return <p> 메뉴가 존재하지 않습니다.</p>;
+  }
+
+  return (
+    <MenuWrapStyle>
+      {menu.map((food, idx) => {
+        const key = `${food.name}_${idx}`;
+        return <MenuItem key={key} food={food} onClickItem={handleClickItem} />;
+      })}
+    </MenuWrapStyle>
+  );
+}

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 
 import { RouterProvider, createMemoryRouter } from 'react-router';
 
@@ -23,10 +23,12 @@ describe('routes', () => {
   });
 
   context('when the current path is “/order”', () => {
-    it('renders the order page', () => {
+    it('renders the order page', async () => {
       renderRouter('/order');
 
-      screen.getByText('주문 페이지');
+      await waitFor(() => {
+        screen.getByText(/메가반점/);
+      });
     });
   });
 

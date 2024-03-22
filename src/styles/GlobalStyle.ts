@@ -17,9 +17,13 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-size: 1.6rem;
-    font-family: "Pretendard Variable", Pretendard, sans-serif ;
     width: 1080px;
     margin: 0 auto;
+    cursor: default;
+  }
+
+  body, span, input {
+    font-family: "Pretendard Variable", Pretendard, sans-serif ;
   }
 
   :lang(ko) {

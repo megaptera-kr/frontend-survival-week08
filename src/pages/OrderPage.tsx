@@ -1,7 +1,9 @@
-import React from 'react';
+import FilterableRestaurants from '../components/restaurants/FilterableRestaurants';
 
-function OrderPage() {
-  return <div>주문 페이지</div>;
+export default function OrderPage() {
+  return (
+    <div>
+      <FilterableRestaurants />
+    </div>
+  );
 }
-
-export default OrderPage;

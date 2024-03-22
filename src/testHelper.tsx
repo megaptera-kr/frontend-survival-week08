@@ -8,22 +8,18 @@ import { ReactNode } from 'react';
 
 import { MemoryRouter } from 'react-router';
 
-import { ThemeProvider } from 'styled-components';
-
-import defaultTheme from './theme/defaultTheme';
+import ThemeProvider from './context/ThemeProvider';
 
 type Option = {
   path?: string;
 };
-
-const theme = defaultTheme;
 
 export function renderWithProviders(
   node: ReactNode,
   { path = '/' }: Option = {}
 ) {
   return render(
-    <ThemeProvider theme={theme}>
+    <ThemeProvider>
       <MemoryRouter initialEntries={[path]}>{node}</MemoryRouter>
     </ThemeProvider>
   );

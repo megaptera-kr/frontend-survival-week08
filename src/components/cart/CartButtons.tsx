@@ -1,4 +1,8 @@
 import styled from 'styled-components';
+
+import { useNavigate } from 'react-router';
+import useCartStore from '../../hooks/useCartStore';
+
 import Button from '../common/Button';
 
 const Wrapper = styled.div`
@@ -28,10 +32,22 @@ const Order = styled(Button)`
 `;
 
 export default function CartButtons() {
+  const navigate = useNavigate();
+  const [, cartStore] = useCartStore();
+
+  const handleCancel = () => {
+    cartStore.clear();
+    navigate('/');
+  };
+
+  const handleOrder = () => {
+    // TODO: Implement Order Button
+  };
+
   return (
     <Wrapper>
-      <Cancel>취소</Cancel>
-      <Order>주문하기</Order>
+      <Cancel onClick={handleCancel}>취소</Cancel>
+      <Order onClick={handleOrder}>주문하기</Order>
     </Wrapper>
   );
 }

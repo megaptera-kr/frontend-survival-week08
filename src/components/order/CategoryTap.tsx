@@ -26,7 +26,7 @@ const CategoryButton = styled(Button)`
     props.active &&
     css`
       color: #ff8400;
-      background-color: white;
+      background-color: ${props.theme.colors.subBackground};
     `}
 `;
 

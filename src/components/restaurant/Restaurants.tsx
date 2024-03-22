@@ -1,29 +1,24 @@
 import styled from 'styled-components';
 
 import useReadRestaurants from '../../hooks/useReadRestaurants';
-import RestaurantModel from '../../models/RestaurantModel';
+
 import Restaurant from './Restaurant';
+import Paragraph from '../common/Paragraph';
+
+import RestaurantModel from '../../models/RestaurantModel';
 
 const Wrapper = styled.section`
-  background-color: white;
+  background-color: ${(props) => props.theme.colors.subBackground};
   border-top-right-radius: 8rem;
+  font-family: ${(props) => props.theme.font.main};
+  color: ${(props) => props.theme.colors.bodyPrimary};
+  padding-bottom: 60px;
 `;
 
 type RestaurantsProps = {
   restaurantName: string;
   categoryName: string;
 };
-
-const Paragraph = styled.h3`
-  background-color: white;
-  color: gray;
-  font-size: 4.2rem;
-  font-family: pretendard-regular;
-  text-align: center;
-  font-style: italic;
-  padding-top: 60px;
-  width: 100%;
-`;
 
 function Restaurants({ restaurantName, categoryName }: RestaurantsProps) {
   const { restaurants } = useReadRestaurants({ restaurantName, categoryName });

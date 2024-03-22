@@ -5,7 +5,7 @@ import CartTotalPrice from './CartTotalPrice';
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  background-color: #f4f4f4;
+  padding-bottom: 2.4rem;
 `;
 
 type CartInfoBarProps = {

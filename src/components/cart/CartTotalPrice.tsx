@@ -1,25 +1,25 @@
 import styled from 'styled-components';
 
 import useCartStore from '../../hooks/useCartStore';
-import Span from '../common/Span';
+import Text from '../common/Text';
 
 const Wrapper = styled.div`
-  font-family: pretendard-regular;
   flex-grow: 1;
   display: flex;
   justify-content: space-between;
 `;
 
-const Title = styled(Span)`
-  color: black;
+const Title = styled(Text)`
   font-size: 3.4rem;
   margin-left: 5.2rem;
+  font-weight: 700;
 `;
 
-const Price = styled.span`
-  color: #ff8400;
+const Price = styled(Text)`
   font-size: 3.4rem;
+  font-weight: 700;
   margin-right: 3.6rem;
+  color: ${(props) => props.theme.colors.bodyHighlight};
 `;
 
 function CartTotalPrice() {

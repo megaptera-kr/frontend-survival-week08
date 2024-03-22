@@ -5,6 +5,7 @@ import useCartStore from '../../hooks/useCartStore';
 import Button from '../common/Button';
 
 import CartItemModel from '../../models/CartItemModel';
+import Text from '../common/Text';
 
 type CartItemProp = {
   cartItem: CartItemModel;
@@ -13,39 +14,42 @@ type CartItemProp = {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: ${(props) => props.theme.colors.cartItemBackground};
   border-radius: 20px;
   position: relative;
 `;
 
-const MenuName = styled.span`
-  color: black;
+const MenuName = styled(Text)`
   font-size: 3.2rem;
   margin: 2.2rem 3rem;
 `;
 
-const MenuCount = styled.span`
-  color: black;
+const MenuCount = styled(Text)`
   font-size: 3.2rem;
+  padding-left: 8px;
 `;
 
-const MenuPrice = styled.span`
-  color: #ff8400;
+const MenuPrice = styled(Text)`
+  color: ${(props) => props.theme.colors.bodyHighlight};
   font-size: 3.2rem;
   margin: 2.2rem 3rem;
+  font-weight: 500;
 `;
 
 const CancelButton = styled(Button)`
-  font-size: 1.8rem;
-  padding: 1.6rem 2.2rem;
+  font-family: ${(props) => props.theme.font.main};
+  font-size: 2.2rem;
+  font-weight: bold;
+  padding: 1.6rem 2.4rem;
   position: absolute;
   top: 8px;
   left: 80%;
-  border-radius: 50%;
+  border-radius: 20px;
+  color: ${(props) => props.theme.colors.headingSecondary};
 
   :hover {
-    background-color: #ff8400;
-    color: white;
+    color: ${(props) => props.theme.colors.headingPrimary};
+    background-color: ${(props) => props.theme.colors.highlightBackground};
   }
 `;
 

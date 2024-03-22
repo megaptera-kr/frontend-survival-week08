@@ -9,8 +9,10 @@ type CartProps = {
 };
 
 const Wrapper = styled.section`
-  background-color: white;
-  padding-top: 5.2rem;
+  background-color: ${(props) => props.theme.colors.cartBackground};
+  font-family: ${(props) => props.theme.font.main};
+  color: ${(props) => props.theme.colors.bodyPrimary};
+  padding: 2.8rem 1.2rem;
 `;
 
 export default function Cart({ orderType }: CartProps) {

@@ -5,7 +5,7 @@ import OrderItem from './OrderItem';
 import MenuItemModel from '../../models/MenuItemModel';
 
 const Wrapper = styled.div`
-  padding: 30px 20px;
+  padding: 32px 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;

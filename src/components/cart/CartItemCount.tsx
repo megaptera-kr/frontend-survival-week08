@@ -3,44 +3,42 @@ import styled from 'styled-components';
 import useCartStore from '../../hooks/useCartStore';
 
 import Img from '../common/Image';
-import Span from '../common/Span';
+import Text from '../common/Text';
 
 const Wrapper = styled.div`
   flex-basis: 50%;
-  background-color: #f4f4f4;
-  padding: 2.4rem 1.2rem;
-  color: black;
+  display: flex;
   align-items: center;
   gap: 1.6rem;
-  display: flex;
-  font-family: pretendard-regular;
 `;
 
 const ShoppingCartImg = styled(Img)`
-  width: 4.8rem;
+  width: 48px;
+  margin-bottom: px;
   margin-left: 1.8rem;
 `;
 
-const Title = styled(Span)`
-  font-size: 3.4rem;
+const Title = styled(Text)`
+  font-size: 2.8rem;
+  font-weight: bold;
 `;
 
-const TotalCount = styled(Span)`
+const TotalCount = styled(Text)`
   font-size: 2.8rem;
   font-weight: bold;
   padding: 1rem 2.8rem;
-  background-color: #ff8400;
+  background-color: ${(props) => props.theme.colors.bodyHighlight};
+  color: ${(props) => props.theme.colors.headingPrimary};
   border-radius: 3.2rem;
-  color: white;
 `;
 
-const OrderType = styled(Span)`
+const OrderType = styled(Text)`
   font-size: 2.8rem;
   font-weight: bold;
-  background-color: #ff8400;
+  background-color: ${(props) => props.theme.colors.bodyHighlight};
+  color: ${(props) => props.theme.colors.headingPrimary};
   border-radius: 3.2rem;
   padding: 1rem 2.8rem;
-  color: white;
 `;
 
 type CartItemCountProps = {

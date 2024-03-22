@@ -5,8 +5,8 @@ import OrderKindButton from './OrderKindButton';
 const OrderKindButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  gap: 1em;
+  justify-content: center;
+  gap: 2rem;
 `;
 
 export default function OrderKindButtons() {

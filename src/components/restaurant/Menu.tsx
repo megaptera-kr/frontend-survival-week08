@@ -1,25 +1,28 @@
 import styled from 'styled-components';
-import MenuItemModel from '../../models/MenuItemModel';
+
 import MenuItem from './MenuItem';
+
+import MenuItemModel from '../../models/MenuItemModel';
 import RestaurantModel from '../../models/RestaurantModel';
+
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 3.2rem;
+`;
 
 type MenuProps = {
   menu: MenuItemModel[];
   restaurant: RestaurantModel;
 };
 
-const MenuBox = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 3.2rem;
-`;
-
 export default function Menu({ menu, restaurant }: MenuProps) {
   return (
-    <MenuBox>
+    <Wrapper>
       {menu.map((item: MenuItemModel) => (
         <MenuItem key={item.id} menuItem={item} restaurant={restaurant} />
       ))}
-    </MenuBox>
+    </Wrapper>
   );
 }

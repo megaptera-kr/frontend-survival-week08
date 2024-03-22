@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { WordH2 } from '../common/Word';
+import Text from '../common/Text';
 
 const TotalInfo = styled.div`
   display: flex;
@@ -9,20 +9,18 @@ const TotalInfo = styled.div`
   border-bottom: solid 1px gray;
 `;
 
-const TotalPriceWord = styled(WordH2)`
-  font-family: 'normal';
-  font-weight: 700;
-  color: black;
-  font-size: 2.8rem;
+const TotalPriceWord = styled(Text)`
+  color: ${(props) => props.theme.colors.bodyPrimary};
+  font-weight: bold;
+  font-size: 3.2rem;
   text-align: start;
   margin: 40px 0;
   padding-left: 20px;
 `;
 
-const TotalPrice = styled(WordH2)`
-  font-family: 'normal';
-  font-weight: 700;
-  color: #ff8400;
+const TotalPrice = styled(Text)`
+  color: ${(props) => props.theme.colors.bodyHighlight};
+  font-weight: bold;
   font-size: 4.8rem;
   text-align: start;
   margin: 40px 0;
@@ -38,8 +36,8 @@ export default function OrderCompleteButtom({
 }: OrderCompleteButtomProps) {
   return (
     <TotalInfo>
-      <TotalPriceWord text='총 가격' />
-      <TotalPrice text={`${formattedTotalPrice}원`} />
+      <TotalPriceWord>총 가격</TotalPriceWord>
+      <TotalPrice>{`${formattedTotalPrice}원`}</TotalPrice>
     </TotalInfo>
   );
 }

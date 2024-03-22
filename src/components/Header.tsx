@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router';
+
 import styled, { css } from 'styled-components';
 
 import Image from './common/Image';
 import Button from './common/Button';
-import { useNavigate } from 'react-router';
+import Title from './common/Title';
 
 const Wrapper = styled.header`
   background-color: transparent;
@@ -26,34 +28,28 @@ const SubWrapper = styled.div`
   align-items: center;
 `;
 
-const Title = styled.h1`
-  font-size: 4rem;
-  color: ${(props) => props.theme.colors.headingSecondary};
-  user-select: none;
-`;
-
 const ButtonWrapper = styled.div`
-  background-color: #ffa454;
-  border-radius: 2em;
-  padding: 0.3em 0.3em;
+  background-color: ${(props) => props.theme.colors.toggleBackground};
+  border-radius: 2.4rem;
+  padding: 0.6rem 0.6rem;
 `;
 
 const ThemeToggleButton = styled(Button)`
-  padding: 0.6em 1.6rem;
-  border-radius: 2em;
-  margin: 0.1em 0.1em;
-  font-weight: 500;
+  padding: 1.2rem 1.8rem;
+  border-radius: 20px;
+  font-family: ${(props) => props.theme.font.main};
+  font-size: 1.6rem;
+  color: white;
 
   ${(props) =>
     props.active
       ? css`
-          background-color: white;
-          color: black;
+          background-color: ${props.theme.colors.toggleActiveBackground};
+          color: ${props.theme.colors.toggleActiveFontColor};
         `
       : css`
           background-color: transparent;
-          color: white;
-        `}
+        `};
 `;
 
 type HeaderProps = {
@@ -72,20 +68,15 @@ export default function Header({ isDarkMode, setIsDarkMode }: HeaderProps) {
       <SubWrapper>
         <Title>메가테라 푸드코트 키오스크</Title>
         <ButtonWrapper>
-          <ThemeToggleButton
-            type='button'
-            active={!isDarkMode}
-            onClick={setIsDarkMode}
-          >
-            밝게
-          </ThemeToggleButton>
-          <ThemeToggleButton
-            type='button'
-            active={!!isDarkMode}
-            onClick={setIsDarkMode}
-          >
-            어둡게
-          </ThemeToggleButton>
+          {['밝게', '어둡게'].map((word: string) => (
+            <ThemeToggleButton
+              key={word}
+              active={word === '밝게' ? !isDarkMode : !!isDarkMode}
+              onClick={setIsDarkMode}
+            >
+              {word}
+            </ThemeToggleButton>
+          ))}
         </ButtonWrapper>
       </SubWrapper>
     </Wrapper>

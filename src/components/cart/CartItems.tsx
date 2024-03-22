@@ -7,7 +7,7 @@ import CartItem from './CartItem';
 import CartItemModel from '../../models/CartItemModel';
 
 const Wrapper = styled.section`
-  background-color: #f4f4f4;
+  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(10px, auto);

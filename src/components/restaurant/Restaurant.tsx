@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { WordH2 } from '../common/Word';
 import Menu from './Menu';
+import Title from '../common/Title';
 
 import RestaurantModel from '../../models/RestaurantModel';
 
@@ -10,7 +10,6 @@ type RestaurantProps = {
 };
 
 const Wrapper = styled.article`
-  font-family: 'normal';
   padding-top: 6.2rem;
   padding-left: 3.2rem;
   padding-right: 2.8rem;
@@ -19,19 +18,20 @@ const Wrapper = styled.article`
   align-items: start;
 `;
 
-const RestaurantTitle = styled(WordH2)`
+const RestaurantTitle = styled(Title)`
   font-size: 5.2rem;
   font-weight: bold;
-  color: black;
   padding-top: 0.2rem;
   padding-bottom: 3.2rem;
+  color: ${(props) => props.theme.colors.bodyPrimary};
+  font-family: ${(props) => props.theme.font.main};
 `;
 
 export default function Restaurant({ restaurant }: RestaurantProps) {
   const { name, menu } = restaurant;
   return (
     <Wrapper>
-      <RestaurantTitle text={name} />
+      <RestaurantTitle>{name}</RestaurantTitle>
       <Menu menu={menu} restaurant={restaurant} />
     </Wrapper>
   );

@@ -8,27 +8,28 @@ import useCreateOrder from '../../hooks/useCreateOrder';
 import Button from '../common/Button';
 
 const Wrapper = styled.div`
-  background-color: #f4f4f4;
-  padding: 3.2rem 3.2rem;
+  background-color: ${(props) => props.theme.colors.cartBackground};
+  padding: 20px 20px 40px 20px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 0 10px;
+  gap: 10px;
 `;
 
 const Cancel = styled(Button)`
-  flex-grow: 1;
-  background-color: #44272b;
+  flex-basis: 50%;
+  background-color: ${(props) => props.theme.colors.buttonSecondary};
+  font-family: ${(props) => props.theme.font.main};
   font-size: 3.2rem;
-  color: white;
   padding: 3.2rem 0;
   border-radius: 60px;
 `;
 
 const Order = styled(Button)`
-  background-color: #ff8400;
-  flex-grow: 1;
+  flex-basis: 50%;
+  background-color: ${(props) => props.theme.colors.highlightBackground};
+  font-family: ${(props) => props.theme.font.main};
   font-size: 3.2rem;
-  color: white;
   padding: 3.2rem 0;
   border-radius: 60px;
 `;

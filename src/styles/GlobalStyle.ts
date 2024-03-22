@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
-import Img from '../components/common/Image';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -13,10 +12,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-    font-family: 'pretendard-regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: 'pretendard400';
     font-weight: 400;
-    font-style: normal;
+    src: url(pre/Pretendard-Regular.woff) format('woff');
   }
 
   html {
@@ -34,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: yg-jalnan;
+    font-family: pretendard400;
     font-size: 1.6rem;
     color: white;
   }
@@ -48,6 +46,10 @@ const GlobalStyle = createGlobalStyle`
     h1, h2, h3 {
       word-break: keep-all;
     }
+  }
+
+  h2 {
+    word-break: keep-all;
   }
 `;
 

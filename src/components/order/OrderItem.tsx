@@ -1,17 +1,17 @@
 import styled from 'styled-components';
+
 import MenuItemModel from '../../models/MenuItemModel';
 
 const Wrapper = styled.div`
-  font-family: pretendard-regular;
-  color: black;
+  color: ${(props) => props.theme.colors.bodyPrimary};
   font-size: 3.2rem;
+  line-height: 48px;
   display: flex;
   align-items: center;
 `;
 
 const DotLine = styled.div`
-  border-top: dotted 2px black;
-  color: black;
+  border-top: dotted 2px ${(props) => props.theme.colors.bodyPrimary};
   flex-grow: 1;
   margin: 12px 24px;
 `;

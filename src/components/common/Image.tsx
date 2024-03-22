@@ -11,7 +11,6 @@ const Img = styled.img.attrs<ImgProps>((props) => ({
 }))<ImgProps>`
   src: ${(props: ImgProps) => props.src};
   alt: ${(props: ImgProps) => props.alt};
-  cursor: pointer;
 `;
 
 export default Img;

@@ -1,4 +1,5 @@
 const defaultTheme = {
+  theme: 'defaultThem',
   fonts: {
     fontFamily: 'yg-jalnan',
   },
@@ -22,6 +23,9 @@ const defaultTheme = {
     itemBgBorder: '#F4F4F4',
     itemHoverBg: '#FFF1DC',
     itemHoverBorder: '#FF8400',
+  },
+  input: {
+    border: '#FFF',
   },
 };
 

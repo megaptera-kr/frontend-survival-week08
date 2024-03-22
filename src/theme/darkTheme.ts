@@ -1,6 +1,7 @@
 import Theme from './Theme';
 
 const darkTheme : Theme = {
+  themeChk: 'darkThem',
   fonts: {
     fontFamily: 'yg-jalnan',
   },
@@ -25,6 +26,9 @@ const darkTheme : Theme = {
     itemBgBorder: '#1E1E1E',
     itemHoverBg: '#1E1E1E',
     itemHoverBorder: '#FF8400',
+  },
+  input: {
+    border: '#FF8400',
   },
 };
 

@@ -28,6 +28,8 @@ describe('routes', () => {
 
       await waitFor(() => {
         screen.getByText(/메가반점/);
+        screen.getByText(/짬뽕/);
+        screen.getByPlaceholderText(/식당이름을 입력해주세요./);
       });
     });
   });

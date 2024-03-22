@@ -2,8 +2,8 @@ import FilterableRestaurants from '../components/restaurants/FilterableRestauran
 
 export default function OrderPage() {
   return (
-    <div>
+    <article>
       <FilterableRestaurants />
-    </div>
+    </article>
   );
 }

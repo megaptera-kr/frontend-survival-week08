@@ -2,6 +2,7 @@
 import React, { ReactNode } from 'react';
 
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+
 import useTheme from '../hooks/useTheme';
 
 import defaultTheme from '../theme/defaultTheme';
@@ -18,7 +19,7 @@ const defaultValue = {
 
 export const ThemeContext = React.createContext(defaultValue);
 
-function ThemProvider({ children }: ThemProviderProps) {
+function ThemeProvider({ children }: ThemProviderProps) {
   const themeProps = useTheme();
   return (
     <ThemeContext.Provider value={themeProps}>
@@ -31,4 +32,4 @@ function ThemProvider({ children }: ThemProviderProps) {
   );
 }
 
-export default ThemProvider;
+export default ThemeProvider;

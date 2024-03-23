@@ -1,5 +1,5 @@
 const defaultTheme = {
-  theme: 'defaultThem',
+  themeChk: 'defaultThem',
   fonts: {
     fontFamily: 'yg-jalnan',
   },

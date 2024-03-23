@@ -1,14 +1,9 @@
 /* eslint-disable import/prefer-default-export */
-type Item = {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-};
+import Food from '../types/Food';
 
 type Listener = () => void;
 
-let items: Item[] = [];
+let items: Food[] = [];
 
 let listeners: Listener[] = [];
 
@@ -31,7 +26,7 @@ export const CartStore = {
     return items;
   },
 
-  addItem(item: Item) {
+  addItem(item: Food) {
     items = [...items, item];
     publish();
   },

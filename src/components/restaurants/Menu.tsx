@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import MenuItem from './MenuItem';
 
 import Food from '../../types/Food';
+import { CartStore } from '../../stores/CartStore';
 
 const MenuWrapStyle = styled.ul`
   display: grid;
@@ -16,8 +17,8 @@ type MenuProps = {
 };
 
 export default function Menu({ menu }: MenuProps) {
-  const handleClickItem = () => {
-    // TODO : Store 연결
+  const handleClickItem = (food: Food) => {
+    CartStore.addItem(food);
   };
 
   if (!menu.length) {
@@ -28,7 +29,13 @@ export default function Menu({ menu }: MenuProps) {
     <MenuWrapStyle>
       {menu.map((food, idx) => {
         const key = `${food.name}_${idx}`;
-        return <MenuItem key={key} food={food} onClickItem={handleClickItem} />;
+        return (
+          <MenuItem
+            key={key}
+            food={food}
+            onClickItem={() => handleClickItem(food)}
+          />
+        );
       })}
     </MenuWrapStyle>
   );

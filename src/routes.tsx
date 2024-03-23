@@ -1,8 +1,8 @@
 import Layout from './components/Layout';
 
 import IntroPage from './pages/IntroPage';
-import OrderCompletePage from './pages/OrderCompletePage';
 import OrderPage from './pages/OrderPage';
+import OrderCompletePage from './pages/OrderCompletePage';
 
 const routes = [
   {

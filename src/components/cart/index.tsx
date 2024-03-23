@@ -38,9 +38,9 @@ export default function Cart() {
     if (!items.length) {
       return;
     }
-    const orderId = await createOrder(items);
+    const id = await createOrder(items);
 
-    navigate(`/order/complete/${orderId}`, { replace: true });
+    navigate(`/order/complete?orderId=${id}`, { replace: true });
 
     CartStore.resetAllItems();
   };

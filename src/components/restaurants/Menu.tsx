@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 import MenuItem from './MenuItem';
 
-import Food from '../../types/Food';
 import { CartStore } from '../../stores/CartStore';
 
-const MenuWrapStyle = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+import Food from '../../types/Food';
+
+import ItemWrapStyle from '../../styles/ItemWrapStyle';
+
+const MenuItemWrapStyle = styled(ItemWrapStyle)`
   gap: 0 2.5rem;
   padding-bottom: 8rem;
 `;
@@ -26,7 +27,7 @@ export default function Menu({ menu }: MenuProps) {
   }
 
   return (
-    <MenuWrapStyle>
+    <MenuItemWrapStyle>
       {menu.map((food, idx) => {
         const key = `${food.name}_${idx}`;
         return (
@@ -37,6 +38,6 @@ export default function Menu({ menu }: MenuProps) {
           />
         );
       })}
-    </MenuWrapStyle>
+    </MenuItemWrapStyle>
   );
 }

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 type ButtonProps = {
   type?: 'button' | 'submit' | 'reset';
+  name?: string;
   active?: boolean;
   onClick?: () => void;
   isDarkMode?: boolean;
@@ -10,6 +11,7 @@ type ButtonProps = {
 
 const Button = styled.button.attrs<ButtonProps>((props) => ({
   type: props.type ?? 'button',
+  name: props.name,
 }))<ButtonProps>`
   border: none;
   background-color: transparent;

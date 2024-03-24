@@ -63,7 +63,7 @@ export default function OrderKindButton({
   };
 
   return (
-    <OrderKind onClick={handleClick} isDarkMode={isDarkMode}>
+    <OrderKind onClick={handleClick} isDarkMode={isDarkMode} name={`#${text}`}>
       <OrderKindImage src={src} alt={alt} />
       <OrderType>{text}</OrderType>
     </OrderKind>

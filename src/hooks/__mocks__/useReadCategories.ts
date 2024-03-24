@@ -1,7 +1,7 @@
 import fixtures from '../../../fixtures';
 
-const useFetchCategories = jest.fn(() => ({
+const useReadCategories = jest.fn(() => ({
   categories: fixtures.categories,
 }));
 
-export default useFetchCategories;
+export default useReadCategories;

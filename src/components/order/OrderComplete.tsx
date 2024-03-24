@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 import HorizontalLine from '../common/HorizontalLine';
+import OrderItems from './OrderItems';
 
 import ReceiptModel from '../../models/ReceiptModel';
-import { WordH2 } from '../common/Word';
-import OrderItems from './OrderItems';
 
 const Wrapper = styled.div`
   color: black;

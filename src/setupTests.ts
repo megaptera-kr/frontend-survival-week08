@@ -1,6 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import 'whatwg-fetch';
 import 'reflect-metadata';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'jest-styled-components';
 
 // window.matchMedia is not a function
 // https://jestjs.io/docs/29.4/manual-mocks

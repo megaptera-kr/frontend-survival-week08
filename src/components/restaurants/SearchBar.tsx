@@ -24,6 +24,7 @@ function SearchBar({
   return (
     <SearchBarStyle>
       <TextField
+        label="검색"
         placeholder="식당이름을 입력해주세요."
         text={filterText}
         setText={setFilterText}

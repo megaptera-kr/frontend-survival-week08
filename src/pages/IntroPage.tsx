@@ -11,11 +11,7 @@ const IntroPageWrapStyle = styled(PageCommonWrapStyle)`
 function IntroPage() {
   return (
     <IntroPageWrapStyle>
-      <BasicTitleStyle>
-        원하시는 주문을
-        <br />
-        터치해주세요.
-      </BasicTitleStyle>
+      <BasicTitleStyle>원하시는 주문을 터치해주세요</BasicTitleStyle>
       <OrderButtons />
     </IntroPageWrapStyle>
   );

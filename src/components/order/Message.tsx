@@ -37,11 +37,7 @@ export default function Message({ order }: MessageProps) {
       ) : (
         <>
           <img src="/images/complete.png" alt="완료 아이콘 이미지" />
-          <h2>
-            주문이
-            <br />
-            완료되었습니다.
-          </h2>
+          <h2>주문이 완료되었습니다!</h2>
           <p>{`주문번호 ${order.id}`}</p>
         </>
       )}

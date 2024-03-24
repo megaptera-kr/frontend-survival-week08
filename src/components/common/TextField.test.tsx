@@ -18,7 +18,12 @@ describe('TextField', () => {
 
   function renderTextField() {
     renderWithProviders(
-      <TextField placeholder={placeholder} text={text} setText={setText} />
+      <TextField
+        label="검색"
+        placeholder={placeholder}
+        text={text}
+        setText={setText}
+      />
     );
   }
 

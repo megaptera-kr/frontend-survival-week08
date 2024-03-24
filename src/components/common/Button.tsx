@@ -4,7 +4,9 @@ type ButtonStyleProps = {
   type?: 'rest' | 'button' | 'submit';
 };
 
-const ButtonStyle = styled.button`
+const ButtonStyle = styled.button.attrs<ButtonStyleProps>((props) => ({
+  type: props.type ?? 'button',
+}))`
   width: 49%;
   height: 10rem;
   border-radius: 5rem;
@@ -43,7 +45,7 @@ type ButtonProps = {
 
 function Button({ active, text, onClick }: ButtonProps) {
   return (
-    <ButtonStyle type="button" className={active} onClick={onClick}>
+    <ButtonStyle className={active} onClick={onClick}>
       {text}
     </ButtonStyle>
   );

@@ -3,7 +3,9 @@ import Restaurant from '../../types/Restaurant';
 
 import RestaurantItem from './RestaurantItem';
 
-const RestaurantsWrapStyle = styled.section`
+import PageCommonWrapStyle from '../../styles/PageCommonWrapStyle';
+
+const RestaurantsWrapStyle = styled(PageCommonWrapStyle)`
   padding: 0 5rem;
   border-radius: 0 8rem 0 0;
   background-color: ${(props) => props.theme.items.itemWrapBg};

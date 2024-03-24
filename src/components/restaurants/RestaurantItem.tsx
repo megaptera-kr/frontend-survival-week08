@@ -5,6 +5,7 @@ import Restaurant from '../../types/Restaurant';
 import Menu from './Menu';
 
 const RestaurantItemPropsWrapStyle = styled.div`
+  width: 100%;
   border-bottom: 1px solid ${(props) => props.theme.colors.borderSecondary};
 
   &:last-child {

@@ -31,6 +31,7 @@ const ButtonStyle = styled.button`
 
   &.fullPrimary {
     width: 100%;
+    background-color: #ff8400;
   }
 `;
 

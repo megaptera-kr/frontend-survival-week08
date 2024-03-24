@@ -35,10 +35,13 @@ describe('routes', () => {
   });
 
   context('when the current path is “/order/complete”', () => {
-    it('renders the order complete page', () => {
-      renderRouter('/order/complete');
+    it('renders the order complete page', async () => {
+      renderRouter('/order/complete?orderId="ID"');
 
-      screen.getByText('주문결과 페이지');
+      await waitFor(() => {
+        screen.getByText(/완료되었습니다./);
+        screen.getByText(/메인화면으로/);
+      });
     });
   });
 });

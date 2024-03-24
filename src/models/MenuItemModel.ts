@@ -46,10 +46,6 @@ class MenuItemModel {
   totalPriceFormat(): string {
     return !this.totalPrice ? '' : moneyformat(this.totalPrice);
   }
-
-  namePriceForamt(): string {
-    return `${this.name} ${this.priceFormat()}원`;
-  }
 }
 
 export default MenuItemModel;

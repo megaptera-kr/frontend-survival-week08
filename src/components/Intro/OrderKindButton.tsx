@@ -6,7 +6,7 @@ import styled, { css } from 'styled-components';
 
 import Button from '../common/Button';
 import Image from '../common/Image';
-import { WordH2 } from '../common/Word';
+import Text from '../common/Text';
 
 const OrderKind = styled(Button)`
   background-color: ${(props) => props.theme.colors.subBackground};
@@ -36,9 +36,11 @@ const OrderKindImage = styled(Image)`
   height: 200px;
 `;
 
-const OrderKindWord = styled(WordH2)`
-  margin-top: 3rem;
+const OrderType = styled(Text)`
+  font-family: ${(props) => props.theme.font.brand};
+  font-size: 6.2rem;
   color: ${(props) => props.theme.colors.bodyPrimary};
+  margin-top: 3rem;
 `;
 
 type OrderKindButtonProps = {
@@ -63,7 +65,7 @@ export default function OrderKindButton({
   return (
     <OrderKind onClick={handleClick} isDarkMode={isDarkMode}>
       <OrderKindImage src={src} alt={alt} />
-      <OrderKindWord text={text} />
+      <OrderType>{text}</OrderType>
     </OrderKind>
   );
 }

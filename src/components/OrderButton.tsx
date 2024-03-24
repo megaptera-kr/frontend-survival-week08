@@ -6,7 +6,7 @@ const ButtonStyle = styled.button`
   justify-content: center;
   align-items: center;
   width: 45%;
-  height: 40rem;
+  height: 59rem;
   margin-inline: 2.5%;
   background-color: ${(props) => props.theme.colors.orderBtnBg};
   border: 1px solid ${(props) => props.theme.colors.orderBtnBg};
@@ -21,12 +21,12 @@ const ButtonStyle = styled.button`
   h4 {
     color: ${(props) => props.theme.colors.textPrimary};
     font-family: ${(props) => props.theme.fonts.fontFamily};
-    font-size: 3.8rem;
-    margin-top: 2rem;
+    font-size: 4.8rem;
+    margin-top: 6rem;
   }
 
   img {
-    max-width: 50%;
+    max-width: 20rem;
   }
 `;
 

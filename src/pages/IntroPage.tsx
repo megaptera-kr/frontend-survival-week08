@@ -2,13 +2,10 @@ import styled from 'styled-components';
 import OrderButtons from '../components/OrderButtons';
 
 import BasicTitleStyle from '../styles/BasicTitleStyle';
+import PageCommonWrapStyle from '../styles/PageCommonWrapStyle';
 
-const IntroPageWrapStyle = styled.article`
-  height: calc(100vh - 16rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+const IntroPageWrapStyle = styled(PageCommonWrapStyle)`
+  background-color: transparent;
 `;
 
 function IntroPage() {

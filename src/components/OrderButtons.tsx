@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router';
 import OrderButton from './OrderButton';
 
 const OrderButtonsWrapStyle = styled.div`
-  width: 70%;
-  margin: 3rem auto 0;
+  width: 100%;
+  margin: 15.2rem auto 0;
 `;
 
 export default function OrderButtons() {

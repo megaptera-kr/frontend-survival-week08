@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const BasicTitleStyle = styled.h2`
-  font-size: 8rem;
+  font-size: 11rem;
   color: #fff;
   text-align: center;
   font-family: 'yg-jalnan';

@@ -59,7 +59,10 @@ export default function MenuItem({ menuItem, restaurant }: MenuItemProps) {
   };
 
   return (
-    <MenuItemBox onClick={handleClick}>
+    <MenuItemBox
+      onClick={handleClick}
+      name={`#${restaurant.name}-${menuItem.name}`}
+    >
       <MenuItemImage src={menuItem.image} alt='menu-item' />
       <MenuInfo>
         <MenuName>{menuItem.name}</MenuName>

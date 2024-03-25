@@ -1,4 +1,4 @@
-type Listener = () => void;
+export type Listener = () => void;
 
 class BaseStore<Snapshot> {
   protected listeners = new Set<Listener>();
@@ -19,6 +19,10 @@ class BaseStore<Snapshot> {
 
   getSnapshot() {
     return this.snapshot;
+  }
+
+  getListener() {
+    return this.listeners;
   }
 }
 

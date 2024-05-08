@@ -1,6 +1,7 @@
 import IntroPage from './pages/IntroPage';
 import Layout from './pages/Layout';
 import OrderPage from './pages/OrderPage';
+import ResultPage from './pages/ResultPage';
 
 const routes = ([
   {
@@ -14,10 +15,10 @@ const routes = ([
         path: '/order',
         element: <OrderPage />,
       },
-      // {
-      //   path: '/order/complete',
-      //   element: <ResultPage />,
-      // },
+      {
+        path: '/order/complete',
+        element: <ResultPage />,
+      },
     ],
   },
 ]);

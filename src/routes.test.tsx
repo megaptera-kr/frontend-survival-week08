@@ -40,4 +40,22 @@ describe('routes', () => {
       expect(placeholderText).toBeInTheDocument();
     });
   });
+
+  context('if route /order/complete?orderId={orderId}', () => {
+    beforeEach(() => {
+      renderRouter('/order/complete?orderId={orderId}');
+    });
+
+    it('renders ResultPage', () => {
+      const orderIdText = screen.getByText(/주문번호/);
+      const title = screen.getByText(/주문목록/);
+      const totalPriceText = screen.getByText(/총 가격/);
+      const btn = screen.getByText(/메인화면으로 돌아가기/);
+
+      expect(orderIdText).toBeInTheDocument();
+      expect(title).toBeInTheDocument();
+      expect(totalPriceText).toBeInTheDocument();
+      expect(btn).toBeInTheDocument();
+    });
+  });
 });

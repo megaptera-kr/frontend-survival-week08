@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import ReceiptHeader from './ReceiptHeader';
 import ReceiptList from './ReceiptList';
@@ -8,6 +9,12 @@ function Receipt() {
   const [searchParams] = useSearchParams();
   const orderId = searchParams.get('orderId') ?? '';
   const goToIntro = () => navigate('/');
+
+  useEffect(() => {
+    if (!orderId) {
+      navigate('/');
+    }
+  }, []);
   return (
     <div>
       <ReceiptHeader orderId={orderId} />

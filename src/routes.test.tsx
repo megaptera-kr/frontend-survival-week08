@@ -43,20 +43,34 @@ describe('routes', () => {
 
   // TODO: orderId 없을 때 테스트 추가 []
   context('if route /order/complete', () => {
-    beforeEach(() => {
-      renderRouter('/order/complete?orderId={orderId}');
+    context('if orderId is valid', () => {
+      beforeEach(() => {
+        renderRouter('/order/complete?orderId={orderId}');
+      });
+
+      it('it renders ResultPage', async () => {
+        const orderIdText = screen.getByText(/주문번호/);
+        const btn = screen.getByText(/메인화면으로 돌아가기/);
+        const title = await screen.findByText(/주문목록/);
+        const totalPriceText = await screen.findByText(/총 가격/);
+
+        expect(orderIdText).toBeInTheDocument();
+        expect(title).toBeInTheDocument();
+        expect(totalPriceText).toBeInTheDocument();
+        expect(btn).toBeInTheDocument();
+      });
     });
 
-    it('it renders ResultPage', async () => {
-      const orderIdText = screen.getByText(/주문번호/);
-      const btn = screen.getByText(/메인화면으로 돌아가기/);
-      const title = await screen.findByText(/주문목록/);
-      const totalPriceText = await screen.findByText(/총 가격/);
+    context('if orderId is undefined', () => {
+      beforeEach(() => {
+        renderRouter('/order/complete');
+      });
 
-      expect(orderIdText).toBeInTheDocument();
-      expect(title).toBeInTheDocument();
-      expect(totalPriceText).toBeInTheDocument();
-      expect(btn).toBeInTheDocument();
+      it('it renders IntroPage', () => {
+        const paragraph = screen.getByText(/원하시는 주문을/);
+
+        expect(paragraph).toBeInTheDocument();
+      });
     });
   });
 });

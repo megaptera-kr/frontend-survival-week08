@@ -41,7 +41,6 @@ describe('routes', () => {
     });
   });
 
-  // TODO: orderId 없을 때 테스트 추가 []
   context('if route /order/complete', () => {
     context('if orderId is valid', () => {
       beforeEach(() => {

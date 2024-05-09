@@ -1,8 +1,9 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import Header from '.';
+import renderWithThemeProvider from '../../renderWithThemeProvider';
 
 function renderHeader() {
-  render(<Header />);
+  renderWithThemeProvider(<Header />);
 }
 
 describe('Header', () => {

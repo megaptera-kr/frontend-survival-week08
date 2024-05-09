@@ -1,10 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { RouterProvider, createMemoryRouter } from 'react-router';
+import renderWithThemeProvider from './renderWithThemeProvider';
 import routes from './routes';
 
 function renderRouter(path = '/') {
   const router = createMemoryRouter(routes, { initialEntries: [path] });
-  render(<RouterProvider router={router} />);
+  renderWithThemeProvider(<RouterProvider router={router} />);
 }
 
 const context = describe;

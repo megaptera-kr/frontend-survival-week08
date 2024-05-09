@@ -1,14 +1,10 @@
-import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router';
+import { screen } from '@testing-library/react';
 import Order from '.';
+import renderWithMemoryRouter from '../../renderWithMemoryRouter';
 
 describe('Order', () => {
   beforeEach(() => {
-    render((
-      <MemoryRouter initialEntries={['/order']}>
-        <Order />
-      </MemoryRouter>
-    ));
+    renderWithMemoryRouter(<Order />, { path: '/order' });
   });
 
   it('renders FilterableRestaurantsTable', async () => {

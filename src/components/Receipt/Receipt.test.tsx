@@ -1,16 +1,15 @@
-import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router';
+import { screen } from '@testing-library/react';
 import Receipt from '.';
 import fixtures from '../../../fixtures';
+import renderWithMemoryRouter from '../../renderWithMemoryRouter';
 
 const { order } = fixtures;
 
 function renderReceipt() {
-  render((
-    <MemoryRouter initialEntries={[`/order/complete?orderId=${order.id}`]}>
-      <Receipt />
-    </MemoryRouter>
-  ));
+  renderWithMemoryRouter(
+    <Receipt />,
+    { path: `/order/complete?orderId=${order.id}` },
+  );
 }
 
 describe('Receipt', () => {

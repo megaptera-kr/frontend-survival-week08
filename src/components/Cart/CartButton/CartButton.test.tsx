@@ -1,6 +1,6 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router';
+import { fireEvent, screen } from '@testing-library/react';
 import CartButton from '.';
+import renderWithMemoryRouter from '../../../renderWithMemoryRouter';
 
 const goToIntro = jest.fn();
 const goToResult = jest.fn();
@@ -10,11 +10,10 @@ describe('CartButton', () => {
   beforeEach(() => {
     jest.clearAllMocks();
 
-    render((
-      <MemoryRouter initialEntries={['/order']}>
-        <CartButton goToIntro={goToIntro} goToResult={goToResult} />
-      </MemoryRouter>
-    ));
+    renderWithMemoryRouter(
+      <CartButton goToIntro={goToIntro} goToResult={goToResult} />,
+      { path: '/order' },
+    );
   });
 
   it('renders 주문하기, 취소 button', () => {

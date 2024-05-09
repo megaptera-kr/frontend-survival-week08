@@ -1,6 +1,6 @@
-import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router';
+import { screen } from '@testing-library/react';
 import Cart from '.';
+import renderWithMemoryRouter from '../../renderWithMemoryRouter';
 import Food from '../../types/food';
 
 const state:{menu:Food[]} = {
@@ -17,11 +17,7 @@ const clearCart = jest.fn();
 jest.mock('../../hooks/useCartStore', () => () => [state, { clearCart }]);
 
 function renderCart() {
-  render((
-    <MemoryRouter initialEntries={['/order']}>
-      <Cart />
-    </MemoryRouter>
-  ));
+  renderWithMemoryRouter(<Cart />, { path: '/order' });
 }
 
 const context = describe;
@@ -58,11 +54,7 @@ describe('Cart', () => {
 
   context('when it unmounted', () => {
     beforeEach(() => {
-      const { unmount } = render((
-        <MemoryRouter initialEntries={['/order']}>
-          <Cart />
-        </MemoryRouter>
-      ));
+      const { unmount } = renderWithMemoryRouter(<Cart />, { path: '/order' });
       unmount();
     });
 

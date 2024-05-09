@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%;
     font-family: 'Pretendard';
+    font-weight: ${(props) => props.theme.fontWeight.semi_bold};
   }
 
   body {
@@ -28,6 +29,11 @@ const GlobalStyle = createGlobalStyle`
       ${props.theme.colors.bg_gradient_start},
       ${props.theme.colors.bg_gradient_end}
     );`}
+  }
+
+  button {
+    border: none;
+    cursor:pointer;
   }
 
   :lang(ko) {

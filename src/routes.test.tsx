@@ -14,7 +14,7 @@ describe('routes', () => {
       renderRouter();
     });
 
-    it('renders IntroPage', () => {
+    it('it renders IntroPage', () => {
       const paragraph = screen.getByText(/원하시는 주문을/);
       const hereBtn = screen.getByText(/매장 주문/);
       const toGoBtn = screen.getByText(/전체 포장/);
@@ -30,7 +30,7 @@ describe('routes', () => {
       renderRouter('/order');
     });
 
-    it('renders OrderPage', () => {
+    it('it renders OrderPage', () => {
       const cartTitle = screen.getByText(/주문내역/);
       const allCategoryBtn = screen.getByText(/전체/);
       const placeholderText = screen.getByPlaceholderText(/식당이름을 입력해주세요/);
@@ -41,16 +41,17 @@ describe('routes', () => {
     });
   });
 
-  context('if route /order/complete?orderId={orderId}', () => {
+  // TODO: orderId 없을 때 테스트 추가 []
+  context('if route /order/complete', () => {
     beforeEach(() => {
       renderRouter('/order/complete?orderId={orderId}');
     });
 
-    it('renders ResultPage', () => {
+    it('it renders ResultPage', async () => {
       const orderIdText = screen.getByText(/주문번호/);
-      const title = screen.getByText(/주문목록/);
-      const totalPriceText = screen.getByText(/총 가격/);
       const btn = screen.getByText(/메인화면으로 돌아가기/);
+      const title = await screen.findByText(/주문목록/);
+      const totalPriceText = await screen.findByText(/총 가격/);
 
       expect(orderIdText).toBeInTheDocument();
       expect(title).toBeInTheDocument();

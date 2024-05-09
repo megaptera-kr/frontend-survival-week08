@@ -1,3 +1,5 @@
+import useCartStore from '../../../../hooks/useCartStore';
+import Food from '../../../../types/food';
 import Restaurant from '../../../../types/restaurant';
 
 type RestaurantRowProps = {
@@ -5,13 +7,17 @@ type RestaurantRowProps = {
 }
 
 function RestaurantRow({ restaurant }:RestaurantRowProps) {
+  const [, cartStore] = useCartStore();
+  const handleClick = (food:Food) => () => {
+    cartStore.addCart(food);
+  };
   return (
     <tr>
       <td>{restaurant.name}</td>
       <td>
         <ul>
           {restaurant.menu.map((food) => (
-            <li key={food.id}>
+            <li role="menuitem" key={food.id} onClick={handleClick(food)}>
               <img src={food.image} alt={food.image} />
               <p>{food.name}</p>
               <p>{food.price}</p>

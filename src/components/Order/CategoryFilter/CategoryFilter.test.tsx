@@ -1,12 +1,19 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import CategoryFilter from '.';
 
 const context = describe;
 describe('CategoryFilter', () => {
   const categories = ['전체', '한식'];
+  const selectedCategory = '전체';
+  const setSelectedCategory = jest.fn();
 
   beforeEach(() => {
-    render(<CategoryFilter categories={categories} />);
+    jest.clearAllMocks();
+    render(<CategoryFilter
+      categories={categories}
+      selectedCategory={selectedCategory}
+      setSelectedCategory={setSelectedCategory}
+    />);
   });
 
   context('it received categories prop', () => {
@@ -15,6 +22,15 @@ describe('CategoryFilter', () => {
       btns.forEach((btn, index) => {
         expect(btn).toHaveTextContent(categories[index]);
       });
+    });
+  });
+
+  context('if user click button', () => {
+    it('setSelectedCategory func will be called 1 time', () => {
+      const firstButton = screen.getAllByRole('button')[0];
+      fireEvent.click(firstButton);
+
+      expect(setSelectedCategory).toHaveBeenCalledTimes(1);
     });
   });
 });

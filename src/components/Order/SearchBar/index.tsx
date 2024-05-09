@@ -4,13 +4,32 @@ import TextField from '../TextField';
 
 type SearchBarProps = {
   categories:Category[]
+  filterText:string;
+  setFilterText:(text:string) => void
+  selectedCategory:Category
+  setSelectedCategory:(category:Category) => void
 }
 
-function SearchBar({ categories }:SearchBarProps) {
+function SearchBar({
+  categories,
+  filterText,
+  setFilterText,
+  selectedCategory,
+  setSelectedCategory,
+}:SearchBarProps) {
   return (
     <div>
-      <TextField label="search" placeholder="식당이름을 입력해주세요" />
-      <CategoryFilter categories={categories} />
+      <TextField
+        label="search"
+        placeholder="식당이름을 입력해주세요"
+        filterText={filterText}
+        setFilterText={setFilterText}
+      />
+      <CategoryFilter
+        categories={categories}
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+      />
     </div>
   );
 }

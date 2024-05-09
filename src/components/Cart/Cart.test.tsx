@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 import Cart from '.';
 import Food from '../../types/food';
 
@@ -14,7 +15,11 @@ const state:{menu:Food[]} = {
 jest.mock('../../hooks/useCartStore', () => () => [state]);
 
 function renderCart() {
-  render(<Cart />);
+  render((
+    <MemoryRouter initialEntries={['/order']}>
+      <Cart />
+    </MemoryRouter>
+  ));
 }
 
 const context = describe;

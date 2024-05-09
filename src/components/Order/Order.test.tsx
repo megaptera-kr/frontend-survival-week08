@@ -1,9 +1,14 @@
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 import Order from '.';
 
 describe('Order', () => {
   beforeEach(() => {
-    render(<Order />);
+    render((
+      <MemoryRouter initialEntries={['/order']}>
+        <Order />
+      </MemoryRouter>
+    ));
   });
 
   it('renders FilterableRestaurantsTable', async () => {

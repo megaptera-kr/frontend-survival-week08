@@ -1,17 +1,17 @@
 import useCartStore from '../../hooks/useCartStore';
+import CartButton from './CartButton';
 import CartHeader from './CartHeader';
 import CartList from './CartList';
-import OrderButton from './OrderButton';
 
 function Cart() {
   const [{ menu }] = useCartStore();
   return (
     <div>
-      <CartHeader />
+      <CartHeader menu={menu} />
 
       <CartList menu={menu} />
 
-      <OrderButton />
+      <CartButton />
     </div>
   );
 }

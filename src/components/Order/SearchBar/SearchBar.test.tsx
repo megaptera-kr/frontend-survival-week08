@@ -4,8 +4,19 @@ import SearchBar from '.';
 const context = describe;
 describe('SearchBar', () => {
   const categories = ['전체', '한식'];
+  const filterText = '';
+  const setFilterText = jest.fn();
+  const selectedCategory = '전체';
+  const setSelectedCategory = jest.fn();
+
   beforeEach(() => {
-    render(<SearchBar categories={categories} />);
+    render(<SearchBar
+      categories={categories}
+      filterText={filterText}
+      setFilterText={setFilterText}
+      selectedCategory={selectedCategory}
+      setSelectedCategory={setSelectedCategory}
+    />);
   });
 
   it('renders TextField', () => {

@@ -12,7 +12,9 @@ const state:{menu:Food[]} = {
   ],
 };
 
-jest.mock('../../hooks/useCartStore', () => () => [state]);
+const clearCart = jest.fn();
+
+jest.mock('../../hooks/useCartStore', () => () => [state, { clearCart }]);
 
 function renderCart() {
   render((
@@ -51,6 +53,21 @@ describe('Cart', () => {
       menuList.forEach((food, index) => {
         expect(food).toHaveTextContent(state.menu[index].name);
       });
+    });
+  });
+
+  context('when it unmounted', () => {
+    beforeEach(() => {
+      const { unmount } = render((
+        <MemoryRouter initialEntries={['/order']}>
+          <Cart />
+        </MemoryRouter>
+      ));
+      unmount();
+    });
+
+    it('clearCart function will be called', () => {
+      expect(clearCart).toHaveBeenCalled();
     });
   });
 });

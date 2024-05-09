@@ -1,4 +1,5 @@
 import Food from '../../../types/food';
+import convertKRW from '../../../utils/convertKRW';
 import getTotalPrice from '../../../utils/getTotalPrice';
 
 type CartHeaderProps = {
@@ -6,6 +7,7 @@ type CartHeaderProps = {
 }
 
 function CartHeader({ menu }:CartHeaderProps) {
+  const totalPrice = getTotalPrice(menu);
   return (
     <header>
       <div>
@@ -20,7 +22,7 @@ function CartHeader({ menu }:CartHeaderProps) {
       <div>
         <span>
           총 결제 예상금액
-          <span>{getTotalPrice(menu)}</span>
+          <span>{convertKRW(totalPrice)}</span>
           원
         </span>
       </div>

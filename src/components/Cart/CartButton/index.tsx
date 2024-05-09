@@ -1,9 +1,9 @@
-import { useNavigate } from 'react-router';
+type CartButtonProps = {
+  goToIntro:() => void
+  goToResult:() => void
+}
 
-function CartButton() {
-  const navigate = useNavigate();
-  const goToIntro = () => navigate('/');
-  const goToResult = () => navigate('/order/complete');
+function CartButton({ goToIntro, goToResult }:CartButtonProps) {
   return (
     <div>
       <button type="button" onClick={goToIntro}>취소</button>

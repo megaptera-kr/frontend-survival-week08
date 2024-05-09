@@ -20,8 +20,8 @@ describe('CartHeader', () => {
 
   context('if it received menu', () => {
     it('it renders menu length and totalPrice', () => {
-      const menuLengthElem = screen.getByText(new RegExp(`${2}`));
-      const totalPriceElem = screen.getByText(new RegExp(`${14000}`));
+      const menuLengthElem = screen.getByText(/2/);
+      const totalPriceElem = screen.getByText(/14,000/);
 
       expect(menuLengthElem).toBeInTheDocument();
       expect(totalPriceElem).toBeInTheDocument();

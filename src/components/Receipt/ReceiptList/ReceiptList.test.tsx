@@ -1,8 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import ReceiptList from '.';
+import fixtures from '../../../../fixtures';
+
+const { order } = fixtures;
 
 function renderReceiptList() {
-  render(<ReceiptList />);
+  render(<ReceiptList orderId={order.id} />);
 }
 
 describe('ReceiptList', () => {
@@ -10,9 +13,9 @@ describe('ReceiptList', () => {
     renderReceiptList();
   });
 
-  it('renders 주문목록, 총 가격', () => {
-    const title = screen.getByText(/주문목록/);
-    const totalPriceText = screen.getByText(/총 가격/);
+  it('renders 주문목록, 총 가격', async () => {
+    const title = await screen.findByText(/주문목록/);
+    const totalPriceText = await screen.findByText(/총 가격/);
 
     expect(title).toBeInTheDocument();
     expect(totalPriceText).toBeInTheDocument();

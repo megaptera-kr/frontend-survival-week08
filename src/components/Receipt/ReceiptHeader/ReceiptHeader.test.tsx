@@ -1,8 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import ReceiptHeader from '.';
+import fixtures from '../../../../fixtures';
+
+const { order } = fixtures;
 
 function renderReceiptHeader() {
-  render(<ReceiptHeader />);
+  render(<ReceiptHeader orderId={order.id} />);
 }
 
 describe('ReceiptHeader', () => {

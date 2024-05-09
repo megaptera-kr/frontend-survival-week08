@@ -1,8 +1,16 @@
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 import Receipt from '.';
+import fixtures from '../../../fixtures';
+
+const { order } = fixtures;
 
 function renderReceipt() {
-  render(<Receipt />);
+  render((
+    <MemoryRouter initialEntries={[`/order/complete?orderId=${order.id}`]}>
+      <Receipt />
+    </MemoryRouter>
+  ));
 }
 
 describe('Receipt', () => {
@@ -10,19 +18,19 @@ describe('Receipt', () => {
     renderReceipt();
   });
 
-  it('renders ReceiptHeader', () => {
+  it('it renders ReceiptHeader', () => {
     const orderIdText = screen.getByText(/주문번호/);
 
     expect(orderIdText).toBeInTheDocument();
   });
-  it('renders ReceiptList', () => {
-    const title = screen.getByText(/주문목록/);
-    const totalPriceText = screen.getByText(/총 가격/);
+  it('it renders ReceiptList', async () => {
+    const title = await screen.findByText(/주문목록/);
+    const totalPriceText = await screen.findByText(/총 가격/);
 
     expect(title).toBeInTheDocument();
     expect(totalPriceText).toBeInTheDocument();
   });
-  it('renders ResetButton', () => {
+  it('it renders ResetButton', () => {
     const btn = screen.getByText(/메인화면으로 돌아가기/);
 
     expect(btn).toBeInTheDocument();

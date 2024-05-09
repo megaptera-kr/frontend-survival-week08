@@ -1,5 +1,6 @@
 import useCartStore from '../../../hooks/useCartStore';
 import Food from '../../../types/food';
+import convertKRW from '../../../utils/convertKRW';
 
 type CartListProps = {
   menu:Food[]
@@ -15,8 +16,7 @@ function CartList({ menu }:CartListProps) {
         <li key={food.id}>
           <p>{food.name}</p>
           <p>
-            {food.price}
-            원
+            {`${convertKRW(food.price)}원`}
           </p>
           <button type="button" onClick={handleClick(food.id)}>X</button>
         </li>

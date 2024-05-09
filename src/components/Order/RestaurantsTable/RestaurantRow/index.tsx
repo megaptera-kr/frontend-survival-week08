@@ -1,6 +1,7 @@
 import useCartStore from '../../../../hooks/useCartStore';
 import Food from '../../../../types/food';
 import Restaurant from '../../../../types/restaurant';
+import convertKRW from '../../../../utils/convertKRW';
 
 type RestaurantRowProps = {
   restaurant:Restaurant
@@ -20,7 +21,7 @@ function RestaurantRow({ restaurant }:RestaurantRowProps) {
             <li role="menuitem" key={food.id} onClick={handleClick(food)}>
               <img src={food.image} alt={food.image} />
               <p>{food.name}</p>
-              <p>{food.price}</p>
+              <p>{`${convertKRW(food.price)}원`}</p>
             </li>
           ))}
         </ul>

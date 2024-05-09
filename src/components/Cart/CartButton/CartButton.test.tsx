@@ -2,12 +2,8 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import CartButton from '.';
 
-const mockUsedNavigate = jest.fn();
-
-jest.mock('react-router', () => ({
-  ...(jest.requireActual('react-router')),
-  useNavigate: () => mockUsedNavigate,
-}));
+const goToIntro = jest.fn();
+const goToResult = jest.fn();
 
 const context = describe;
 describe('CartButton', () => {
@@ -16,7 +12,7 @@ describe('CartButton', () => {
 
     render((
       <MemoryRouter initialEntries={['/order']}>
-        <CartButton />
+        <CartButton goToIntro={goToIntro} goToResult={goToResult} />
       </MemoryRouter>
     ));
   });
@@ -30,11 +26,11 @@ describe('CartButton', () => {
   });
 
   context('if user click "취소" button', () => {
-    it('navigate function will be called with "/"', () => {
+    it('navigate function will be called', () => {
       const cancelBtn = screen.getByText(/취소/);
       fireEvent.click(cancelBtn);
 
-      expect(mockUsedNavigate).toHaveBeenCalledWith('/');
+      expect(goToIntro).toHaveBeenCalled();
     });
   });
 
@@ -43,7 +39,7 @@ describe('CartButton', () => {
       const orderBtn = screen.getByText(/주문 하기/);
       fireEvent.click(orderBtn);
 
-      expect(mockUsedNavigate).toHaveBeenCalledWith('/order/complete');
+      expect(goToResult).toHaveBeenCalled();
     });
   });
 });

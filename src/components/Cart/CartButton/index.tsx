@@ -7,7 +7,7 @@ function CartButton({ goToIntro, goToResult }:CartButtonProps) {
   return (
     <div>
       <button type="button" onClick={goToIntro}>취소</button>
-      <button type="button" onClick={goToResult}>주문 하기</button>
+      <button type="button" onClick={goToResult}>주문하기</button>
     </div>
   );
 }

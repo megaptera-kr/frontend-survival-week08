@@ -37,8 +37,8 @@ describe('RestaurantRow', () => {
       expect(restaurantName).toBeInTheDocument();
     });
 
-    it('renders restaurants menu list', () => {
-      const menuList = screen.getAllByRole('menuitem');
+    it('renders restaurants menu list button', () => {
+      const menuList = screen.getAllByRole('button');
 
       menuList.forEach((menuItem, index) => {
         expect(menuItem).toHaveTextContent(
@@ -50,7 +50,7 @@ describe('RestaurantRow', () => {
 
   context('if user click food', () => {
     it('addCart function will be called 1 time', () => {
-      const firstFood = screen.getAllByRole('menuitem')[0];
+      const firstFood = screen.getAllByRole('button')[0];
       fireEvent.click(firstFood);
 
       expect(addCart).toHaveBeenCalledTimes(1);

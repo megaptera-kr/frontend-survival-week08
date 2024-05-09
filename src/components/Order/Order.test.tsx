@@ -12,7 +12,7 @@ describe('Order', () => {
   });
 
   it('renders FilterableRestaurantsTable', async () => {
-    const labelText = screen.getByLabelText(/search/);
+    const labelText = screen.getByLabelText(/검색/);
     const placeholderText = screen.getByPlaceholderText(/식당이름을 입력해주세요/);
 
     expect(labelText).toBeInTheDocument();
@@ -30,7 +30,7 @@ describe('Order', () => {
     expect(totalPriceText).toBeInTheDocument();
 
     const cancelBtn = screen.getByText(/취소/);
-    const orderBtn = screen.getByText(/주문 하기/);
+    const orderBtn = screen.getByText(/주문하기/);
 
     expect(cancelBtn).toBeInTheDocument();
     expect(orderBtn).toBeInTheDocument();

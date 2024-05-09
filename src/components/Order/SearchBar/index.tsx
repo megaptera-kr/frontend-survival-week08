@@ -20,7 +20,7 @@ function SearchBar({
   return (
     <div>
       <TextField
-        label="search"
+        label="검색"
         placeholder="식당이름을 입력해주세요"
         filterText={filterText}
         setFilterText={setFilterText}

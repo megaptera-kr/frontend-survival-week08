@@ -19,7 +19,7 @@ describe('CartButton', () => {
 
   it('renders 주문하기, 취소 button', () => {
     const cancelBtn = screen.getByText(/취소/);
-    const orderBtn = screen.getByText(/주문 하기/);
+    const orderBtn = screen.getByText(/주문하기/);
 
     expect(cancelBtn).toBeInTheDocument();
     expect(orderBtn).toBeInTheDocument();
@@ -34,9 +34,9 @@ describe('CartButton', () => {
     });
   });
 
-  context('if user click "주문 하기" button', () => {
+  context('if user click "주문하기" button', () => {
     it('navigate function will be called with "/order/complete"', () => {
-      const orderBtn = screen.getByText(/주문 하기/);
+      const orderBtn = screen.getByText(/주문하기/);
       fireEvent.click(orderBtn);
 
       expect(goToResult).toHaveBeenCalled();

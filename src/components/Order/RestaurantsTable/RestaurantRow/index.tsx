@@ -18,10 +18,12 @@ function RestaurantRow({ restaurant }:RestaurantRowProps) {
       <td>
         <ul>
           {restaurant.menu.map((food) => (
-            <li role="menuitem" key={food.id} onClick={handleClick(food)}>
-              <img src={food.image} alt={food.image} />
-              <p>{food.name}</p>
-              <p>{`${convertKRW(food.price)}원`}</p>
+            <li key={food.id}>
+              <button type="button" onClick={handleClick(food)}>
+                <img src={food.image} alt={food.image} />
+                <p>{food.name}</p>
+                <p>{`${convertKRW(food.price)}원`}</p>
+              </button>
             </li>
           ))}
         </ul>

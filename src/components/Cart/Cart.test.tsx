@@ -40,7 +40,7 @@ describe('Cart', () => {
   });
   it('renders OrderButton', () => {
     const cancelBtn = screen.getByText(/취소/);
-    const orderBtn = screen.getByText(/주문 하기/);
+    const orderBtn = screen.getByText(/주문하기/);
 
     expect(cancelBtn).toBeInTheDocument();
     expect(orderBtn).toBeInTheDocument();

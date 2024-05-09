@@ -16,7 +16,7 @@ describe('FilterableRestaurantsTable', () => {
   });
 
   it('renders SearchBar', () => {
-    const labelText = screen.getByLabelText(/search/);
+    const labelText = screen.getByLabelText(/검색/);
     const placeholderText = screen.getByPlaceholderText(/식당이름을 입력해주세요/);
 
     expect(labelText).toBeInTheDocument();

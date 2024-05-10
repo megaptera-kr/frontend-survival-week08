@@ -1,17 +1,14 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import RestaurantsTable from '.';
 import fixtures from '../../../../fixtures';
+import renderWithThemeProvider from '../../../renderWithThemeProvider';
 
 const { restaurants } = fixtures;
-
-function renderRestaurantsTable() {
-  render(<RestaurantsTable restaurants={restaurants} />);
-}
 
 const context = describe;
 describe('RestaurantsTable', () => {
   beforeEach(() => {
-    renderRestaurantsTable();
+    renderWithThemeProvider(<RestaurantsTable restaurants={restaurants} />);
   });
 
   context('received restaurants props', () => {

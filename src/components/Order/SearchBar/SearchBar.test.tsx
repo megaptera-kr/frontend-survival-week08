@@ -1,5 +1,6 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import SearchBar from '.';
+import renderWithThemeProvider from '../../../renderWithThemeProvider';
 
 const context = describe;
 describe('SearchBar', () => {
@@ -10,7 +11,7 @@ describe('SearchBar', () => {
   const setSelectedCategory = jest.fn();
 
   beforeEach(() => {
-    render(<SearchBar
+    renderWithThemeProvider(<SearchBar
       categories={categories}
       filterText={filterText}
       setFilterText={setFilterText}

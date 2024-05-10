@@ -1,5 +1,6 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import TextField from '.';
+import renderWithThemeProvider from '../../../renderWithThemeProvider';
 
 const context = describe;
 describe('TextField', () => {
@@ -10,7 +11,7 @@ describe('TextField', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    render(<TextField
+    renderWithThemeProvider(<TextField
       label={label}
       placeholder={placeholder}
       filterText={filterText}

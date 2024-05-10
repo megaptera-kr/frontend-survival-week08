@@ -1,8 +1,13 @@
 import { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import styled from 'styled-components';
 import ReceiptHeader from './ReceiptHeader';
 import ReceiptList from './ReceiptList';
 import ResetButton from './ResetButton';
+
+const StyledReceipt = styled.div`
+  background-color: ${(props) => props.theme.colors.food_bg};
+`;
 
 function Receipt() {
   const navigate = useNavigate();
@@ -16,13 +21,13 @@ function Receipt() {
     }
   }, []);
   return (
-    <div>
+    <StyledReceipt>
       <ReceiptHeader orderId={orderId} />
 
       <ReceiptList orderId={orderId} />
 
       <ResetButton goToIntro={goToIntro} />
-    </div>
+    </StyledReceipt>
   );
 }
 

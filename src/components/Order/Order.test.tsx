@@ -1,10 +1,19 @@
 import { screen } from '@testing-library/react';
+import { ThemeProvider } from 'styled-components';
 import Order from '.';
 import renderWithMemoryRouter from '../../renderWithMemoryRouter';
+import defaultTheme from '../../styles/defaultTheme';
 
 describe('Order', () => {
   beforeEach(() => {
-    renderWithMemoryRouter(<Order />, { path: '/order' });
+    const theme = defaultTheme;
+    renderWithMemoryRouter(
+      (
+        <ThemeProvider theme={theme}>
+          <Order />
+        </ThemeProvider>
+      ), { path: '/order' },
+    );
   });
 
   it('renders FilterableRestaurantsTable', async () => {

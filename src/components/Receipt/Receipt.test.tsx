@@ -1,13 +1,21 @@
 import { screen } from '@testing-library/react';
+import { ThemeProvider } from 'styled-components';
 import Receipt from '.';
 import fixtures from '../../../fixtures';
 import renderWithMemoryRouter from '../../renderWithMemoryRouter';
+import defaultTheme from '../../styles/defaultTheme';
 
 const { order } = fixtures;
 
 function renderReceipt() {
+  const theme = defaultTheme;
   renderWithMemoryRouter(
-    <Receipt />,
+    (
+      <ThemeProvider theme={theme}>
+        <Receipt />
+      </ThemeProvider>
+    )
+    ,
     { path: `/order/complete?orderId=${order.id}` },
   );
 }

@@ -1,5 +1,6 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import Intro from '.';
+import renderWithThemeProvider from '../../renderWithThemeProvider';
 
 const mockedUsedNavigate = jest.fn();
 
@@ -12,7 +13,7 @@ const context = describe;
 describe('Intro', () => {
   beforeEach(() => {
     jest.clearAllMocks();
-    render(<Intro />);
+    renderWithThemeProvider(<Intro />);
   });
 
   it('it renders paragraph, "매장 주문", "전체 포장" button', () => {

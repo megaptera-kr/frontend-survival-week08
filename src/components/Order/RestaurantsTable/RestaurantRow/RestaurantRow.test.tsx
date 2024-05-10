@@ -1,6 +1,7 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import RestaurantRow from '.';
 import fixtures from '../../../../../fixtures';
+import renderWithThemeProvider from '../../../../renderWithThemeProvider';
 import Food from '../../../../types/food';
 
 const { restaurants } = fixtures;
@@ -18,11 +19,11 @@ jest.mock(
 
 function renderRestaurantRow() {
   jest.clearAllMocks();
-  render(
+  renderWithThemeProvider((
     <table>
       <tbody><RestaurantRow restaurant={restaurant} /></tbody>
-    </table>,
-  );
+    </table>
+  ));
 }
 
 const context = describe;

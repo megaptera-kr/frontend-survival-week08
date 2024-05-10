@@ -1,5 +1,6 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import CategoryFilter from '.';
+import renderWithThemeProvider from '../../../renderWithThemeProvider';
 
 const context = describe;
 describe('CategoryFilter', () => {
@@ -9,7 +10,7 @@ describe('CategoryFilter', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    render(<CategoryFilter
+    renderWithThemeProvider(<CategoryFilter
       categories={categories}
       selectedCategory={selectedCategory}
       setSelectedCategory={setSelectedCategory}

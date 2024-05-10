@@ -1,18 +1,15 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import FilterableRestaurantsTable from '.';
 import fixtures from '../../../../fixtures';
+import renderWithThemeProvider from '../../../renderWithThemeProvider';
 import getUniqueCategory from '../../../utils/getUniqueCategory';
 
 const { restaurants } = fixtures;
 const categories = getUniqueCategory(restaurants);
 
-function renderFilterableRestaurantsTable() {
-  render(<FilterableRestaurantsTable />);
-}
-
 describe('FilterableRestaurantsTable', () => {
   beforeEach(() => {
-    renderFilterableRestaurantsTable();
+    renderWithThemeProvider(<FilterableRestaurantsTable />);
   });
 
   it('renders SearchBar', () => {

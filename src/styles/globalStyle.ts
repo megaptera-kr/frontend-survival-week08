@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
     font-family: 'Pretendard';
     font-weight: ${(props) => props.theme.fontWeight.semi_bold};
+    background-color: ${(props) => props.theme.colors.toggle_active};
   }
 
   body {

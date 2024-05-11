@@ -21,7 +21,7 @@ function renderRestaurantRow() {
   jest.clearAllMocks();
   renderWithThemeProvider((
     <table>
-      <tbody><RestaurantRow restaurant={restaurant} /></tbody>
+      <tbody><RestaurantRow restaurant={restaurant} isLast /></tbody>
     </table>
   ));
 }

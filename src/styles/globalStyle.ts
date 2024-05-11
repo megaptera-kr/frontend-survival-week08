@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
     width: 1080px;
     margin-inline:auto;
     font-size: 1.6rem;
+    line-height: 1.2;
   }
 
   #root {

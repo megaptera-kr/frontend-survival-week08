@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import ReceiptHeader from '.';
 import fixtures from '../../../../fixtures';
 import renderWithThemeProvider from '../../../renderWithThemeProvider';

@@ -43,14 +43,14 @@ Scenario('음식 주문하기', ({ I }) => {
   I.click('비빔밥');
 
   I.see('1개');
-  I.see('총 결제 예상금액8,000원');
+  I.see('총 결제 예상금액 8,000원');
 
   I.click('김밥');
   I.click('김밥');
   I.click(locate('button').withText('X').last()); // 마지막 X 버튼 찾아서 클릭해줘
 
   I.see('2개');
-  I.see('총 결제 예상금액11,500원');
+  I.see('총 결제 예상금액 11,500원');
 
   I.click('주문하기');
 });

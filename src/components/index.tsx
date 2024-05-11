@@ -4,6 +4,5 @@ import Intro from './Intro';
 import Order from './Order';
 
 export {
-	Cart, Header, Intro, Order
+  Cart, Header, Intro, Order,
 };
-

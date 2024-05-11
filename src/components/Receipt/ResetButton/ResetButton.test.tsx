@@ -1,10 +1,11 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import ResetButton from '.';
+import renderWithThemeProvider from '../../../renderWithThemeProvider';
 
 const goToIntro = jest.fn();
 
 function renderResetButton() {
-  render(<ResetButton goToIntro={goToIntro} />);
+  renderWithThemeProvider(<ResetButton goToIntro={goToIntro} />);
 }
 
 const context = describe;

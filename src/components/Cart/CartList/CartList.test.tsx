@@ -1,7 +1,8 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import CartList from '.';
 import fixtures from '../../../../fixtures';
 import Food from '../../../types/food';
+import renderWithThemeProvider from '../../../renderWithThemeProvider';
 
 const { menu } = fixtures.cart;
 
@@ -14,7 +15,7 @@ const removeCart = jest.fn();
 jest.mock('../../../hooks/useCartStore', () => () => [state, { removeCart }]);
 
 function renderCartList() {
-  render(<CartList menu={menu} />);
+  renderWithThemeProvider(<CartList menu={menu} />);
 }
 const context = describe;
 describe('CartList', () => {

@@ -1,11 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import ReceiptList from '.';
 import fixtures from '../../../../fixtures';
+import renderWithThemeProvider from '../../../renderWithThemeProvider';
 
 const { order } = fixtures;
 
 function renderReceiptList() {
-  render(<ReceiptList orderId={order.id} />);
+  renderWithThemeProvider(<ReceiptList orderId={order.id} />);
 }
 
 describe('ReceiptList', () => {

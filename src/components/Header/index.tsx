@@ -25,7 +25,7 @@ function Header() {
   return (
     <StyledHeader>
       <StyledHeaderLeft>
-        <img src="images/logo.png" alt="logo" width={80} />
+        <img src="/images/logo.png" alt="logo" width={80} />
         <StyledHeaderTitle>메가테라 푸드코트 키오스크</StyledHeaderTitle>
       </StyledHeaderLeft>
       <DarkModeToggle />

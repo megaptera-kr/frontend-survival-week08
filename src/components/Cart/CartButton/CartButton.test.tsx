@@ -1,9 +1,12 @@
 import { fireEvent, screen } from '@testing-library/react';
+import { ThemeProvider } from 'styled-components';
 import CartButton from '.';
 import renderWithMemoryRouter from '../../../renderWithMemoryRouter';
+import defaultTheme from '../../../styles/defaultTheme';
 
 const goToIntro = jest.fn();
 const goToResult = jest.fn();
+const theme = defaultTheme;
 
 const context = describe;
 describe('CartButton', () => {
@@ -11,7 +14,11 @@ describe('CartButton', () => {
     jest.clearAllMocks();
 
     renderWithMemoryRouter(
-      <CartButton goToIntro={goToIntro} goToResult={goToResult} />,
+      (
+        <ThemeProvider theme={theme}>
+          <CartButton goToIntro={goToIntro} goToResult={goToResult} />
+        </ThemeProvider>
+      ),
       { path: '/order' },
     );
   });

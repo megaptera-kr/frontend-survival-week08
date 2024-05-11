@@ -8,18 +8,24 @@ import StyledButton from '../../../Button';
 
 type RestaurantRowProps = {
   restaurant:Restaurant
+  isLast:boolean
 }
 
 type FoodButtonProps = {
   isDarkMode:boolean
 }
 
-const StyledRow = styled.tr`
+type RowType = {
+  isLast:boolean
+}
+
+// TODO: 마지막행은 border bottom 없어져야함
+const StyledRow = styled.tr<RowType>`
   display: flex;
   flex-direction:column;
   padding-block:80px;
   margin-inline: 50px;
-  border-bottom: ${(props) => `2px solid ${props.theme.colors.divider_secondary}`};
+  border-bottom: ${(props) => !props.isLast && `2px solid ${props.theme.colors.divider_secondary}`};
 `;
 
 const StyledRowTitle = styled.td`
@@ -64,14 +70,14 @@ const StyledFoodButton = styled(StyledButton)<FoodButtonProps>`
   }
 `;
 
-function RestaurantRow({ restaurant }:RestaurantRowProps) {
+function RestaurantRow({ restaurant, isLast }:RestaurantRowProps) {
   const { isDarkMode } = useDarkMode();
   const [, cartStore] = useCartStore();
   const handleClick = (food:Food) => () => {
     cartStore.addCart(food);
   };
   return (
-    <StyledRow>
+    <StyledRow isLast={isLast}>
       <StyledRowTitle>{restaurant.name}</StyledRowTitle>
       <td>
         <StyledMenu>

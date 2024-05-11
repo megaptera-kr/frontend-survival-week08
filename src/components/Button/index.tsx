@@ -8,7 +8,8 @@ type ButtonProps = {
 const StyledButton = styled.button.attrs<ButtonProps>(
   (props) => ({ type: props.type ?? 'button' }),
 )<ButtonProps>`
-
+  padding:0;
+  background-color: transparent;
 `;
 
 export default StyledButton;

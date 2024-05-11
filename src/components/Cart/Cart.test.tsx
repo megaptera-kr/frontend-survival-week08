@@ -1,7 +1,9 @@
 import { screen } from '@testing-library/react';
+import { ThemeProvider } from 'styled-components';
 import Cart from '.';
 import renderWithMemoryRouter from '../../renderWithMemoryRouter';
 import Food from '../../types/food';
+import defaultTheme from '../../styles/defaultTheme';
 
 const state:{menu:Food[]} = {
   menu: [{
@@ -16,8 +18,16 @@ const clearCart = jest.fn();
 
 jest.mock('../../hooks/useCartStore', () => () => [state, { clearCart }]);
 
+const theme = defaultTheme;
 function renderCart() {
-  renderWithMemoryRouter(<Cart />, { path: '/order' });
+  renderWithMemoryRouter(
+    (
+      <ThemeProvider theme={theme}>
+        <Cart />
+      </ThemeProvider>
+    )
+    , { path: '/order' },
+  );
 }
 
 const context = describe;
@@ -54,7 +64,13 @@ describe('Cart', () => {
 
   context('when it unmounted', () => {
     beforeEach(() => {
-      const { unmount } = renderWithMemoryRouter(<Cart />, { path: '/order' });
+      const { unmount } = renderWithMemoryRouter(
+        (
+          <ThemeProvider theme={theme}>
+            <Cart />
+          </ThemeProvider>
+        ), { path: '/order' },
+      );
       unmount();
     });
 

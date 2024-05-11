@@ -1,13 +1,14 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import CartHeader from '.';
 import fixtures from '../../../../fixtures';
+import renderWithThemeProvider from '../../../renderWithThemeProvider';
 
 const { food } = fixtures;
 
 const context = describe;
 describe('CartHeader', () => {
   beforeEach(() => {
-    render(<CartHeader menu={food} />);
+    renderWithThemeProvider(<CartHeader menu={food} />);
   });
 
   it('renders 주문내역, 총 결제 예상금액', () => {

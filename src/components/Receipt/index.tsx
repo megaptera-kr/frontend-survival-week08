@@ -6,7 +6,9 @@ import ReceiptList from './ReceiptList';
 import ResetButton from './ResetButton';
 
 const StyledReceipt = styled.div`
-  background-color: ${(props) => props.theme.colors.food_bg};
+  border-radius:0 40px 0 0;
+  padding-inline: 50px;
+  background-color: ${(props) => props.theme.colors.restaurant_bg};
 `;
 
 function Receipt() {
